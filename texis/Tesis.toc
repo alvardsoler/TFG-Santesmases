@@ -1,6 +1,6 @@
 \select@language {spanish}
-\contentsline {chapter}{Agradecimientos}{\es@scroman {ix}}{chapter*.1}
-\contentsline {chapter}{Resumen}{\es@scroman {xi}}{chapter*.2}
+\contentsline {chapter}{Agradecimientos}{\es@scroman {vii}}{chapter*.1}
+\contentsline {chapter}{Resumen}{\es@scroman {ix}}{chapter*.2}
 \contentsline {chapter}{\numberline {1}Introducci\'on a Santesmases GO}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Introducci\'on}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Museo de inform\'atica Garc\IeC {\'\i }a-Santesmases}{1}{section.1.2}
