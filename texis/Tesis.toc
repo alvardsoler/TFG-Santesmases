@@ -1,15 +1,73 @@
 \select@language {spanish}
 \contentsline {chapter}{Agradecimientos}{\es@scroman {ix}}{chapter*.1}
 \contentsline {chapter}{Resumen}{\es@scroman {xi}}{chapter*.2}
-\contentsline {chapter}{\numberline {1}Space Invaders}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Historia}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Nuestra versi\'on}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}Implementaci\'on}{2}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Dise\~no}{3}{subsection.1.3.1}
-\contentsline {subsection}{\numberline {1.3.2}Desarrollo}{4}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}Conclusiones}{5}{subsection.1.3.3}
-\contentsline {section}{Notas bibliogr\'aficas}{5}{subsection.1.3.3}
-\contentsline {part}{I\hspace {1em}Ap\'endices}{7}{part.1}
-\contentsline {chapter}{\numberline {A}As\IeC {\'\i } se hizo...}{9}{appendix.Alph1}
-\contentsline {section}{\numberline {A.1}Introducci\'on}{9}{section.Alph1.1}
-\contentsline {chapter}{Lista de acr\'onimos}{11}{section.Alph1.1}
+\contentsline {chapter}{\numberline {1}Introducci\'on a Santesmases GO}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introducci\'on}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Museo de inform\'atica Garc\IeC {\'\i }a-Santesmases}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}Objetivos y motivaci\'on}{1}{section.1.3}
+\contentsline {section}{\numberline {1.4}Antecedentes}{1}{section.1.4}
+\contentsline {section}{Notas bibliogr\'aficas}{2}{section.1.4}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{2}{section.1.4}
+\contentsline {chapter}{\numberline {2}Estado del Arte}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}La realidad aumentada}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Alcance}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}Herramientas de desarrollo}{3}{section.2.3}
+\contentsline {section}{Notas bibliogr\'aficas}{3}{section.2.3}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{4}{section.2.3}
+\contentsline {chapter}{\numberline {3}Realidad aumentada en museos}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introducci\'on}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}El museo Garc\IeC {\'\i }a-Santesmases}{5}{section.3.2}
+\contentsline {section}{\numberline {3.3}Otros museos}{5}{section.3.3}
+\contentsline {section}{Notas bibliogr\'aficas}{5}{section.3.3}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{6}{section.3.3}
+\contentsline {chapter}{\numberline {4}Dise\~no del videojuego}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introducci\'on}{7}{section.4.1}
+\contentsline {section}{\numberline {4.2}Plan de trabajo}{7}{section.4.2}
+\contentsline {section}{\numberline {4.3}Otros aspectos}{7}{section.4.3}
+\contentsline {section}{\numberline {4.4}Conclusiones}{7}{section.4.4}
+\contentsline {section}{Notas bibliogr\'aficas}{7}{section.4.4}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{8}{section.4.4}
+\contentsline {chapter}{\numberline {5}Space Invaders}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}Historia}{9}{section.5.1}
+\contentsline {section}{\numberline {5.2}Nuestra versi\'on}{9}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementaci\'on}{10}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Dise\~no}{11}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Desarrollo}{12}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Conclusiones}{13}{subsection.5.3.3}
+\contentsline {section}{Notas bibliogr\'aficas}{13}{subsection.5.3.3}
+\contentsline {chapter}{\numberline {6}Arkanoid}{15}{chapter.6}
+\contentsline {section}{\numberline {6.1}Historia}{15}{section.6.1}
+\contentsline {section}{\numberline {6.2}Nuestra versi\'on}{15}{section.6.2}
+\contentsline {section}{\numberline {6.3}Implementaci\'on}{15}{section.6.3}
+\contentsline {section}{\numberline {6.4}Conclusiones}{15}{section.6.4}
+\contentsline {section}{Notas bibliogr\'aficas}{15}{section.6.4}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{16}{section.6.4}
+\contentsline {chapter}{\numberline {7}Water Pipes}{17}{chapter.7}
+\contentsline {section}{\numberline {7.1}Historia}{17}{section.7.1}
+\contentsline {section}{\numberline {7.2}Nuestra versi\'on}{17}{section.7.2}
+\contentsline {section}{\numberline {7.3}Implementaci\'on}{17}{section.7.3}
+\contentsline {section}{\numberline {7.4}Conclusiones}{17}{section.7.4}
+\contentsline {section}{Notas bibliogr\'aficas}{17}{section.7.4}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{18}{section.7.4}
+\contentsline {chapter}{\numberline {8}Evaluaci\'on con usuarios}{19}{chapter.8}
+\contentsline {section}{\numberline {8.1}Plan de evaluaci\'on}{19}{section.8.1}
+\contentsline {section}{\numberline {8.2}Descripci\'on de la metodolog\IeC {\'\i }a del an\'alisis de los datos}{19}{section.8.2}
+\contentsline {section}{\numberline {8.3}Primera evaluaci\'on con usuarios}{19}{section.8.3}
+\contentsline {section}{Notas bibliogr\'aficas}{19}{section.8.3}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{20}{section.8.3}
+\contentsline {chapter}{\numberline {9}Conclusiones y trabajo futuro}{21}{chapter.9}
+\contentsline {section}{\numberline {9.1}Conclusiones}{21}{section.9.1}
+\contentsline {section}{\numberline {9.2}L\IeC {\'\i }neas futuras}{21}{section.9.2}
+\contentsline {section}{Notas bibliogr\'aficas}{21}{section.9.2}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{21}{section.9.2}
+\contentsline {chapter}{\numberline {10}Aportaciones individuales}{23}{chapter.10}
+\contentsline {section}{\numberline {10.1}Organizaci\'on general del proyecto}{23}{section.10.1}
+\contentsline {section}{\numberline {10.2}Ra\'ul Cobos}{23}{section.10.2}
+\contentsline {section}{\numberline {10.3}\'Alvar D. Soler}{23}{section.10.3}
+\contentsline {section}{\numberline {10.4}Mar\IeC {\'\i }a Picado}{23}{section.10.4}
+\contentsline {section}{Notas bibliogr\'aficas}{23}{section.10.4}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{24}{section.10.4}
+\contentsline {part}{I\hspace {1em}Ap\'endices}{25}{part.1}
+\contentsline {chapter}{\numberline {A}As\IeC {\'\i } se hizo...}{27}{appendix.Alph1}
+\contentsline {section}{\numberline {A.1}Introducci\'on}{27}{section.Alph1.1}
+\contentsline {chapter}{Lista de acr\'onimos}{29}{section.Alph1.1}
