@@ -7,59 +7,71 @@
 \contentsline {section}{\numberline {1.3}Objetivos y motivaci\'on}{1}{section.1.3}
 \contentsline {section}{\numberline {1.4}Antecedentes}{2}{section.1.4}
 \contentsline {section}{Notas bibliogr\'aficas}{2}{section.1.4}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{3}{section.1.4}
 \contentsline {chapter}{\numberline {2}Estado del Arte}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}La realidad aumentada}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Alcance}{5}{section.2.2}
-\contentsline {section}{\numberline {2.3}Realidad aumentada en videojuegos}{5}{section.2.3}
-\contentsline {section}{\numberline {2.4}Realidad aumentada en museos}{5}{section.2.4}
-\contentsline {section}{\numberline {2.5}Herramientas de desarrollo}{5}{section.2.5}
-\contentsline {section}{Notas bibliogr\'aficas}{6}{section.2.5}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{6}{section.2.5}
-\contentsline {chapter}{\numberline {3}Dise\~no del videojuego}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introducci\'on}{7}{section.3.1}
-\contentsline {section}{\numberline {3.2}Hilo argumental}{7}{section.3.2}
-\contentsline {section}{\numberline {3.3}Conclusiones}{7}{section.3.3}
-\contentsline {section}{Notas bibliogr\'aficas}{7}{section.3.3}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{8}{section.3.3}
-\contentsline {chapter}{\numberline {4}Space Invaders}{9}{chapter.4}
-\contentsline {section}{\numberline {4.1}Historia}{9}{section.4.1}
-\contentsline {section}{\numberline {4.2}Nuestra versi\'on}{9}{section.4.2}
-\contentsline {section}{\numberline {4.3}Implementaci\'on}{10}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Dise\~no}{11}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Desarrollo}{12}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Conclusiones}{13}{subsection.4.3.3}
-\contentsline {section}{Notas bibliogr\'aficas}{13}{subsection.4.3.3}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{14}{subsection.4.3.3}
-\contentsline {chapter}{\numberline {5}Arkanoid}{15}{chapter.5}
-\contentsline {section}{\numberline {5.1}Historia}{15}{section.5.1}
-\contentsline {section}{\numberline {5.2}Nuestra versi\'on}{15}{section.5.2}
-\contentsline {section}{\numberline {5.3}Implementaci\'on}{15}{section.5.3}
-\contentsline {section}{\numberline {5.4}Conclusiones}{15}{section.5.4}
-\contentsline {section}{Notas bibliogr\'aficas}{15}{section.5.4}
-\contentsline {chapter}{\numberline {6}Water Pipes}{17}{chapter.6}
-\contentsline {section}{\numberline {6.1}Historia}{17}{section.6.1}
-\contentsline {section}{\numberline {6.2}Nuestra versi\'on}{17}{section.6.2}
-\contentsline {section}{\numberline {6.3}Implementaci\'on}{17}{section.6.3}
-\contentsline {section}{\numberline {6.4}Conclusiones}{17}{section.6.4}
-\contentsline {section}{Notas bibliogr\'aficas}{17}{section.6.4}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{18}{section.6.4}
-\contentsline {chapter}{\numberline {7}Evaluaci\'on con usuarios}{19}{chapter.7}
-\contentsline {section}{\numberline {7.1}Plan de evaluaci\'on}{19}{section.7.1}
-\contentsline {section}{\numberline {7.2}Descripci\'on de la metodolog\IeC {\'\i }a del an\'alisis de los datos}{19}{section.7.2}
-\contentsline {section}{\numberline {7.3}Primera evaluaci\'on con usuarios}{19}{section.7.3}
-\contentsline {section}{Notas bibliogr\'aficas}{19}{section.7.3}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{20}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusiones y trabajo futuro}{21}{chapter.8}
-\contentsline {section}{\numberline {8.1}Conclusiones}{21}{section.8.1}
-\contentsline {section}{\numberline {8.2}L\IeC {\'\i }neas futuras}{21}{section.8.2}
-\contentsline {section}{Notas bibliogr\'aficas}{21}{section.8.2}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{21}{section.8.2}
-\contentsline {chapter}{\numberline {9}Aportaciones individuales}{23}{chapter.9}
-\contentsline {section}{\numberline {9.1}Organizaci\'on general del proyecto}{23}{section.9.1}
-\contentsline {section}{\numberline {9.2}Ra\'ul Cobos}{23}{section.9.2}
-\contentsline {section}{\numberline {9.3}\'Alvar D. Soler}{23}{section.9.3}
-\contentsline {section}{\numberline {9.4}Mar\IeC {\'\i }a Picado}{23}{section.9.4}
-\contentsline {section}{Notas bibliogr\'aficas}{23}{section.9.4}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{24}{section.9.4}
-\contentsline {chapter}{Lista de acr\'onimos}{25}{section.9.4}
+\contentsline {section}{\numberline {2.2}Alcance}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Informaci\'on interactiva}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Entretenimiento}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Ciencia y desarrollo}{6}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Otros}{7}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Realidad aumentada en videojuegos}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Ejemplos de Realidad Aumentada en videojuegos}{7}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.4}Realidad aumentada en museos}{8}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}El museo Garc\IeC {\'\i }a-Santesmases}{8}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Otros museos}{8}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Herramientas de desarrollo}{10}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Vuforia}{10}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}C\'omo generar realidad aumentada}{10}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Plataformas de desarrollo}{11}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Unity3D}{12}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.5.5}C\#}{12}{subsection.2.5.5}
+\contentsline {subsection}{\numberline {2.5.6}Unity3D + Vuforia}{13}{subsection.2.5.6}
+\contentsline {section}{Notas bibliogr\'aficas}{14}{subsection.2.5.6}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{14}{subsection.2.5.6}
+\contentsline {chapter}{\numberline {3}Dise\~no del videojuego}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introducci\'on}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}Hilo argumental}{15}{section.3.2}
+\contentsline {section}{\numberline {3.3}Conclusiones}{15}{section.3.3}
+\contentsline {section}{Notas bibliogr\'aficas}{15}{section.3.3}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{16}{section.3.3}
+\contentsline {chapter}{\numberline {4}Space Invaders}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}Historia}{17}{section.4.1}
+\contentsline {section}{\numberline {4.2}Nuestra versi\'on}{17}{section.4.2}
+\contentsline {section}{\numberline {4.3}Implementaci\'on}{18}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Dise\~no}{19}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Desarrollo}{20}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Conclusiones}{21}{subsection.4.3.3}
+\contentsline {section}{Notas bibliogr\'aficas}{21}{subsection.4.3.3}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{22}{subsection.4.3.3}
+\contentsline {chapter}{\numberline {5}Arkanoid}{23}{chapter.5}
+\contentsline {section}{\numberline {5.1}Historia}{23}{section.5.1}
+\contentsline {section}{\numberline {5.2}Nuestra versi\'on}{23}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementaci\'on}{23}{section.5.3}
+\contentsline {section}{\numberline {5.4}Conclusiones}{23}{section.5.4}
+\contentsline {section}{Notas bibliogr\'aficas}{23}{section.5.4}
+\contentsline {chapter}{\numberline {6}Water Pipes}{25}{chapter.6}
+\contentsline {section}{\numberline {6.1}Historia}{25}{section.6.1}
+\contentsline {section}{\numberline {6.2}Nuestra versi\'on}{25}{section.6.2}
+\contentsline {section}{\numberline {6.3}Implementaci\'on}{25}{section.6.3}
+\contentsline {section}{\numberline {6.4}Conclusiones}{25}{section.6.4}
+\contentsline {section}{Notas bibliogr\'aficas}{25}{section.6.4}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{26}{section.6.4}
+\contentsline {chapter}{\numberline {7}Evaluaci\'on con usuarios}{27}{chapter.7}
+\contentsline {section}{\numberline {7.1}Plan de evaluaci\'on}{27}{section.7.1}
+\contentsline {section}{\numberline {7.2}Descripci\'on de la metodolog\IeC {\'\i }a del an\'alisis de los datos}{27}{section.7.2}
+\contentsline {section}{\numberline {7.3}Primera evaluaci\'on con usuarios}{27}{section.7.3}
+\contentsline {section}{Notas bibliogr\'aficas}{27}{section.7.3}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{28}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusiones y trabajo futuro}{29}{chapter.8}
+\contentsline {section}{\numberline {8.1}Conclusiones}{29}{section.8.1}
+\contentsline {section}{\numberline {8.2}L\IeC {\'\i }neas futuras}{29}{section.8.2}
+\contentsline {section}{Notas bibliogr\'aficas}{29}{section.8.2}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{29}{section.8.2}
+\contentsline {chapter}{\numberline {9}Aportaciones individuales}{31}{chapter.9}
+\contentsline {section}{\numberline {9.1}Organizaci\'on general del proyecto}{31}{section.9.1}
+\contentsline {section}{\numberline {9.2}Ra\'ul Cobos}{31}{section.9.2}
+\contentsline {section}{\numberline {9.3}\'Alvar D. Soler}{31}{section.9.3}
+\contentsline {section}{\numberline {9.4}Mar\IeC {\'\i }a Picado}{31}{section.9.4}
+\contentsline {section}{Notas bibliogr\'aficas}{31}{section.9.4}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{32}{section.9.4}
+\contentsline {chapter}{Lista de acr\'onimos}{33}{section.9.4}
