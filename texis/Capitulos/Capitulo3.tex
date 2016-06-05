@@ -5,38 +5,60 @@
 %---------------------------------------------------------------------
 \chapter{Diseño del videojuego}
 
-\begin{FraseCelebre}
-\begin{Frase}
-...
-\end{Frase}
-\begin{Fuente}
-...
-\end{Fuente}
-\end{FraseCelebre}
-
-\begin{resumen}
-...
-\end{resumen}
-
+El proyecto que se ha realizado es una yimcana, con videojuegos en RA, por el museo García-Santesmases, de la Facultad de Informática de la Universidad Complutense. Ésta se compone de varios minijuegos en RA y un hilo argumental. Las funciones de este último son las de ir dirigiendo al visitante por el museo, y ayudarle a ir completando las diferentes misiones que se le van a ir presentando para poder finalizar con éxito la yimcana.
 
 %-------------------------------------------------------------------
 \section{Introducción}
 %-------------------------------------------------------------------
 \label{cap3:sec:introduccion}
 
-...
+La idea principal del proyecto es la diseñar e implementar estos minijuegos para que ~podamos adaptarlos a la RA, y hacer del museo no solo un espacio que aporte información interesante al usuario sobre la historia de la informática, sino que haga de éste un lugar más interactivo y entretenido para sus visitantes.
+
+En este caso, hemos tenido la suerte de realizar un proyecto sobre videojuegos en RA, en el museo García-Santesmases situado en la facultad de Informática. Esto no brinda la oportunidad de poder entretener al visitante mediante los videojuegos pero es importante destacar que a la vez estamos enseñando en primera persona historia de los videojuegos. Esto lo conseguimos al proponer al visitante que juegue a distintos videojuegos míticos como lo son el Space Invader, el Arkanoid o el Pipe Manía, juegos que hemos elegido para implementar en este trabajo.
+
+Con el fin de hacer uso de la tecnología actual que se nos brinda para el desarrollo de la RA hemos implementado estos tres juegos citados anteriormente. Pero se tiene que tener en cuenta que los 3 son juegos que sus primeras versiones cuentan con más de 20 años de antigüedad, por lo que hemos tenido que adaptarlos para que fuera viable jugarlos con RA, aunque siempre manteniendo su esencia original.
 
 \section{Hilo argumental}
 %-------------------------------------------------------------------
 \label{cap3:sec:hilo}
 
-...
+El videojuego nos traslada a una nave espacial que está siendo atacada por unos alienígenas. El piloto de la nave nos pondrá en situación y nos irá pidiendo que realicemos diferentes tareas para que la nave pueda despegar. De ésta forma conseguimos que el jugador se mueva por diferentes sitios del museo, ya que a cada minijuego solo se puede jugar en un punto del museo. Así añadimos dinamismo a la aplicación. Además, hay un sistema de puntuación diferente para cada minijuego y solo una oportunidad para cada minijuego.
 
+Al principio nos pedirá que destruyamos a los alienígenas que nos están atacando. Para ello, debemos salir al exterior de la nave (la puerta de entrada de la facultad), donde comienza el primer minijuego al enfocar el cartel de la Facultad de Informática. Así, comenzamos a jugar al Space Invaders. Conseguiremos puntos cada vez que destruyamos un invasor, y perderemos puntos si no conseguimos destruir todos antes de que destruyan el escudo de la nave.
+
+A continuación, el piloto nos pedirá que limpiemos los restos de las naves invasoras. Para ésto debemos ir a los mandos del robot de reciclaje (la máquina arcade que hay en la tercera planta del museo) y así comenzará el segundo minijuego, el Arkanoid. En este conseguimos puntos cuando la bola choca contra la ``chatarra espacial''.
+
+Por último, libres de enemigos y con el camino despejado, solo nos queda un escollo para poder escapar. Los tubos del sistema de refrigeración de la nave no están bien alineados y tenemos que rehacer el camino desde el depósito hasta el motor. Para ésto debemos ir al puesto de mando donde está el panel informativo del sistema de combustión (cartel ``Simulador Básico de Centrales térmicas'' del otro pasillo de la tercera planta) y reajustarlos. Aquí comienza el tercer y último minijuego, WaterPipes. Éste minijuego va por tiempo, y debemos encontrar un camino para el combustible antes de que se agote. La puntuación, con este minijuego, solo puede disminuir, pero en nuestra mano está que el camino sea lo más corto posible y así se nos reste el mínimo posible de puntos.
+
+Al finalizar, nuestra tarea habrá acabado. Se nos pedirá que introduzcamos nuestro nombre, y este se añadirá a un ``Hall de la fama'' de todos los usuarios del juego, ordenados por puntuación. Con ésto, hemos querido intentar que el juego sea rejugable por los usuarios, que intentarán conseguir más puntos afinando su puntería o su velocidad para quedar más alto del ``Hall de la fama''.
+
+
+\section{Mecánicas}
+%-------------------------------------------------------------------
+\label{cap3:sec:mecanicas}
+
+Uno de los principales problemas de la RA son las mecánicas. Es complicado adaptar un juego haciendo uso de la RA y elegir las mecánicas apropiadas para que este no se vea perjudicado por ella.
+
+En este caso, se implementan juegos ``clásicos'', por lo que un usuario que más o menos haya sido jugador, debiera conocer las mecánicas de estos, por lo que la comprensión inicial de estas no debiera ser el principal problema. Ahora bien, hay que hacerle comprender al jugador como debe ejecutarlas y que estas le resulten cómodas, porque el hecho de utilizar la RA limita las mecánicas considerablemente. En primer lugar, el tener que estar enfocando a un ``target'' dificulta la acción; el usuario deberá estar apuntando a este y eso restringe aquellas mecánicas que puedan propiciar movimientos bruscos. Otra dificultad reside en la ergonomía; el hecho de tener que apuntar con el smartphone, obliga a coger este de una determinada forma que deja apenas dos dedos libres, los cuales tendrán un área limitada donde poder pulsar. Además, el hecho de que sea un juego para móviles conlleva también limitaciones a la hora de recrear juegos que se jugasen con un mando, o que requieran un amplio campo de visión.
+
+El planteamiento teniendo en cuenta las limitaciones de la RA, sumadas a nuestra inexperiencia en el desarrollo de videojuegos ha sido el de implementar tres videojuegos con no mucha complejidad de desarrollo y con mecánicas muy simples que encajen con la RA.
+
+En primer lugar, un menú principal para permitir al jugador comenzar cuando este lo desee y consultar las puntuaciones; algo importante como hemos mencionado anteriormente que utiliza una interfaz muy simple con botones grandes. A continuación, un hilo principal compuestos por escenas que le dicen al jugador a dónde tiene que ir para comenzar el juego. Tras estas, cada uno de los juegos donde antes de comenzar cada uno de estos se muestra la información que describe las mecánicas y que le dice a el jugador cuál será el ``target''al que deberán apuntar. Y en último lugar el juego en sí, que comenzará al reconocer el ``target'' y que contienen tres elementos fundamentales:
+
+\begin{itemize}
+	\item{El tiempo, que supone un obstáculo para el jugador.}
+	\item{Control. El jugador interactúa con el juego en el caso del Space Invaders apuntando con el propio dispositivo y pulsando sobre la pantalla; en el caso del Arkanoid deslizando el dedo sobre esta para desplazar la plataforma, y el Water Pipes, donde se pulsa sobre las tuberías para intercambiarlas.}
+	\item{Puntuación, lo que motiva al jugador no solo a pasarse el juego sino a hacerlo de la mejor forma posible.}
+\end{itemize}
 \section{Conclusiones}
 %-------------------------------------------------------------------
 \label{cap3:sec:conclusiones}
 
-...
+En general hemos quedado bastante satisfechos con el resultado final. Sí nos hemos dado cuenta que podríamos haber implementado más minijuegos, pero los primeros meses fueron bastante lentos en cuanto a desarrollo.
+
+Creemos que la yimcana es una buena manera para que el usuario del museo se mueva por éste. Y que el interactuar con los elementos del museo mejorarán su experiencia. Incluso es probable que pudiese atraer visitas, que motivadas por el hecho de probar esta tecnología relativamente ``novedosa'', visiten el museo.
+
+Por otra parte, se considera un acierto el sistema de puntuaciones, ya que anima al usuario a volver a jugar, y cuando lo hace con la mecánicas aprendidad, uno es capaz de percibir más los detalles de las escenas, los cuales pueden contener referencias del museo lo cual refuerza el objetivo del videojuego.
 
 %-------------------------------------------------------------------
 \section*{\NotasBibliograficas}
@@ -47,18 +69,6 @@ Citamos algo para que aparezca en la bibliografía\ldots
 \citep{ldesc2e}
 
 \medskip
-
-Y también ponemos el acrónimo \ac{CVS} para que no cruja.
-
-Ten en cuenta que si no quieres acrónimos (o no quieres que te falle la compilación en ``release'' mientras no tengas ninguno) basta con que no definas la constante \verb+\acronimosEnRelease+ (en \texttt{config.tex}).
-
-
-%-------------------------------------------------------------------
-\section*{\ProximoCapitulo}
-%-------------------------------------------------------------------
-\TocProximoCapitulo
-
-...
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX
