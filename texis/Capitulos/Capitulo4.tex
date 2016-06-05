@@ -12,9 +12,9 @@ El primero de los juegos de la yimcana. Inspirado en el famoso Space Invaders, e
 %-------------------------------------------------------------------
 \label{cap4:sec:historia}
 
-Quizá uno de los juegos arcade clásicos más conocidos. La primera versión salió al mercado en 1978, hace casi cuarenta años \footnote{\href{https://es.wikipedia.org/wiki/Space_Invaders}} . Uno de los precursores del género shoot 'em up. El jugador controla una nave espacial que se mueve horizontalmente y debe hacer frente a hordas de alienígenas enemigos que atacan al jugador disparándole proyectiles. Además, a veces el jugador cuenta con pequeñas construcciones que hacen la labor de búnker donde ponerse a cubierto de los disparos, aunque éstos se van destruyendo.
+Space Invaders es uno de los juegos arcade clásicos más conocidos. La primera versión salió al mercado en 1978, hace casi cuarenta años \footnote{\href{https://es.wikipedia.org/wiki/Space_Invaders}} . Uno de los precursores del género shoot 'em up. El jugador controla una nave espacial que se mueve horizontalmente y debe hacer frente a hordas de alienígenas enemigos que atacan al jugador disparándole proyectiles. Además, a veces el jugador cuenta con pequeñas construcciones que hacen la labor de búnker donde ponerse a cubierto de los disparos, aunque éstos se van destruyendo.
 
-Éste juego está ampliamente extendido en la cultura popular ya que es uno de los grandes clásicos, por eso hemos considerado acertado incluirlo en nuestro proyecto.
+Space Invaders está ampliamente extendido en la cultura popular ya que es uno de los grandes clásicos, por eso hemos considerado acertado incluirlo en nuestro proyecto.
 
 \figura{Tfg/spaceinvadersoriginal.png}{width=.5\textwidth}{fig:inaveders1}
 	{Space Invaders original}
@@ -22,25 +22,12 @@ Quizá uno de los juegos arcade clásicos más conocidos. La primera versión salió 
 \section{Nuestra versión}
 \label{cap4:sec:nuestraversion}
 
-Nosotros hemos decidido darle un cambio a la jugabilidad del juego. En nuestra versión utilizamos la RA para que la experiencia sea completamente diferente. Nuestro juego arrancará al detectar el cartel de FACULTAD DE INFORMÁTICA (Text Recognition), mostrándonos unos invasores alienígenas sobre el cartel, y unas defensas bajo éste.
+Nosotros hemos decidido darle un cambio a la jugabilidad del
+juego. En nuestra versión utilizamos la RA para que la experiencia sea completamente diferente. Nuestro juego arrancará al detectar el cartel de FACULTAD DE INFORMÁTICA (Text Recognition), mostrándonos unos invasores alienígenas sobre el cartel, y unas defensas bajo éste.
 
 Para destruir a los invasores, lo que tenemos que hacer es mover nuestro Smartphone para mover nuestra cámara y pulsar en la pantalla para disparar. Hemos pasado de manejar la nave defensora en tercera persona, a hacerlo en primera persona, con un punto de mira en el centro de la pantalla que nos marca en qué dirección irán los láseres de nuestra torreta de defensa, convirtiendo el juego en un First Person Shooter, y tendremos que hacerlo antes de que los enemigos consigan destruir el escudo de nuestra nave espacial (cuando pasa del verde al rojo). Iremos obteniendo puntos según destruyamos naves enemigas, y perderemos puntos al recibir impactos en el escudo, por lo que cuanto más rápidos seamos, más puntos obtendremos.
 
 Con estos cambios, hemos conseguido (a nuestro juicio), transformar un clásico de los arcade en un nuevo juego que utiliza la RA dando una experiencia diferente.
-
-\section{Implementación}
-\label{cap4:sec:implementacion}
-Durante el desarrollo de este juego hemos encontrado unos cuantos escollos que superar, algunos que nos han llevado quebraderos de cabeza. Comenzamos desarrollando el videojuego utilizando un código QR como marcador de la RA, pensando que después pasar a utilizar un texto no tendría complicaciones. Una vez teníamos el juego desarrollado con un código QR (ImageTarget), probamos a detectar texto propio, ya que Vuforia nos da un diccionario con miles de palabras en inglés, pero nosotros no queríamos detectar esas palabras, si no únicamente FACULTAD DE INFORMÁTICA.
-
-Para esto, seguimos los tutoriales de Vuforia, y, tras resolver algunas dudas, implementamos una escena sencilla en la que se mostraba una esfera sobre el texto. Después, intentamos transferir lo desarrollado con el ImageTarget, al texto.
-
-Entonces surgieron los problemas. El primero que vimos, era que las proporciones de nuestros Invasores y las Defensas se quedaron muy pequeñas, haciendo imposible jugar cómodamente. La mejor manera que conseguimos para que se ajustaran los elementos del juego a un tamaño aceptable fue mediante un Script de C\# que aumentaba la escala local de los Invasores y las Defensas (local scale).
-
-El siguiente problema que encontramos fue al insertar nuestro Enjambre de Invasores. Por un lado, una vez aparecían los enemigos, si movíamos la cámara, éstos se quedaban en la misma posición respecto a la cámara, es decir, si cuando salían por primera vez estaban en la parte superior izquierda (por ejemplo) de la pantalla, y nos movíamos, seguían ahí, en vez de ajustar su posición con respecto al texto detectado. Tuvimos que cambiar la forma en la que los insertábamos en la escena, antes de manera dinámica y creando una instancia con un Script, y ahora como hijos del GameObject que representa al texto detectado. Éste tipo de problema (de la posición respecto a los objetos de RA) nos volvería a salir más adelante, pero con los proyectiles que lanzábamos para acabar con los enemigos.
-
-En las primeras versiones del juego, lanzábamos un prisma (nuestro Proyectil) contra los enemigos. Según lanzábamos, el proyectil se iba dirigiendo en la dirección que tenía la cámara respecto al ImageTarget al realizar el disparo. Al pasar a utilizar el texto, esto cambió. Vimos que nuestro disparo se mantenía siempre en el vector de dirección de la cámara, y cambiaba con éste. Es decir, nuestro proyectil siempre estaba en el centro de la pantalla, con lo cual se perdía toda la gracia al juego y su jugabilidad pasaba a ser bastante complicada. Éste problema nos dejó bastante confusos, ya que con cambiar el objeto de la RA (ImageTarget o TextRecognition) cambiaba el comportamiento del proyectil.
-
-Para resolver esto, cambiamos nuestro proyectil por un láser. Ahora al tocar la pantalla no se lanza un proyectil, si no que se dispara un láser que destruirá los enemigos que estén en el vector de dirección de la cámara. Así hemos conseguido solventar este extraño comportamiento.
 
 \subsection{Diseño} % (fold)
 \label{cap4:sub:diseno}
@@ -88,7 +75,8 @@ Pasamos a explicar qué clases componen el juego y para qué las utilizamos.
 
 \subsection{Conclusiones}
 \label{cap4:sub:conclusiones}
-Al detectar el texto de FACULTAD DE INFORMÁTICA, el GameManager es avisado y comienza el juego. El GameManager instancia el Enjambre, que a su vez instancia todos los Invaders. Una vez hecho esto, se instancian las defensas desde el GameManager, se activa la información de la interfaz de usuario (puntuación, punto de mira…).A partir de este momento, el jugador puede disparar el láser.
+
+Al detectar el texto de FACULTAD DE INFORMÁTICA, el GameManager es avisado y comienza el juego. El GameManager instancia el Enjambre, que a su vez instancia todos los Invaders. Una vez hecho esto, se instancian las defensas desde el GameManager, se activa la información de la interfaz de usuario (puntuación, punto de mira \ldots{}).A partir de este momento, el jugador puede disparar el láser.
 
 Ahora, en cada actualización, el Enjambre mueve su posición, moviendo a todos los Invaders con él. Por su parte, cada Invader tiene un tanto porciento de posibilidades de disparar. Si se da esa posibilidad, instanciará un proyectil en la dirección de las defensas.
 
@@ -96,7 +84,7 @@ Durante el desarrollo de este juego hemos encontrado unos cuantos escollos que s
 
 Para esto, seguimos los tutoriales de Vuforia, y, tras resolver algunas dudas, implementamos una escena sencilla en la que se mostraba una esfera sobre el texto. Después, intentamos transferir lo desarrollado con el ImageTarget, al texto.
 
-Entonces surgieron los problemas. El primero que vimos, era que las proporciones de nuestros Invasores y las Defensas se quedaron muy pequeñas, haciendo imposible jugar cómodamente. La mejor manera que conseguimos para que se ajustaran los elementos del juego a un tamaño aceptable fue mediante un Script de C# que aumentaba la escala local de los Invasores y las Defensas (local scale).
+Entonces surgieron los problemas. El primero que vimos, era que las proporciones de nuestros Invasores y las Defensas se quedaron muy pequeñas, haciendo imposible jugar cómodamente. La mejor manera que conseguimos para que se ajustaran los elementos del juego a un tamaño aceptable fue mediante un Script de C\# que aumentaba la escala local de los Invasores y las Defensas (local scale).
 
 El siguiente problema que encontramos fue al insertar nuestro Enjambre de Invasores. Por un lado, una vez aparecían los enemigos, si movíamos la cámara, éstos se quedaban en la misma posición respecto a la cámara, es decir, si cuando salían por primera vez estaban en la parte superior izquierda (por ejemplo) de la pantalla, y nos movíamos, seguían ahí, en vez de ajustar su posición con respecto al texto detectado. Tuvimos que cambiar la forma en la que los insertábamos en la escena, antes de manera dinámica y creando una instancia con un Script, y ahora como hijos del GameObject que representa al texto detectado. Éste tipo de problema (de la posición respecto a los objetos de RA) nos volvería a salir más adelante, pero con los proyectiles que lanzábamos para acabar con los enemigos.
 
