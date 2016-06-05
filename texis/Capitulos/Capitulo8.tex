@@ -30,30 +30,42 @@ Al ser una aplicación, decidimos utilizar el cuestionario SUS para realizar esta
 
 La siguiente tabla muestra las preguntas finales, con las respuestas necesarias para sacar el 100\% de la puntuación.
 
-\begin{longtable}[c]{@{}lll@{}}
-\toprule\addlinespace
-\begin{minipage}[t]{0.30\columnwidth}\raggedright
-N
+\begin{table}[t]
+\footnotesize
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+N & Preguntas & Puntuación \\
+\hline
+\hline
+1 & Me gustaría volver a jugar & 5 \\
+\hline
+2 & El juego tiene una complejidad innecesaria & 1 \\
+\hline
+3 & Pienso que el juego es fácil de jugar & 5 \\
+\hline
+4 & Necesitaría el apoyo de una persona que conozca el juego para poder jugarlo & 1 \\
+\hline
+5 & Creo las funcionalidades están bien integradas en el juego. & 5 \\
+\hline
+6 & El sistema tenía demasiados fallos. & 1 \\
+\hline
+7 & La mayoría de las personas podrían aprender rápidamente a jugar. & 5 \\
+\hline
+8 & El juego es incómodo de jugarlo. & 1 \\
+\hline
+9 & Me sentí agusto jugando. & 5 \\
+\hline
+10 & Necesitaría haber aprendido algunas cosas antes de jugarlo. & 1 \\
+\hline
+ & & 100 \\
+\hline
+\end{tabular}
+\caption{Tabla de cuestionario SUS
+   \label{cap8:tab:cuestionariosus}}
+\end{table}
 
-Preguntas
 
-Puntuación
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-1
-
-Me gustaría volver a jugar
-
-5
-\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
-2
-
-El juego tiene una complejidad innecesaria
-
-1
-\end{minipage}
-\\\addlinespace
-\bottomrule
-\end{longtable}
 % Tabla del cuestionario SUS
 
 
@@ -112,12 +124,28 @@ Es importante saber que el cuestionario SUS coloca el resultado obtenido en un i
 
 Este intervalo es el siguiente:
 \begin{itemize}
-\item{Puntuación > 80.3 -> Buena usabilidad}
-\item{80.3 >= Puntuación > 68 -> Bien, pero se puede mejorar}
-\item{Puntuación  <= 51 -> La usabilidad no es buena}
+\item{Puntuación > 80.3 : Buena usabilidad}
+\item{80.3 >= Puntuación > 68 : Bien, pero se puede mejorar}
+\item{Puntuación  <= 51 : La usabilidad no es buena}
 \end{itemize}
 
+
 A continuación mostramos el promedio de los resultados obtenidos de los cuestionarios realizados en este primer análisis. 
+
+\begin{table}[t2]
+\footnotesize
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+Space Invaders & Arkanoid & Water Pipes \\
+\hline
+\hline
+ 78,2 & 52,5 & 55,5 \\
+\hline
+\end{tabular}
+\caption{Promedio primera evaluación
+   \label{cap8:tab:promediosprimera}}
+\end{table}
 
 % insertar tabla info: tabla cuestionario sus
 
@@ -180,6 +208,16 @@ Las acciones a emprender atendiendo al análisis de los cuestionarios son las sig
 \subsection{Conclusiones}
 \label{cap8:sub:acciones}
 
+Después de analizar los resultados de los cuestionarios realizados a los usuarios, podemos decir que la conclusión más destacable es que a los usuarios les ha entretenido y gustado mucho más el primer minijuego (Space Invaders) que los dos restantes (Arkanoid y WaterPipes). 
+
+Una gran mayoría de los usuarios no han podido llegar a completar el minijuego del Arkanoid con éxito, y ni siquiera han podido comenzar a jugar el Water Pipes. En cambio, el 100\% de los usuarios no han tenido problemas de este tipo con el primer minijuego y todos han logrado completar con éxito el Space Invaders.
+
+Los usuarios piensan que disminuyendo la velocidad de la bola en el caso del Arkanoid, su experiencia a la hora de jugar podría mejorar notablemente, aunque no es la única mecánica que creen que se debe mejorar, piensan que sería la primera que deberíamos solventar. 
+
+Los pocos usuarios que han llegado a comprender la mecánica del minijuego WaterPipes, nos han comentado que les ha gustado mucho el juego y que les ha resultado muy entretenido. Esto nos lleva a pensar que en este caso, añadiendo alguna mecánica que indicará más claramente el funcionamiento del juego y la forma de controlarlo, sería suficiente para que la experiencia del usuario mejore notablemente.
+
+En cualquier caso, la experiencia del usuario en general ha sido buena debido a que sus comentarios al completar la yimcana eran positivos y la mayoría querían repetir la experiencia.
+
 %-------------------------------------------------------------------
 \section*{\NotasBibliograficas}
 %-------------------------------------------------------------------
@@ -190,17 +228,6 @@ Citamos algo para que aparezca en la bibliografía\ldots
 
 \medskip
 
-Y también ponemos el acrónimo \ac{CVS} para que no cruja.
-
-Ten en cuenta que si no quieres acrónimos (o no quieres que te falle la compilación en ``release'' mientras no tengas ninguno) basta con que no definas la constante \verb+\acronimosEnRelease+ (en \texttt{config.tex}).
-
-
-%-------------------------------------------------------------------
-\section*{\ProximoCapitulo}
-%-------------------------------------------------------------------
-\TocProximoCapitulo
-
-...
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX
