@@ -69,7 +69,7 @@
 \contentsline {chapter}{\numberline {10}Aportaciones individuales}{61}{chapter.10}
 \contentsline {section}{\numberline {10.1}Organizaci\'on general del proyecto}{61}{section.10.1}
 \contentsline {section}{\numberline {10.2}Ra\'ul Cobos}{62}{section.10.2}
-\contentsline {section}{\numberline {10.3}\'Alvar D. Soler}{62}{section.10.3}
-\contentsline {section}{\numberline {10.4}Mar\IeC {\'\i }a Picado}{63}{section.10.4}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{65}{appendix*.43}
-\contentsline {chapter}{Lista de acr\'onimos}{66}{appendix*.43}
+\contentsline {section}{\numberline {10.3}\'Alvar D. Soler}{64}{section.10.3}
+\contentsline {section}{\numberline {10.4}Mar\IeC {\'\i }a Picado}{65}{section.10.4}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{67}{appendix*.43}
+\contentsline {chapter}{Lista de acr\'onimos}{68}{appendix*.43}
