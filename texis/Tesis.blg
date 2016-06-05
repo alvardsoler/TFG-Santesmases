@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Tesis.aux
+A level-1 auxiliary file: Cascaras/cover.aux
+A level-1 auxiliary file: Cascaras/dedicatoria.aux
+A level-1 auxiliary file: Cascaras/autorizacion.aux
+A level-1 auxiliary file: Cascaras/agradecimientos.aux
+A level-1 auxiliary file: Cascaras/resumen.aux
+A level-1 auxiliary file: TeXiS/TeXiS_toc.aux
+A level-1 auxiliary file: Capitulos/Capitulo1.aux
+A level-1 auxiliary file: Capitulos/Capitulo2.aux
+A level-1 auxiliary file: Capitulos/Capitulo3.aux
+A level-1 auxiliary file: Capitulos/Capitulo4.aux
+A level-1 auxiliary file: Capitulos/Capitulo5.aux
+A level-1 auxiliary file: Capitulos/Capitulo6.aux
+A level-1 auxiliary file: Capitulos/Capitulo7.aux
+A level-1 auxiliary file: Capitulos/Capitulo8.aux
+A level-1 auxiliary file: Capitulos/Capitulo9.aux
+A level-1 auxiliary file: Capitulos/Capitulo10.aux
+A level-1 auxiliary file: Cascaras/bibliografia.aux
+The style file: TeXiS/TeXiS.bst
+A level-1 auxiliary file: TeXiS/TeXiS_acron.aux
+A level-1 auxiliary file: Cascaras/fin.aux
+Database file #1: nuestros.bib
+Database file #2: latex.bib
+Database file #3: otros.bib
+You've used 2 entries,
+            2962 wiz_defined-function locations,
+            1107 strings with 12970 characters,
+and the built_in function-call counts, 1058 in all, are:
+= -- 72
+> -- 52
+< -- 1
++ -- 20
+- -- 18
+* -- 91
+:= -- 175
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 15
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 79
+empty$ -- 76
+format.name$ -- 22
+if$ -- 195
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 16
+newline$ -- 14
+num.names$ -- 8
+pop$ -- 38
+preamble$ -- 1
+purify$ -- 14
+quote$ -- 0
+skip$ -- 27
+stack$ -- 0
+substring$ -- 22
+swap$ -- 39
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 17
+warning$ -- 0
+while$ -- 6
+width$ -- 0
+write$ -- 26

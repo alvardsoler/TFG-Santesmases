@@ -12,7 +12,7 @@ El primero de los juegos de la yimcana. Inspirado en el famoso Space Invaders, e
 %-------------------------------------------------------------------
 \label{cap4:sec:historia}
 
-Space Invaders es uno de los juegos arcade clásicos más conocidos. La primera versión salió al mercado en 1978, hace casi cuarenta años \footnote{\href{https://es.wikipedia.org/wiki/Space_Invaders}} . Uno de los precursores del género shoot 'em up. El jugador controla una nave espacial que se mueve horizontalmente y debe hacer frente a hordas de alienígenas enemigos que atacan al jugador disparándole proyectiles. Además, a veces el jugador cuenta con pequeñas construcciones que hacen la labor de búnker donde ponerse a cubierto de los disparos, aunque éstos se van destruyendo.
+Space Invaders es uno de los juegos arcade clásicos más conocidos. La primera versión salió al mercado en 1978, hace casi cuarenta años \citep{SpaceInvadersWikipedia}. Uno de los precursores del género shoot 'em up. El jugador controla una nave espacial que se mueve horizontalmente y debe hacer frente a hordas de alienígenas enemigos que atacan al jugador disparándole proyectiles. Además, a veces el jugador cuenta con pequeñas construcciones que hacen la labor de búnker donde ponerse a cubierto de los disparos, aunque éstos se van destruyendo.
 
 Space Invaders está ampliamente extendido en la cultura popular ya que es uno de los grandes clásicos, por eso hemos considerado acertado incluirlo en nuestro proyecto.
 
@@ -33,7 +33,10 @@ Con estos cambios, hemos conseguido (a nuestro juicio), transformar un clásico d
 \label{cap4:sub:diseno}
 El juego se compone de una única escena que contiene todo el juego. Básicamente se compone de:
 
+\figura{Tfg/implementacion_space_invaders.png}{width=.5\textwidth}{fig:inaveders3}
+	{Captura durante el proceso de implementación}
 \begin{enumerate}
+
 \item{La cámara de Vuforia, que a su vez tiene los siguientes hijos:}
 	\begin{enumerate}
 	\item{El canvas con la Interfaz de usuario (puntos y mensajes de inicio y fin del juego).}
@@ -49,19 +52,14 @@ El juego se compone de una única escena que contiene todo el juego. Básicamente 
 	\item{Las defensas, un objeto en tres dimensiones que representa a las defensas del jugador. Van cambiando de color, desde el verde al rojo según van recibiendo impactos de los invasores (o del propio jugador que apunta mal, para ser algo más realista).}
 \end{enumerate}
 
-\figura{Tfg/diagrama_spaceinvaders.png}{width=.5\textwidth}{fig:inaveders2}
-	{Diagrama de los GameObjects}
-
 % subsection dise_o (end)
 
 \subsection{Implementación}
 \label{cap4:sub:implementacion}
 
 Pasamos a explicar qué clases componen el juego y para qué las utilizamos.
-
-\figura{Tfg/implementacion_space_invaders.png}{width=.5\textwidth}{fig:inaveders3}
-	{Captura durante el proceso de implementación}
-
+\figura{Tfg/diagrama_spaceinvaders.jpg}{width=.7\textwidth}{fig:inaveders2}
+	{Diagrama de los GameObjects}
 \begin{enumerate}
 \item{Defense.cs: Gestiona las defensas del usuario. Marca el color de inicio y el de final que debe tener la defensa para calcular los colores intermedios. Además gestiona las colisiones.  Va añadido al GameObject de las defensas.}
 \item{Projectile.cs: Muy simple. Va asociada a los proyectiles y los destruye al pasar unos segundos en escena. Es para que los proyectiles que no impacten con nada, no se queden siempre en la escena. En la version final, los proyectiles con este Script solo son lanzados por los enemigos.}
@@ -71,6 +69,7 @@ Pasamos a explicar qué clases componen el juego y para qué las utilizamos.
 \item{TextInformaticaTrackableEventHandler.cs: Implementación propia de la clase ITrackableEventHandler de Vuforia. Va asociada al Text de RA. Al ``encontrarse'' y si no está instanciado ya (es decir, que no se ha ``encontrado'' varias veces), le dice al GameManager que comience el juego, indicándole dónde están el Enjambre y las Defensas en relación al Text.}
 \item{TextTimer.cs: De manera muy sencilla destruye el texto (de la interfaz gráfica) al que está asociado al pasar un tiempo dado una vez se ha habilitado. Lo utilizamos para mostrar los mensajes de texto de información previa, avisando al jugador cuando debe comenzar a disparar. Va asociado a GameObjects de texto.}
 \end{enumerate}
+
 
 
 \subsection{Conclusiones}
@@ -96,13 +95,6 @@ El juego en general ha quedado sencillo pero con todos los aspectos que debe ten
 
 La complejidad no es grande, aunque sí es recomendable que se tenga cierta habilidad para apuntar con el móvil.  
 
-%-------------------------------------------------------------------
-\section*{\NotasBibliograficas}
-%-------------------------------------------------------------------
-\TocNotasBibliograficas
-
-Citamos algo para que aparezca en la bibliografía\ldots
-\citep{ldesc2e}
 
 \medskip
 % Variable local para emacs, para  que encuentre el fichero maestro de
