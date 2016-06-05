@@ -23,7 +23,6 @@
 \contentsline {section}{\numberline {3.2}Hilo argumental}{18}{section.3.2}
 \contentsline {section}{\numberline {3.3}Mec\'anicas}{19}{section.3.3}
 \contentsline {section}{\numberline {3.4}Conclusiones}{20}{section.3.4}
-\contentsline {section}{Notas bibliogr\'aficas}{20}{section.3.4}
 \contentsline {chapter}{\numberline {4}Space Invaders}{21}{chapter.4}
 \contentsline {section}{\numberline {4.1}Historia}{21}{section.4.1}
 \contentsline {section}{\numberline {4.2}Nuestra versi\'on}{21}{section.4.2}
@@ -33,47 +32,44 @@
 \contentsline {chapter}{\numberline {5}Arkanoid}{27}{chapter.5}
 \contentsline {section}{\numberline {5.1}Historia}{27}{section.5.1}
 \contentsline {section}{\numberline {5.2}Nuestra versi\'on}{27}{section.5.2}
-\contentsline {section}{\numberline {5.3}Implementaci\'on}{27}{section.5.3}
-\contentsline {section}{\numberline {5.4}Conclusiones}{27}{section.5.4}
-\contentsline {section}{Notas bibliogr\'aficas}{27}{section.5.4}
-\contentsline {chapter}{\numberline {6}Water Pipes}{29}{chapter.6}
-\contentsline {section}{\numberline {6.1}Historia}{29}{section.6.1}
-\contentsline {section}{\numberline {6.2}Nuestra versi\'on}{29}{section.6.2}
-\contentsline {section}{\numberline {6.3}Implementaci\'on}{29}{section.6.3}
-\contentsline {section}{\numberline {6.4}Conclusiones}{29}{section.6.4}
-\contentsline {section}{Notas bibliogr\'aficas}{29}{section.6.4}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{30}{section.6.4}
-\contentsline {chapter}{\numberline {7}Detalles de implementaci\'on}{31}{chapter.7}
-\contentsline {section}{\numberline {7.1}Realidad aumentada}{31}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Vuforia}{31}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Unity}{32}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Unity + Vuforia}{33}{subsection.7.1.3}
-\contentsline {section}{\numberline {7.2}Escenas intermedias}{34}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}SALSA with Random Eyes}{34}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}VozMe MP3 generator}{35}{subsection.7.2.2}
-\contentsline {section}{\numberline {7.3}Persistencia de puntuaciones}{35}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Symfony}{35}{subsection.7.3.1}
-\contentsline {section}{Notas bibliogr\'aficas}{36}{subsection.7.3.1}
-\contentsline {chapter}{\numberline {8}Evaluaci\'on con usuarios}{37}{chapter.8}
-\contentsline {section}{\numberline {8.1}Plan de evaluaci\'on}{37}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Objetivos de la evaluaci\'on}{37}{subsection.8.1.1}
-\contentsline {subsection}{\numberline {8.1.2}M\'etricas}{38}{subsection.8.1.2}
-\contentsline {section}{\numberline {8.2}Descripci\'on de la metodolog\IeC {\'\i }a del an\'alisis de los datos}{39}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Primera fase}{39}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Segunda fase}{39}{subsection.8.2.2}
-\contentsline {subsection}{\numberline {8.2.3}Tercera fase}{39}{subsection.8.2.3}
-\contentsline {section}{\numberline {8.3}Primera evaluaci\'on con usuarios}{39}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Informe de resultados}{40}{subsection.8.3.1}
-\contentsline {subsection}{\numberline {8.3.2}Acciones}{42}{subsection.8.3.2}
-\contentsline {subsection}{\numberline {8.3.3}Conclusiones}{43}{subsection.8.3.3}
-\contentsline {section}{Notas bibliogr\'aficas}{43}{subsection.8.3.3}
-\contentsline {chapter}{\numberline {9}Conclusiones y trabajo futuro}{45}{chapter.9}
-\contentsline {section}{\numberline {9.1}Conclusiones}{45}{section.9.1}
-\contentsline {section}{\numberline {9.2}L\IeC {\'\i }neas futuras}{46}{section.9.2}
-\contentsline {chapter}{\numberline {10}Aportaciones individuales}{49}{chapter.10}
-\contentsline {section}{\numberline {10.1}Organizaci\'on general del proyecto}{49}{section.10.1}
-\contentsline {section}{\numberline {10.2}Ra\'ul Cobos}{49}{section.10.2}
-\contentsline {section}{\numberline {10.3}\'Alvar D. Soler}{50}{section.10.3}
-\contentsline {section}{\numberline {10.4}Mar\IeC {\'\i }a Picado}{51}{section.10.4}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{53}{appendix*.31}
-\contentsline {chapter}{Lista de acr\'onimos}{54}{appendix*.31}
+\contentsline {section}{\numberline {5.3}Dise\~no}{29}{section.5.3}
+\contentsline {section}{\numberline {5.4}Implementaci\'on}{31}{section.5.4}
+\contentsline {section}{\numberline {5.5}Conclusiones}{32}{section.5.5}
+\contentsline {chapter}{\numberline {6}Water Pipes}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Historia}{35}{section.6.1}
+\contentsline {section}{\numberline {6.2}Nuestra versi\'on}{35}{section.6.2}
+\contentsline {section}{\numberline {6.3}Dise\~no}{37}{section.6.3}
+\contentsline {section}{\numberline {6.4}Implementaci\'on}{39}{section.6.4}
+\contentsline {section}{\numberline {6.5}Conclusiones}{41}{section.6.5}
+\contentsline {chapter}{\numberline {7}Detalles de implementaci\'on}{43}{chapter.7}
+\contentsline {section}{\numberline {7.1}Realidad aumentada}{43}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Vuforia}{43}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Unity}{44}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Unity + Vuforia}{45}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Escenas intermedias}{46}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}SALSA with Random Eyes}{46}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}VozMe MP3 generator}{47}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}Persistencia de puntuaciones}{47}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Symfony}{47}{subsection.7.3.1}
+\contentsline {chapter}{\numberline {8}Evaluaci\'on con usuarios}{49}{chapter.8}
+\contentsline {section}{\numberline {8.1}Plan de evaluaci\'on}{49}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Objetivos de la evaluaci\'on}{49}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}M\'etricas}{50}{subsection.8.1.2}
+\contentsline {section}{\numberline {8.2}Descripci\'on de la metodolog\IeC {\'\i }a del an\'alisis de los datos}{51}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Primera fase}{51}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Segunda fase}{51}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Tercera fase}{51}{subsection.8.2.3}
+\contentsline {section}{\numberline {8.3}Primera evaluaci\'on con usuarios}{51}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Informe de resultados}{52}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Acciones}{54}{subsection.8.3.2}
+\contentsline {subsection}{\numberline {8.3.3}Conclusiones}{55}{subsection.8.3.3}
+\contentsline {chapter}{\numberline {9}Conclusiones y trabajo futuro}{57}{chapter.9}
+\contentsline {section}{\numberline {9.1}Conclusiones}{57}{section.9.1}
+\contentsline {section}{\numberline {9.2}L\IeC {\'\i }neas futuras}{58}{section.9.2}
+\contentsline {chapter}{\numberline {10}Aportaciones individuales}{61}{chapter.10}
+\contentsline {section}{\numberline {10.1}Organizaci\'on general del proyecto}{61}{section.10.1}
+\contentsline {section}{\numberline {10.2}Ra\'ul Cobos}{62}{section.10.2}
+\contentsline {section}{\numberline {10.3}\'Alvar D. Soler}{62}{section.10.3}
+\contentsline {section}{\numberline {10.4}Mar\IeC {\'\i }a Picado}{63}{section.10.4}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{65}{appendix*.43}
+\contentsline {chapter}{Lista de acr\'onimos}{66}{appendix*.43}

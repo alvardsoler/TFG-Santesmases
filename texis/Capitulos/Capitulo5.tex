@@ -5,59 +5,125 @@
 %---------------------------------------------------------------------
 \chapter{Arkanoid}
 
-\begin{FraseCelebre}
-\begin{Frase}
-...
-\end{Frase}
-\begin{Fuente}
-...
-\end{Fuente}
-\end{FraseCelebre}
-
-\begin{resumen}
-...
-\end{resumen}
-
+Para el comienzo de este juego, el usuario proviene de defender la facultad (nave espacial tfg-III) de unos invasores, y tras finalizar, recibirá una misión, que es la de despejar el campo de batalla para poder despegar la nave. Para ello debe abrir paso reciclando escombros, haciendo uso del panel de reciclaje que se sitúa en la tercera planta, y que se accede a este, apuntando al código QR de Super Mario situado junto a una de las consolas.
 
 %-------------------------------------------------------------------
 \section{Historia}
 %-------------------------------------------------------------------
 \label{cap5:sec:historia}
 
-...
+El Arkanoid es un juego de los 80, donde el jugador controla una plataforma que impide que una bola se salga de la superficie que limita el juego. El objetivo principal de la bola es el de destruir todos los ladrillos o bloques de la pantalla sin salirse de esta. La misión del jugador es la de, no solo impedir que la bola se salga de la escena, sino la de situar la plataforma que maneja de tal forma que consiga que la bola rebote y destruya todos los bloques.
+
+\figura{Tfg/arkanoidOriginal.jpg}{width=.5\textwidth}{fig:arkanoid1}
+	{Portada original Arkanoid}
+
+A lo largo del juego puede haber un gran número de variaciones que complican el juego o que facilitan las cosas. La plataforma del jugador puede modificar su tamaño, u obtener mejoras como disparos para romper los bloques. La bola, puede verse modificada mediante variaciones de tamaño o en la física del juego como romper varios bloques sin rebotar o
+incluso multiplicarse. Y los bloques pueden variar en su posición e incluso desplazarse con el fin de finalizar el juego cuando llegan abajo.
 
 \section{Nuestra versión}
 %-------------------------------------------------------------------
 \label{cap5:sec:nuestra}
 
-...
+Una vez se reconozca el ImageTarget (el QR de Super Mario), aparecerá un viejo televisor, y en su pantalla se observa el juego y dos contadores. El objetivo es sencillo: hay que despejar los escombros. Hay un minuto para realizar dicha tarea o hasta que la bola atraviese la deathzone. Cuantos más residuos recicla, mayor será la puntuación que arrastrará al siguiente juego.
+
+\figura{Tfg/qrmario.jpg}{width=.5\textwidth}{fig:qrmario}
+	{Código QR de Super Mario}
+
+Una vez en situación, mientras enfoca al target para no perder de vista la escena, el jugador deberá arrastrar su dedo por la pantalla de su smartphone para poder desplazar la plataforma y controlar donde rebota la bola. Mientras hace eso, la bola irá rebotando y el tiempo decrementando. A medida que destruya objetivos, la puntuación crecerá y el tiempo se irá agotando.
+
+El juego está ambientado en un entorno espacial, haciendo referencia al hilo del juego pero solo de forma superficial. Lo que conforma el tema del espacio es lo que aparece en la pantalla del televisor que contiene la escena. Pero, en realidad, la escena tiene una connotación retro, donde un antiguo televisor al lado de una de las consolas que en un pasado ejecutaba el juego, quiere recrear la forma primitiva de jugar al Arkanoid; en un televisor de tubo y con un juego sencillo que era para lo que daba de sí la tecnología y los medios de la época.
+
+Con esta recreación lo que se intenta es no tanto simular un juego entretenido para cumplir con el objetivo de la historia, sino el recrear una escena pasada basada en este juego. De esta forma se hace uso de la RA en este caso, no como medio de entretenimiento a través las mecánicas que proporciona, sino generando una escena para mejorar la experiencia del visitante del lugar, el museo de la facultad.
+
+\section{Diseño}
+%-------------------------------------------------------------------
+\label{cap5:sec:diseno}
+
+La escena se compone de los siguientes elementos:
+
+\begin{itemize}
+\item{ARCamera e ImageTarget como elementos principales en una escena de RA. La propia librería de~Vuforia~nos provee de ellos, solo hay que definir el Image target al que reacciona la escena y añadirlos; del resto ya se encarga su lógica interna.}
+\item{Un modelo 3D de un televisor que hace de contenedor de la escena y que no tiene ninguna mecánica asociada.}
+\item{La bola, en la que se han implementado dos componentes; uno físico para hacer que esta rebote, y un script cuya finalidad es la de destruir los bloques, o mejor dicho, la de lanzar la animación de destrucción del bloque y finalizar el juego al acabar con todos los bloques, o, al salirse de la zona de juego. Para evitar problemas y por lógica del juego, aunque la escena sea 3D los componentes sobre este juego son en 2D.}
+
+\begin{itemize}
+\item{Ball Material: Es un material de Unity que, junto al componente~RigidBody2D, elimina la gravedad en el objeto, configura a este para poder rebotar, consigue que la fuerza aplicada sobre la bola sea infinita, de forma que no pare jamás de desplazarse; y, define las coordenadas en las que puede desplazarse el objeto (x e y) y en las que puede rotar (ninguna).}
+
+\item{BoxCollider2D: Para controlar todo el tema de colisiones. En este caso, el Collider que envuelve a la bola es un cuadrado rotado 45 grados para evitar problemas en los rebotes.}
+\end{itemize}
+
+\figura{Tfg/boxColliderArkanoid.jpg}{width=.5\textwidth}{fig:boxcolliderarkanoid}
+	{BoxCollider Bola Arkanoid}
+
+\item{Los bloques, que se reparten por la escena esperando a que la bola colisione con ellos y recibir así, la orden de que se lance su animación de destrucción y se aumente el marcador.}
+\begin{itemize}
+\item{Audio source: el componente que da sonido a la acción de destrucción.}
+\item{Animation: la animación de destrucción que se lanza al colisionar con la bola. Esta se genera por interpolación, ya que es el sistema del que nos dota Unity, y lo que hace es reducir la escala del objeto a cero.}
+\end{itemize}
+\figura{Tfg/bloquesArkanoid.jpg}{width=.5\textwidth}{fig:bloquesarkanoid}
+	{Distintos tipos de bloques del Arkanoid}
+
+\item{La plataforma: Esta contiene un componente que reacciona a los eventos de la pantalla táctil y que le permite desplazarse, además también tiene un RigidBody2D cuyas constraints impiden que pueda verse desplazado en el eje vertical o rotado.}
+\item{Canvas: Contiene la información del estado del juego. Este objeto y sus hijos, a diferencia del resto, en escena, se muestra en función a la pantalla del dispositivo en el que se ejecuta el juego y no en función de lo que enfoca la cámara. Sus hijos son, el marcador, el contador de tiempo y la pantalla de precarga que muestra la información de la ejecución del juego al usuario.}
+\end{itemize}
 
 \section{Implementación}
 %-------------------------------------------------------------------
 \label{cap5:sec:implementacion}
 
-...
+Para el Arkanoid, se han tenido que implementar las siguientes lógicas de juego:
+
+\begin{enumerate}
+\item{ScreenDragListener.cs}
+\begin{itemize}
+\item{Se encarga de capturar las pulsaciones en pantalla. En su método Update () se comprueba con cada llamada si la pantalla ha sido pulsada; si es así, se guarda el punto inicial donde se detectó la pulsación y se guarda, de forma que al volverse a llamar al método, esta vez, no solo se comprueba si ha habido contacto con la pantalla, sino que, además, se comprueba si ha habido variación en la posición del punto.}
+
+\item{El script, tiene una interfaz interna. En el método Start (), se comprueba todos los componentes que implementan dicha interfaz en la escena y se almacenan en un array. Cada vez que se detecta y calcula un movimiento de drag sobre la pantalla del dispositivo, se recorren los componentes del array. Estos reciben, a través del método, las variaciones en los ejes de la pulsación; y así pueden realizar lasacciones correspondientes.}
+\end{itemize}
+
+\item{BallIA.cs}
+\begin{itemize}
+\item{No tiene mucha explicación, aplica una fuerza en dos coordenadas que se le asignan como atributos en el momento en el que está activa y se toque por primera vez la pantalla.}
+\end{itemize}
+
+\item{DefaultTrackableEventHandle.cs}
+\begin{itemize}
+\item{Es un script que viene por defecto asociado al ImageTarget de Vuforia. En este caso, hemos hecho una leve modificación sobre este script, donde hemos añadido un array de componentes que, cuando se detecta el QR en escena (OnTrackingFound ()) se recorre y estos se van activando.}
+\end{itemize}
+
+\item{DieOnCollide.cs:}
+
+Con dos parámetros que definen las etiquetas de los gameObjects que se comportarán como enemigo (el gameObject que delimita la deathzone) y los objetivos (los bloques que se destruyen al colisionar con ellos). Implementa el método OnCollisionEnter2D (), que es aquel al que llama el collider 2D cuando entra en colisión el gameObject con otro objeto con collider. Cuando se detecta una colisión, se comprueba la etiqueta del objeto con el que se ha producido y si es de tipo enemigo, se destruye el propio objeto y se pasa a la siguiente escena. Si es de tipo objetivo, se llama a la animación de destrucción de este, se aumenta el marcador y se comprueba si quedan más, para que, en el caso de que no, pasar también a la siguiente escena.
+
+Los mencionados son los más importantes, ya que son los que dotan de lógica al juego, aunque existen más de los que se hacen uso como el globalGameManager, que es el encargado de navegar entre escenas, ScoreMarkerObserver y TimeMarkerObserver, que pintan en el canvas el estado del juego o un script que se añade a la escena para controlar el back de nuestro dispositivo. Además, hay también otros scripts sencillos que controlan el resto de los objetos de la escena.
+
+\end{enumerate}
+
+\figura{Tfg/diagramaarkanoid.jpg}{width=.75\textwidth}{fig:diagramarkanoid}
+	{Diagrama del juego}
 
 \section{Conclusiones}
 %-------------------------------------------------------------------
 \label{cap5:sec:conclusiones}
 
-...
+La RA tiene muchos usos como se menciona en el estado del arte. En este caso, el objetivo principal no es el de aprovecharnos de las dinámicas que nos provee para convertirlas en objeto de entretenimiento, sino el de dotar de dinamismo una parte del museo, ya que aportamos información de uno de los objetos expuestos en forma de videojuego (una versión propia que funcionaba en dicha máquina).
 
-%-------------------------------------------------------------------
-\section*{\NotasBibliograficas}
-%-------------------------------------------------------------------
-\TocNotasBibliograficas
+Una de las partes complejas en el desarrollo del juego, es la de configurar una forma de jugar en la que se le haga posible al usuario interaccionar con su dispositivo mientras apunta al target. Para esto se han hecho diferentes pruebas, y se ha llegado a la configuración actual teniendo en cuenta los siguientes factores:
 
-Citamos algo para que aparezca en la bibliografía\ldots
-\citep{ldesc2e}
 
-\medskip
+\begin{itemize}
+\item{El usuario tiene una posición incómoda al utilizar su Smartphone. Él tiene que apuntar a la imagen mientras interacciona con el teléfono para evitar que la bola caiga. La mejor solución en este caso es la de implementar una mecánica basada en detectar el arrastre del dedo de la pantalla y que sea este movimiento el que desplace la plataforma en el juego. De esta forma, el usuario puede apuntar sin problema al QR mientras a su vez puede jugar. Esta forma de hacer las cosas consigue los dos objetivos, una mantener la cámara fijada en el target, y dos la de hacer cómodo junto con esto el poder manejar la plataforma.}
+\item{La complejidad del juego. En este caso se implementa un juego sencillo, muy intuitivo y corto, porque el jugador, por la posición que tiene, no puede pasar mucho tiempo jugando. El juego tiene como máximo un minuto de duración. Y es creemos que es la apropiada ya que en este período se puede jugar sin cansarse y acabar el juego si se tiene la habilidad suficiente sin que el cansancio de la posición evite dicho propósito.}
+\item{La escena. Es cierto que el modelo 3D del televisor no ayuda mucho a la jugabilidad. Pero en este caso en el que recrear una escena es casi más importante que la experiencia del jugador en el juego. Se ha preferido penalizar un poco la jugabilidad (tampoco en exceso) para añadir este elemento de forma que añadiendo este objeto a la escena, se haga una referencia a la forma de jugar de la época.}
+\end{itemize}
 
-Y también ponemos el acrónimo \ac{CVS} para que no cruja.
+Con este juego respecto al desarrollo de RA con Unity y Vuforia, los conceptos sintetizados son:
 
-Ten en cuenta que si no quieres acrónimos (o no quieres que te falle la compilación en ``release'' mientras no tengas ninguno) basta con que no definas la constante \verb+\acronimosEnRelease+ (en \texttt{config.tex}).
-
+\begin{itemize}
+\item{Aunque se trate de una escena 3D el uso de componentes 2D en los objetos de la escena simplifican mucho el trabajo, ya que al no tener que contar con un eje más; controlar el movimiento de la bola, los rebotes y las colisiones es más sencillo. Al fin y al cabo es como mantener el eje restante en un objeto 3D bloqueado pero esto lo hace por ti, por lo que te ahorras muchos quebraderos de cabeza a la hora de controlar casuísticas que se pueden escapar por ser detalles tan pequeños.}
+\item{El manejo de los componentes Collider y RigidBody que en esta escena hay que modificar el material por defecto para cambiar la lógica de la gravedad, el rozamiento, etc.; que en este caso, no es el que está por defecto, ya que en este juego no hay nada de eso. Además hay que hacer uso de las constraints del RigidBody para poder bloquear las  rotaciones y desplazamientos de algunos de los objetos de la escena que no interesan que puedan moverse.}
+\item{La depuración del juego en modo escena en vez de hacer uso de la cámara. En Vuforia es normal el uso de una webcam para probar tu escena, pero en este caso, para probar el juego, era incómodo el tener que estar usando dicho elemento, por lo que, desactivando dicha opción de depurar la webcam en el ImageTargety colocando la ARCamera apuntando a nuestro modelo 3D podíamos depurar simplemente haciendo click en el play del IDE de Unity sin preocuparnos de apuntar al QR. Lo malo de este planteamiento es que traía un problema consigo, los eventos de pantalla; por defecto, Unity no detecta como eventos de pantalla en un dispositivo Android el uso del ratón. Para solventar esto se hizo uso de una aplicación llamada UnityRemote, que lo que hace es mostrar en la pantalla de nuestro dispositivo la escena que se está ejecutando en el IDE; y de esta forma podemos capturar los eventos que se realizan sobre esta pantalla.}
+\end{itemize}
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX

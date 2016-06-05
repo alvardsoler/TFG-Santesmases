@@ -5,67 +5,127 @@
 %---------------------------------------------------------------------
 \chapter{Water Pipes}
 
-\begin{FraseCelebre}
-\begin{Frase}
-...
-\end{Frase}
-\begin{Fuente}
-...
-\end{Fuente}
-\end{FraseCelebre}
+En este capítulo, vamos a centrarnos en la explicación del último minijuego al que se tendrá que enfrentar el jugador para completar con éxito la yimcana. El recorrido finaliza en la 3º planta de la facultad, en un ``simulador básico de centrales térmicas''. Este simulador y el minijuego combina a la perfección, tanto por la similitud visual entre ambos como por el hilo argumental del juego.
 
-\begin{resumen}
-...
-\end{resumen}
-
+\figura{Tfg/termica.jpg}{width=.75\textwidth}{fig:termica}
+	{Simulador térmico del museo García-Santesmases}
 
 %-------------------------------------------------------------------
 \section{Historia}
 %-------------------------------------------------------------------
 \label{cap6:sec:historia}
 
-...
+Este juego fue creado a finales de los años 80 bajo el nombre de
+``Pipe Mania'' por ``The Assembly Line'', teniendo muchas versiones a lo
+largo de los años. Las primeras fueron realizadas por el estudio
+``LucasFilm Game'' que lanzó el juego ``Pipe Dream''.
+
+Aunque posteriormente fueron lanzadas otras versiones del juego para PC,
+PS2, NintendoDS y PSP.
+
+\figura{Tfg/pipeManiaOriginal.jpg}{width=.75\textwidth}{fig:pipeoriginal}
+	{Juego original de 1989}
+
+En la versión original, el juego consistía en ir colocando las tuberías que salían de forma aleatoria en un tablero de tal manera que el agua pudiera fluir por ellas. El objetivo era construir el mayor recorrido posible antes de que el agua lo inundará todo. Cada tubería llena de agua sumaba puntos y cada tubería que no hubiera sido inundada a la finalización del juego restaba puntos para obtener así la puntuación final. En cada nivel se iban complicando las cosas. Esto lo conseguían poniendo posiciones del tablero de juego en las cuales no se pudieran colocar tuberías, o comenzando antes a fluir el agua por las tuberías, dando al jugador menos tiempo de reacción.
 
 \section{Nuestra versión}
 %-------------------------------------------------------------------
 \label{cap6:sec:nuestra}
 
-...
+En nuestra versión del juego existen algunas diferencias con respecto a la versión original. La principal es la mecánica del juego, ya que en esta ocasión el usuario acaba de exterminar al enemigo que estaba poniendo en peligro a la Facultad y ahora su misión cambia para poder despegar la nave y ponerse a salvo definitivamente. En esta última misión el jugador se encontrará frente a frente con los conductos de refrigeración de la nave. El problema es que, debido a la batalla, éstos se han dispersado y si quiere despegar la nave tendrá que re ordenarlos para que el agua pueda fluir correctamente. 
+Al comienzo, el jugador verá un tablero relleno aleatoriamente con estos conductos, además de una salida y una meta. Por lo tanto, el objetivo del jugador es ir cambiando de posición las tuberías que encuentra en la matriz, entre sí, para que el agua pueda fluir del punto de origen al de destino. En esta ocasión, el jugador tiene 6 segundos por cada tubería para ir colocando las demás y otros 10 segundos adicionales desde que el juego comienza hasta que la casilla de salida comienza a llenarse. Para poder despegar la nave, el agua ha debido fluir por todas las tuberías necesarias para llegar a la meta. En cambio si el agua ya ha comenzado a fluir y el jugador no ha conseguido recolocar los conductos, en cuanto el agua no encuentre un camino factible la nave ya no se podrá despegar y el juego terminará.
+
+Para lograr esto, el jugador deberá ir intercambiando una tubería por otra, la mecánica implementada para permitirle realizar esta acciones es, que en primer lugar seleccione la tubería que desea colocar en otra posición, pulsando sobre ella, y a continuación seleccione la otra tubería que desea intercambiar con que ya ha seleccionado anteriormente, y en el momento en el que se pulse esta última, automaticamente se cambiarán entre ellas. Las tuberías en la que ya ha comenzado a fluir el agua no podrán ser seleccionadas.
+
+\section{Diseño}
+%-------------------------------------------------------------------
+\label{cap6:sec:diseno}
+
+En este apartado explicaremos todos los objetos y componentes necesarios para la implementación del minijuego.
+
+Para este juego existe un solo tipo de objeto visible, los tiles que representan a los conductos. Todos estos objetos, se crean dinámicamente al comienzo de la escena, como hijos del Image Target.
+
+\begin{itemize}
+\item{Tile: todo el juego se compone de 25 (matriz de 5x5) GameObjects de tipo Quad que representan los conductos de refrigeración. A cada uno se les han incluido los mismos componentes:}
+
+\begin{itemize}
+\item{Box Collider: para detectar la colisión y así poder intercambiar dos objetos entre sí, en este caso, solo existe la colisión entre el usuario y los objetos (Touch).}
+\item{RigidBody: Elimina la gravedad de los objetos y congela ciertos movimientos de desplazamiento y rotación de estos, en este caso hemos querido bloquear todas las rotaciones y la dimensión Z del desplazamiento. Esto es debido a que aunque es un juego en 3D, la experiencia con el jugador es totalmente en 2D y esos movimientos no nos serán necesarios.}
+\end{itemize}
+
+\item{Tile animación: Aunque el único objeto ``visible'' en el juego sean los conductos (Quad), cada uno de ellos contiene otro GameObject como hijo. La funcionalidad de éste es la animación del agua cuando pasa por la tubería, por lo que cada uno de estos ``hijos'' contienen también los mismos componentes cada uno:}
+
+\begin{itemize}
+\item{Sprite Renderer: Esto es necesario, ya que la animación se compone de un sprites.}
+\item{Animator: que contiene el Animator Controller de ese tipo de tubería. Cada controlador suele tener dos animaciones por tubería, que dependiendo de la salida de la anterior se reproduce una animación u otra.}
+\figura{Tfg/tile.png}{width=.25\textwidth}{fig:tile}
+	{Uno de los 23 tiles que forman el tablero}
+\end{itemize}
+
+
+\figura{Tfg/gowater.png}{width=.75\textwidth}{fig:goswater}
+	{Esquema de los GO y sus componentes, necesarios para el tile anterior}
+
+\item{Canvas: Muestra la información del juego, en este caso se encarga de mostrar el tiempo restante que le queda al jugador y cuando el juego finaliza muestra la pantalla de marcadores, para que el jugador pueda introducir su nombre y así entrar en la lista de clasificados.}
+\item{GameManager: Es un GameObject vacío en la escena que contiene los scripts para la funcionalidad del juego:}
+
+\begin{itemize}
+\item{GameManagerWaterPipes.cs: es el encargado de generar toda la escena al inicio del juego.}
+\item{WaterController.cs: desde este script, se controla todo el flujo del agua.}
+\item{TimeController.cs: clase que decrementa el tiempo de juego y el tiempo que tarda el agua en pasar por cada conducto.}
+\end{itemize}
+\end{itemize}
+
 
 \section{Implementación}
 %-------------------------------------------------------------------
 \label{cap6:sec:implementacion}
 
-...
+Este juego se ha implementado en base al patrón command, que encapsula la decisión de por dónde va a ir fluyendo el agua. Esta funcionalidad es la principal de todo el juego, ya que aunque el jugador de lo que se encarga es de intercambiar las tuberías, el objetivo del juego es conseguir que el agua fluya desde la casilla de salida hasta la meta.
+
+En primer lugar, vamos a describir las clases que se encargan de las otras funcionalidades del juego, las cuales son, el intercambio de tuberías que realiza el jugador, la inicialización y creación del entorno del juego y el tiempo del juego.
+
+\begin{enumerate}
+\item{TouchObject}
+
+Este script es el encargado de controlar el cambio de los conductos. Para ello, lo primero que hace es capturar en el método Update todos los toques en la pantalla y llamar a getObjectHit para obtener el objeto presionado. Este objeto lo obtenemos a través del método ``GetNearestHitGameObject'', que genera un rayo con origen en la ARCamera y con la dirección generada por el rayo. Y de esos se queda con el que haya menor distancia. 
+
+Una vez tenemos el objeto presionado, tenemos que saber si ya existe otro objeto pulsado para poder intercambiarlos, o si es el primer elemento que queremos cambiar. Si es el primero, lo único que haremos es cambiarle a ese objeto el tag a ``ButtonPush'' y si es el segundo, obtenemos el que ya hemos pulsado anteriormente e intercambiamos su posición.
+
+Este componente se encuentra en el objecto ARCamera que nos proporciona Vuforia.
+
+\item{GameManagerWarterPipes}
+
+Es el encargado de crear dinámicamente todos los objetos de la escena al comienzo del juego, y de llevar el control del tiempo que tiene el jugador para completar la misión. Este componente, se añade al GameObject vacío de nombre GameManager de la escena. El script lo primero que hace es añadir los objetos prefabs de cada tipo de conducto (Horizontal, Vertical, Codo Derecho Arriba, Codo Derecho Abajo, Codo Izquierdo Arriba y Codo Izquierdo Abajo) en una lista de SquareReceiver para luego ir eligiendo de manera aleatoria los 23 conductos totales.
+
+\figura{Tfg/tuberias.png}{width=.75\textwidth}{fig:tuberias}
+	{Sprites de las tuberías del juego Water Pipes}
+
+A continuación crea la salida y la meta, ya que estos siempre van a tener una posición fija en el tablero. Y cuando ya está todo listo, lo único que falta es ir creando el resto del tablero. Esto lo hace recorriendo todo el tablero desde la casilla 1 hasta la 23 y por cada una escoge aleatoriamente un tipo de conducto, de la lista anterior.Crea una instancia de ese tipo de objeto que será un hijo del Image Target. Dándole además las propiedades como la posición, el nombre, y la escala. Esta instancia la guardamos en un array del tipo SquareReceiver para luego poder acceder a él. El método Update controla el tiempo del juego.
+
+\figura{Tfg/tablerowater.png}{width=.75\textwidth}{fig:tablero}
+	{Captura del tablero generado de forma aleatoria}
+
+\item{WaterController}
+
+Este script es, junto con el gameManagerWaterPipes, es el más importante, ya que se encarga de controlar el flujo del agua, y esta es la funcionalidad básica de nuestro juego. Y por lo tanto está añadido al GameObject vacío de la escena, que como hemos dicho en el punto anterior contiene también el script gameManagerWaterPipes.cs.
+
+En este ocasión, se ha decidido diseñar el flujo de agua de la siguiente manera:
+
+Por cada tipo de conducto el agua puede fluir en dos sentidos cada vez, por lo tanto a partir de la entrada del agua de la casilla anterior se calculará la casilla siguiente por la que el agua debería de fluir. Y una vez que ya sepamos cuál es la siguiente casilla por la que tenemos que llevar el agua, podremos comprobar si esa casilla es válida, es decir su entrada de agua coincide con la salida de agua anterior.
+
+\figura{Tfg/diagramawaterpipes.jpg}{width=.75\textwidth}{fig:diagramaWaterPipesScene}
+	{Diagrama del juego}
+
 
 \section{Conclusiones}
 %-------------------------------------------------------------------
 \label{cap6:sec:conclusiones}
 
-...
+En este caso, el juego Water Pipes es un juego sencillo que la mayoría de la gente conoce, por lo menos en alguna de sus versiones, y que entretiene al usuario. Al tener varias versiones del juego fue interesante decidir cuál era la que mejor se podía adaptar a la RA. Quizá no es el juego que más llame la atención del usuario con respecto a este punto, sobretodo en las primeras fases de la implementación cuando no estaban introducidas las animaciones del agua. Pero una vez, terminado el juego la RA hace más llamativas estas, por lo que atrae más la atención del usuario, lo que era nuestro principal objetivo al empezar este proyecto.
 
+Creemos que el resultado final cumple con los objetivos, ya que se ha implementado un juego que gracias a su sencillez y que la duración no es demasiado larga, entretiene y capta la atención del usuario.
 
-%-------------------------------------------------------------------
-\section*{\NotasBibliograficas}
-%-------------------------------------------------------------------
-\TocNotasBibliograficas
-
-Citamos algo para que aparezca en la bibliografía\ldots
-\citep{ldesc2e}
-
-\medskip
-
-Y también ponemos el acrónimo \ac{CVS} para que no cruja.
-
-Ten en cuenta que si no quieres acrónimos (o no quieres que te falle la compilación en ``release'' mientras no tengas ninguno) basta con que no definas la constante \verb+\acronimosEnRelease+ (en \texttt{config.tex}).
-
-
-%-------------------------------------------------------------------
-\section*{\ProximoCapitulo}
-%-------------------------------------------------------------------
-\TocProximoCapitulo
-
-...
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX
