@@ -18,19 +18,20 @@
 \contentsline {section}{\numberline {2.4}Realidad aumentada en museos}{12}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Otros museos}{12}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}Herramientas de desarrollo}{13}{section.2.5}
+\contentsline {section}{Notas bibliogr\'aficas}{15}{section.2.5}
 \contentsline {chapter}{\numberline {3}Dise\~no del videojuego}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Introducci\'on}{17}{section.3.1}
 \contentsline {section}{\numberline {3.2}Hilo argumental}{18}{section.3.2}
 \contentsline {section}{\numberline {3.3}Mec\'anicas}{19}{section.3.3}
 \contentsline {section}{\numberline {3.4}Conclusiones}{20}{section.3.4}
+\contentsline {section}{Notas bibliogr\'aficas}{20}{section.3.4}
 \contentsline {chapter}{\numberline {4}Space Invaders}{21}{chapter.4}
 \contentsline {section}{\numberline {4.1}Historia}{21}{section.4.1}
 \contentsline {section}{\numberline {4.2}Nuestra versi\'on}{21}{section.4.2}
-\contentsline {section}{\numberline {4.3}Implementaci\'on}{22}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Dise\~no}{23}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Implementaci\'on}{24}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Conclusiones}{26}{subsection.4.3.3}
-\contentsline {section}{Notas bibliogr\'aficas}{28}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.2.1}Dise\~no}{22}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Implementaci\'on}{23}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Conclusiones}{25}{subsection.4.2.3}
+\contentsline {section}{Notas bibliogr\'aficas}{27}{subsection.4.2.3}
 \contentsline {chapter}{\numberline {5}Arkanoid}{29}{chapter.5}
 \contentsline {section}{\numberline {5.1}Historia}{29}{section.5.1}
 \contentsline {section}{\numberline {5.2}Nuestra versi\'on}{29}{section.5.2}
@@ -44,20 +45,31 @@
 \contentsline {section}{\numberline {6.4}Conclusiones}{31}{section.6.4}
 \contentsline {section}{Notas bibliogr\'aficas}{31}{section.6.4}
 \contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{32}{section.6.4}
-\contentsline {chapter}{\numberline {7}Evaluaci\'on con usuarios}{33}{chapter.7}
-\contentsline {section}{\numberline {7.1}Plan de evaluaci\'on}{33}{section.7.1}
-\contentsline {section}{\numberline {7.2}Descripci\'on de la metodolog\IeC {\'\i }a del an\'alisis de los datos}{33}{section.7.2}
-\contentsline {section}{\numberline {7.3}Primera evaluaci\'on con usuarios}{33}{section.7.3}
-\contentsline {section}{Notas bibliogr\'aficas}{33}{section.7.3}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{34}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusiones y trabajo futuro}{35}{chapter.8}
-\contentsline {section}{\numberline {8.1}Conclusiones}{35}{section.8.1}
-\contentsline {section}{\numberline {8.2}L\IeC {\'\i }neas futuras}{35}{section.8.2}
-\contentsline {section}{Notas bibliogr\'aficas}{35}{section.8.2}
-\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{35}{section.8.2}
-\contentsline {chapter}{\numberline {9}Aportaciones individuales}{37}{chapter.9}
-\contentsline {section}{\numberline {9.1}Organizaci\'on general del proyecto}{37}{section.9.1}
-\contentsline {section}{\numberline {9.2}Ra\'ul Cobos}{37}{section.9.2}
-\contentsline {section}{\numberline {9.3}\'Alvar D. Soler}{38}{section.9.3}
-\contentsline {section}{\numberline {9.4}Mar\IeC {\'\i }a Picado}{39}{section.9.4}
-\contentsline {chapter}{Lista de acr\'onimos}{41}{section.9.4}
+\contentsline {chapter}{\numberline {7}Detalles de implementaci\'on}{33}{chapter.7}
+\contentsline {section}{\numberline {7.1}Realidad aumentada}{33}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Vuforia}{33}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Unity}{34}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Unity + Vuforia}{35}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Escenas intermedias}{36}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}SALSA with Random Eyes}{36}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}VozMe MP3 generator}{37}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}Persistencia de puntuaciones}{37}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Symfony}{37}{subsection.7.3.1}
+\contentsline {section}{Notas bibliogr\'aficas}{38}{subsection.7.3.1}
+\contentsline {chapter}{\numberline {8}Evaluaci\'on con usuarios}{39}{chapter.8}
+\contentsline {section}{\numberline {8.1}Plan de evaluaci\'on}{39}{section.8.1}
+\contentsline {section}{\numberline {8.2}Descripci\'on de la metodolog\IeC {\'\i }a del an\'alisis de los datos}{39}{section.8.2}
+\contentsline {section}{\numberline {8.3}Primera evaluaci\'on con usuarios}{39}{section.8.3}
+\contentsline {section}{Notas bibliogr\'aficas}{39}{section.8.3}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{40}{section.8.3}
+\contentsline {chapter}{\numberline {9}Conclusiones y trabajo futuro}{41}{chapter.9}
+\contentsline {section}{\numberline {9.1}Conclusiones}{41}{section.9.1}
+\contentsline {section}{\numberline {9.2}L\IeC {\'\i }neas futuras}{41}{section.9.2}
+\contentsline {section}{Notas bibliogr\'aficas}{41}{section.9.2}
+\contentsline {section}{En el pr\'oximo cap\IeC {\'\i }tulo}{41}{section.9.2}
+\contentsline {chapter}{\numberline {10}Aportaciones individuales}{43}{chapter.10}
+\contentsline {section}{\numberline {10.1}Organizaci\~A{^3}n general del proyecto}{43}{section.10.1}
+\contentsline {section}{\numberline {10.2}Ra\~A\IeC {\textordmasculine }l Cobos}{43}{section.10.2}
+\contentsline {section}{\numberline {10.3}\~A\@inpenc@undefined@ {latin1}lvar D. Soler}{44}{section.10.3}
+\contentsline {section}{\numberline {10.4}Mar\~A\discretionary {-}{}{}a Picado}{45}{section.10.4}
+\contentsline {chapter}{Lista de acr\'onimos}{47}{section.10.4}
