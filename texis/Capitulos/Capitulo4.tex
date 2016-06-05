@@ -29,8 +29,9 @@ Para destruir a los invasores, lo que tenemos que hacer es mover nuestro Smartph
 
 Con estos cambios, hemos conseguido (a nuestro juicio), transformar un clásico de los arcade en un nuevo juego que utiliza la RA dando una experiencia diferente.
 
-\subsection{Diseño} % (fold)
-\label{cap4:sub:diseno}
+\section{Diseño}
+%-------------------------------------------------------------------
+\label{cap4:sec:diseno}
 El juego se compone de una única escena que contiene todo el juego. Básicamente se compone de:
 
 \figura{Tfg/implementacion_space_invaders.png}{width=.5\textwidth}{fig:inaveders3}
@@ -54,12 +55,12 @@ El juego se compone de una única escena que contiene todo el juego. Básicamente 
 
 % subsection dise_o (end)
 
-\subsection{Implementación}
-\label{cap4:sub:implementacion}
+\section{Implementación}
+%-------------------------------------------------------------------
+\label{cap4:sec:implementacion}
 
 Pasamos a explicar qué clases componen el juego y para qué las utilizamos.
-\figura{Tfg/diagrama_spaceinvaders.jpg}{width=.7\textwidth}{fig:inaveders2}
-	{Diagrama de los GameObjects}
+
 \begin{enumerate}
 \item{Defense.cs: Gestiona las defensas del usuario. Marca el color de inicio y el de final que debe tener la defensa para calcular los colores intermedios. Además gestiona las colisiones.  Va añadido al GameObject de las defensas.}
 \item{Projectile.cs: Muy simple. Va asociada a los proyectiles y los destruye al pasar unos segundos en escena. Es para que los proyectiles que no impacten con nada, no se queden siempre en la escena. En la version final, los proyectiles con este Script solo son lanzados por los enemigos.}
@@ -70,10 +71,15 @@ Pasamos a explicar qué clases componen el juego y para qué las utilizamos.
 \item{TextTimer.cs: De manera muy sencilla destruye el texto (de la interfaz gráfica) al que está asociado al pasar un tiempo dado una vez se ha habilitado. Lo utilizamos para mostrar los mensajes de texto de información previa, avisando al jugador cuando debe comenzar a disparar. Va asociado a GameObjects de texto.}
 \end{enumerate}
 
+\newpage
+\begin{center}
+\figura{Tfg/diagrama_spaceinvaders.jpg}{width=\textwidth,keepaspectratio}{fig:invaders2}{Diagrama de los GameObjects}
+\end{center}
+\newpage
 
-
-\subsection{Conclusiones}
-\label{cap4:sub:conclusiones}
+\section{Conclusiones}
+%-------------------------------------------------------------------
+\label{cap4:sec:conclusiones}
 
 Al detectar el texto de FACULTAD DE INFORMÁTICA, el GameManager es avisado y comienza el juego. El GameManager instancia el Enjambre, que a su vez instancia todos los Invaders. Una vez hecho esto, se instancian las defensas desde el GameManager, se activa la información de la interfaz de usuario (puntuación, punto de mira \ldots{}).A partir de este momento, el jugador puede disparar el láser.
 

@@ -63,8 +63,7 @@ Para este juego existe un solo tipo de objeto visible, los tiles que representan
 \end{itemize}
 
 
-\figura{Tfg/gowater.png}{width=.75\textwidth}{fig:goswater}
-	{Esquema de los GO y sus componentes, necesarios para el tile anterior}
+\figura{Tfg/gowater.png}{width=\textwidth}{fig:goswater}{Esquema de los GO y sus componentes, necesarios para el tile anterior}
 
 \item{Canvas: Muestra la información del juego, en este caso se encarga de mostrar el tiempo restante que le queda al jugador y cuando el juego finaliza muestra la pantalla de marcadores, para que el jugador pueda introducir su nombre y así entrar en la lista de clasificados.}
 \item{GameManager: Es un GameObject vacío en la escena que contiene los scripts para la funcionalidad del juego:}
@@ -114,8 +113,10 @@ En este ocasión, se ha decidido diseñar el flujo de agua de la siguiente manera:
 
 Por cada tipo de conducto el agua puede fluir en dos sentidos cada vez, por lo tanto a partir de la entrada del agua de la casilla anterior se calculará la casilla siguiente por la que el agua debería de fluir. Y una vez que ya sepamos cuál es la siguiente casilla por la que tenemos que llevar el agua, podremos comprobar si esa casilla es válida, es decir su entrada de agua coincide con la salida de agua anterior.
 
-\figura{Tfg/diagramawaterpipes.jpg}{width=.75\textwidth}{fig:diagramaWaterPipesScene}
-	{Diagrama del juego}
+\newpage
+\begin{center}
+\figura{Tfg/diagramawaterpipes.jpg}{width=\textwidth,keepaspectratio}{fig:diagramaWaterPipesScene}{Diagrama del juego}
+\end{center}
 
 
 \section{Conclusiones}
