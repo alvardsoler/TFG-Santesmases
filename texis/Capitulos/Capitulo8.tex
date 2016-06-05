@@ -5,39 +5,180 @@
 %---------------------------------------------------------------------
 \chapter{Evaluación con usuarios}
 
-\begin{FraseCelebre}
-\begin{Frase}
-...
-\end{Frase}
-\begin{Fuente}
-...
-\end{Fuente}
-\end{FraseCelebre}
-
-\begin{resumen}
-...
-\end{resumen}
-
+Una vez hemos tenido una versión terminada de todos los juegos y unidos ellos entre sí mediante una pequeña historia, damos por finalizada la primera versión estable de nuestro juego.  Con esta versión, decidimos realizar pruebas con usuarios para mejorar los posibles errores  o mejorar la usabilidad de los juegos de cara a una segunda iteración.
 
 %-------------------------------------------------------------------
 \section{Plan de evaluación}
 %-------------------------------------------------------------------
 \label{cap8:sec:plan}
 
-...
+\subsection{Objetivos de la evaluación}
+\label{cap8:sub:objetivos}
+
+Nuestros objetivos a la hora de realizar la evaluación con distintos usuarios son: mejorar la usabilidad de cara al usuario, detectar posibles bugs, comprobar si las mecánicas son comprensibles para los usuarios del museo y ver si estas son entretenidas y coherentes de cara a la RA.
+
+Cuando se desarrolla un juego, el programador realiza distintas pruebas durante toda la implementación. Y una vez que ha terminado el juego, intenta jugar de varias formas posibles con la única intención de encontrar el mayor número de errores posibles para luego solventarlos. Pero esto no suele ser suficiente debido a que si realiza las pruebas la misma persona que lo ha implementado, pasará por alto muchas cosas. Esto es debido a que él sabe el funcionamiento del juego e inconscientemente jugará bien y le resultará muy difícil darse cuenta de cierto tipo de errores. Un buen ejemplo de esto es, que si el juego es intuitivo, es decir, si aunque no sepas como funciona, esta lo suficientemente bien explicado y diseñado para que el usuario no tenga problemas de ese tipo.
+
+Otro motivo por el cual pensamos que la realización de pruebas a  distintos usuarios es importante, es para tener la información suficiente, como para poder evaluar los errores en y clasificarlos por prioridad. Después de realizar las suficientes pruebas, se van a presentar varios errores, pero no tendrán la misma complejidad a la hora de solucionarlo y sobre todo no suponen lo mismo para la jugabilidad de la aplicación.
+
+Creemos, que la evaluación con usuarios es una fase fundamental en cualquier aplicación. Cuantas más pruebas se realicen, la aplicación será mejor y la experiencia del usuario con el juego será más satisfactoria, lo que seguramente hará que ese usuario quiera repetir el juego y se descargue tu aplicación
+
+\subsection{Métricas}
+\label{cap8:sub:metricas}
+
+Al ser una aplicación, decidimos utilizar el cuestionario SUS para realizar estas pruebas. Pero este cuestionario está en un principio dirigido a evaluar una aplicación web, por lo que tuvimos que modificar un poco las preguntas para adaptarlo a un juego. Además, aparte de este, mientras el usuario juega, se toma nota de todo aquello que se puede observar importante, ya sean bugs o posibles mejoras y aquello que el usuario menciona mientras está jugando: Cosas que no comprende, observaciones que aprecia acerca de la dificultad de los juegos o de sus mecánicas.
+
+La siguiente tabla muestra las preguntas finales, con las respuestas necesarias para sacar el 100\% de la puntuación.
+
+\begin{longtable}[c]{@{}lll@{}}
+\toprule\addlinespace
+\begin{minipage}[t]{0.30\columnwidth}\raggedright
+N
+
+Preguntas
+
+Puntuación
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+1
+
+Me gustaría volver a jugar
+
+5
+\end{minipage} & \begin{minipage}[t]{0.30\columnwidth}\raggedright
+2
+
+El juego tiene una complejidad innecesaria
+
+1
+\end{minipage}
+\\\addlinespace
+\bottomrule
+\end{longtable}
+% Tabla del cuestionario SUS
+
+
+Una de las ventajas de este cuestionario, es que las preguntas son sencillas y fáciles de entender. Pero también, es muy importante que sea muy sencillo de contestar, ya que el jugador, solo tendrá que evaluar cada pregunta en un intervalo del 1 al 5; siendo 1 la respuesta elegida si está muy en desacuerdo con lo que le preguntan, o 5 en el caso de que esté muy de acuerdo.
 
 \section{Descripción de la metodología del análisis de los datos}
 %-------------------------------------------------------------------
 \label{cap8:sec:metodologia}
 
-...
+Dividimos en varias fases este proceso, con la intención de simplificar cada una de ellas y así tener muy claro lo que debíamos hacer en cada momento para que no se nos escapará ningún detalle, obteniendo así, no el mejor resultado en los test, sino lo más importante datos e información relevante para poder mejorar nuestra aplicación
+
+\subsection{Primera fase}
+\label{cap8:sub:primera}
+
+Lo primero que hicimos, una vez adaptamos las preguntas del cuestionario a las de un juego, fue decidir sobre qué nos deberíamos fijar más detenidamente mientras realizamos los test y así poder tomar notas sobre ello para más tarde poder añadirlo a la evaluación final, ya que cuanta más información se obtenga de los test a los usuarios, más mejoras podremos realizar en nuestro juego.
+
+Cuando tuvimos claro todos estos puntos, empezamos a realizar test a la mayor cantidad de usuarios posibles, sin importarnos su edad, su habilidad a la hora de utilizar un smartphone o si habían probado previamente los juegos que hemos implementado.
+
+\subsection{Segunda fase}
+\label{cap8:sub:segunda}
+
+El siguiente paso es la evaluación directa con los usuarios. Nuestro procedimiento a seguir en esta fase, es la de que el usuario juegue e intentando no explicarle nada del juego previamente analizar mientras juega y decirle que comente en voz alto sus observaciones.  Además, mientras el usuario está jugando, nosotros tomamos notas que nos sirven de ayuda. Y una vez el usuario ha finalizado, se le pasa el cuestionario para que responda a las preguntas y anote su edad.
+
+\figura{Tfg/usuario.jpg}{width=.5\textwidth}{fig:usuariotesting}
+		{Usuario realizando un prueba del Space Invaders}
+
+\subsection{Tercera fase}
+\label{cap8:sub:tercera}
+
+Analizamos los resultados, tanto los obtenidos a través del cuestionario SUS, como de las notas recogidas durante la prueba del juego.
 
 \section{Primera evaluación con usuarios}
 %-------------------------------------------------------------------
 \label{cap8:sec:primera}
 
-...
+En esta primera evaluación, efectuamos un total de 14 pruebas a los usuarios, de las cuales, 7 se realizaron en la facultad y el resto desde casa.
 
+Trás realizar la evaluación nos encontramos  con que la mayoría de los usuarios tenían problemas similares:
+
+\begin{itemize}
+\item{El space invaders, aunque era el más intuitivo, se acaba muy rápido y era demasiado fácil de jugar.}
+
+\item{En el Arkanoid, la bola iba demasiado rápida, el dedo que controlaba la barra tapaba la escena y no les permitía ver bien, el control era poco preciso y el fondo no permitía distinguir bien cuáles eran los objetivos que había que destruir.}
+
+\item{En el Water Pipes, la gente no comprendía la mecánica del juego al iniciar. Pulsaban sobre una pieza y no comprendían si tenían que intercambiar las piezas. Además, les costaba comprender cuál era el comienzo y cuál la meta.}
+
+\end{itemize}
+
+\subsection{Informe de resultados}
+\label{cap8:sub:informe}
+
+\subsection*{Cuestionario SUS}
+El análisis de resultados de la primera evaluación con usuarios fue muy revelador con respecto a los controles del usuario con los distintos juegos. Tanto como los resultados del cuestionario SUS, como los comentarios de los usuarios unidos con nuestras notas tomadas mientras jugaban, nos revelaron que en los dos últimos minijuegos de la aplicación era necesario realizar alguna modificación para que el usuario pudiera manejar los controles del juego de manera más efectiva.
+
+Es importante saber que el cuestionario SUS coloca el resultado obtenido en un intervalo de puntuación que determina la usabilidad de la aplicación y en nuestro caso de los mini juegos. 
+
+Este intervalo es el siguiente:
+\begin{itemize}
+\item{Puntuación > 80.3 -> Buena usabilidad}
+\item{80.3 >= Puntuación > 68 -> Bien, pero se puede mejorar}
+\item{Puntuación  <= 51 -> La usabilidad no es buena}
+\end{itemize}
+
+A continuación mostramos el promedio de los resultados obtenidos de los cuestionarios realizados en este primer análisis. 
+
+% insertar tabla info: tabla cuestionario sus
+
+Simplemente con estos datos, se puede ver a primera vista lo comentado anteriormente. El primer mini juego, según la escala SUS, no obtiene la puntuación necesaria para obtener una buena usabilidad, pero se acerca mucho, lo que nos indica que aunque existen ciertas cosas se pueden mejorar, el usuario piensa que el juego tiene lo necesario para ser jugado sin problemas y a demás que el juego le resulta entretenido.
+
+En cambio, la puntuación de los otros dos juegos se encuentran en el caso opuesto. Aunque no llegan a obtener el 51. límite para que la usabilidad del juego no sea buena, se aproximan demasiado. 
+
+\subsection*{Información recogida de los usuarios}
+Los resultados que nos ha proporcionado el cuestionario SUS, nos resultan muy útiles para obtener una visión clara de la usabilidad de cada juego, y aunque si analizamos las respuestas más detenidamente, podríamos hacernos una idea de los fallos y los deseos de los usuarios. Nos es imprescindible también tomar nota, tanto de los comentarios de los usuarios antes, durante y después de haber probado el juego, como de las observaciones que nosotros mismos realizamos. 
+
+En la primera evaluación, esta información es muy relevante, debido también a que se repite las mismas opiniones o muy parecidas, en la mayoría de los usuarios evaluados.
+
+En las siguientes líneas mostramos las opiniones más frecuentes y relevantes de los usuarios, por cada uno de los juegos en esta primera evaluación.
+
+\begin{itemize}
+\item{Space Invaders}
+	\begin{enumerate}
+	\item{El juego sale muy pequeño con respecto al Image Target.}
+	\item{La dificultad del juego es demasiado sencilla.}
+	\end{enumerate}
+\item{Arkanoid}
+	\begin{enumerate}
+	\item{El control del juego es demasiado complicado. La mayoría de los usuarios, no han sido capaces de controlar la barra para mantener la pelota a salvo.}
+	\item{La velocidad de la pelota es demasiado rápida, lo que hace que el juego sea demasiado difícil de completar con éxito.}
+	\item{La escena es demasiado grande, lo que obliga al usuario a separarse mucho del QR.}
+	\end{enumerate}
+\item{Water Pipes}
+	\begin{enumerate}
+	\item{La mayoría de los usuarios no saben cómo controlar el juego.}
+	\item{El tiempo de comienzo antes de que el agua empiece a pasar por las tuberías es demasiado corto, por lo que los usuarios pierden antes de poder comprender el funcionamiento del juego.}
+	\item{Las casillas de Start y End, se confunden por lo que el usuario no sabe dónde tiene que empezar a colocar las tuberías antes de que el tiempo acabe.}
+	\end{enumerate}
+\end{itemize}
+
+\subsection{Acciones}
+\label{cap8:sub:acciones}
+
+Las acciones a emprender atendiendo al análisis de los cuestionarios son las siguientes:
+
+\begin{itemize}
+\item{Space Invaders}
+	\begin{enumerate}
+	\item{Aumentar el tamaño de los invaders.}
+	\item{Aumentar el daño de los enemigos sobre la plataforma, aumentar la velocidad de desplazamientos de estos y aumentar la separación.}
+	\end{enumerate}
+\item{Arkanoid}
+	\begin{enumerate}
+	\item{Informar del control en la pantalla de información del principio e intentar mejorar la precisión del control de la plataforma.}
+	\item{Si se es capaz de mejorar en el apartado uno quizá el reducir la velocidad de la pelota facilita mucho el juego, pero si no, se reducirá la velocidad o se ampliará el tamaño de la plataforma.}
+	\item{Disminuir el tamaño del modelo del televisor.}
+	\end{enumerate}
+\item{Water Pipes}
+	\begin{enumerate}
+	\item{Especificar mejor el control y el objetivo del juego en el panel de información inicial.}
+	\item{Si se mejora en el apartado uno quizás el aumentar el tiempo en este caso facilita en exceso el juego, pero sino, se aumentará el tiempo inicial.}
+	\item{Resaltar de forma más significativa la diferencia entre ambos extremos.}
+	\end{enumerate}
+\end{itemize}
+
+\subsection{Conclusiones}
+\label{cap8:sub:acciones}
 
 %-------------------------------------------------------------------
 \section*{\NotasBibliograficas}
