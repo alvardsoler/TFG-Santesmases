@@ -1,4 +1,4 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{6}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Bautista et\ al.(1998)Bautista, Oetiker, Partl, Hyna y
@@ -7,6 +7,35 @@
   Schlegl, E.}
 \newblock {\em Una Descripción de \LaTeXe\/}.
 \newblock Versión electrónica, 1998.
+
+\bibitem[{Caro~Mart\'{i}nez y Hernando~Hern\'{a}ndez(2014 - 2015)}]{RACMA}
+{\sc Caro~Mart\'{i}nez, M.} y {\sc Hernando~Hern\'{a}ndez, D.}
+\newblock {\em Realidad aumentada para el Museo de Am\'{e}rica\/}.
+\newblock Tfg, Universidad Complutense de Madrid, 2014 - 2015.
+
+\bibitem[{of~London(2015)}]{streetmuseum}
+{\sc of~London, M.}
+\newblock Street museum.
+\newblock 2015.
+\newblock Disponible en
+  \url{http://www.museumoflondon.org.uk/Resources/app/you-are-here-app/home.html}
+  (último acceso,  Mayo, 2016).
+
+\bibitem[{mocadele.net(2015)}]{appeducativas}
+{\sc mocadele.net}.
+\newblock Realidad aumentada y realidad virtual.
+\newblock 2015.
+\newblock Disponible en
+  \url{http://mocadele.net/arloon-app-educativas-de-ciencias-con-realidad-aumentada/}
+  (último acceso,  Mayo, 2016).
+
+\bibitem[{y~Stefano~Caldana(2012)}]{mataro}
+{\sc y~Stefano~Caldana, R.~B.}
+\newblock Construye tu propia exhibiciÃ³n.
+\newblock 2012.
+\newblock Disponible en
+  \url{http://blogs.elpais.com/arte-en-la-edad-silicio/2012/05/construye-tu-propia-exhibicion.html}
+  (último acceso,  Mayo, 2016).
 
 \bibitem[{Wikipedia(Space Invaders)}]{SpaceInvadersWikipedia}
 {\sc Wikipedia} (Space Invaders).

@@ -6,7 +6,6 @@
 \contentsline {section}{\numberline {1.1}Museo de inform\'atica Garc\IeC {\'\i }a-Santesmases}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Objetivos y motivaci\'on}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Antecedentes}{3}{section.1.3}
-\contentsline {section}{Notas bibliogr\'aficas}{3}{section.1.3}
 \contentsline {chapter}{\numberline {2}Estado del Arte}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}La realidad aumentada}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Alcance}{6}{section.2.2}
@@ -19,7 +18,6 @@
 \contentsline {section}{\numberline {2.4}Realidad aumentada en museos}{12}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Otros museos}{12}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}Herramientas de desarrollo}{13}{section.2.5}
-\contentsline {section}{Notas bibliogr\'aficas}{15}{section.2.5}
 \contentsline {chapter}{\numberline {3}Dise\~no del videojuego}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Introducci\'on}{17}{section.3.1}
 \contentsline {section}{\numberline {3.2}Hilo argumental}{18}{section.3.2}
