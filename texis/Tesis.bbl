@@ -1,12 +1,16 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
-\bibitem[{Bautista et\ al.(1998)Bautista, Oetiker, Partl, Hyna y
-  Schlegl}]{ldesc2e}
-{\sc Bautista, T.}, {\sc Oetiker, T.}, {\sc Partl, H.}, {\sc Hyna, I.} y {\sc
-  Schlegl, E.}
-\newblock {\em Una Descripción de \LaTeXe\/}.
-\newblock Versión electrónica, 1998.
+\bibitem[{Azuma(1997)}]{ARsurvey}
+{\sc Azuma, R.~T.}
+\newblock A survey of augmented reality.
+\newblock {\em Introduction\/}, 1997.
+
+\bibitem[{Bosco y Caldana(2012)}]{mataro}
+{\sc Bosco, R.} y {\sc Caldana, S.}
+\newblock Construye tu propia exhibici\'{o}n.
+\newblock Disponible en
+  \url{http://blogs.elpais.com/arte-en-la-edad-silicio/2012/05/construye-tu-propia-exhibicion.html}.
 
 \bibitem[{Caro~Mart\'{i}nez y Hernando~Hern\'{a}ndez(2014 - 2015)}]{RACMA}
 {\sc Caro~Mart\'{i}nez, M.} y {\sc Hernando~Hern\'{a}ndez, D.}
@@ -16,31 +20,36 @@
 \bibitem[{of~London(2015)}]{streetmuseum}
 {\sc of~London, M.}
 \newblock Street museum.
-\newblock 2015.
 \newblock Disponible en
-  \url{http://www.museumoflondon.org.uk/Resources/app/you-are-here-app/home.html}
-  (último acceso,  Mayo, 2016).
+  \url{http://www.museumoflondon.org.uk/Resources/app/you-are-here-app/home.html}.
 
 \bibitem[{mocadele.net(2015)}]{appeducativas}
 {\sc mocadele.net}.
 \newblock Realidad aumentada y realidad virtual.
-\newblock 2015.
 \newblock Disponible en
-  \url{http://mocadele.net/arloon-app-educativas-de-ciencias-con-realidad-aumentada/}
-  (último acceso,  Mayo, 2016).
+  \url{http://mocadele.net/arloon-app-educativas-de-ciencias-con-realidad-aumentada/}.
 
-\bibitem[{y~Stefano~Caldana(2012)}]{mataro}
-{\sc y~Stefano~Caldana, R.~B.}
-\newblock Construye tu propia exhibiciÃ³n.
-\newblock 2012.
+\bibitem[{Unity3D()}]{Unity3d}
+{\sc Unity3D}.
+\newblock Tutoriales de unity3d.
+\newblock Disponible en \url{https://unity3d.com/es/learn/tutorials}.
+
+\bibitem[{Vuforia()}]{vuforia}
+{\sc Vuforia}.
+\newblock Documentaci\'{o}n oficial de vuforia.
 \newblock Disponible en
-  \url{http://blogs.elpais.com/arte-en-la-edad-silicio/2012/05/construye-tu-propia-exhibicion.html}
-  (último acceso,  Mayo, 2016).
+  \url{https://developer.vuforia.com/library/getting-started}.
+
+\bibitem[{Wikipedia(Arkanoid)}]{ArkanoidWiki}
+{\sc Wikipedia} (Arkanoid).
+\newblock Disponible en \url{https://en.wikipedia.org/wiki/Arkanoid}.
+
+\bibitem[{Wikipedia(Pipe Mania)}]{WaterPipesWiki}
+{\sc Wikipedia} (Pipe Mania).
+\newblock Disponible en \url{https://en.wikipedia.org/wiki/Pipe_Mania}.
 
 \bibitem[{Wikipedia(Space Invaders)}]{SpaceInvadersWikipedia}
 {\sc Wikipedia} (Space Invaders).
-\newblock Entrada: ``{Space Invaders}''.
-\newblock Disponible en \url{https://es.wikipedia.org/wiki/Space_Invaders}
-  (último acceso,  Mayo, 2016).
+\newblock Disponible en \url{https://es.wikipedia.org/wiki/Space_Invaders}.
 
 \end{thebibliography}
