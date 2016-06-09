@@ -1,5 +1,10 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{19}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{AUMENTATY()}]{aumentaty}
+{\sc AUMENTATY}.
+\newblock Web oficial.
+\newblock Disponible en \url{http://www.aumentaty.com/}.
 
 \bibitem[{Azuma(1997)}]{ARsurvey}
 {\sc Azuma, R.~T.}
@@ -12,10 +17,26 @@
 \newblock Disponible en
   \url{http://blogs.elpais.com/arte-en-la-edad-silicio/2012/05/construye-tu-propia-exhibicion.html}.
 
+\bibitem[{CAMONAPP()}]{camonapp}
+{\sc CAMONAPP}.
+\newblock Web oficial.
+\newblock Disponible en \url{http://www.camonapp.com/}.
+
 \bibitem[{Caro~Mart\'{i}nez y Hernando~Hern\'{a}ndez(2014 - 2015)}]{RACMA}
 {\sc Caro~Mart\'{i}nez, M.} y {\sc Hernando~Hern\'{a}ndez, D.}
 \newblock {\em Realidad aumentada para el Museo de Am\'{e}rica\/}.
 \newblock Tfg, Universidad Complutense de Madrid, 2014 - 2015.
+
+\bibitem[{Crazy Minnow~Studio()}]{salsa}
+{\sc Crazy Minnow~Studio, L.}
+\newblock Salsa with randomeyes en asset store.
+\newblock Disponible en
+  \url{https://www.assetstore.unity3d.com/en/#!/content/16944}.
+
+\bibitem[{INGRESS()}]{ingress}
+{\sc INGRESS}.
+\newblock Web oficial del juego.
+\newblock Disponible en \url{https://www.ingress.com}.
 
 \bibitem[{of~London(2015)}]{streetmuseum}
 {\sc of~London, M.}
@@ -23,22 +44,51 @@
 \newblock Disponible en
   \url{http://www.museumoflondon.org.uk/Resources/app/you-are-here-app/home.html}.
 
+\bibitem[{MIGS()}]{migs}
+{\sc MIGS}.
+\newblock Web oficial del museo garcia-santesmases en la facultad de
+  inform\'{a}tica de la ucm.
+\newblock Disponible en \url{http://www.fdi.ucm.es/migs/}.
+
 \bibitem[{mocadele.net(2015)}]{appeducativas}
 {\sc mocadele.net}.
 \newblock Realidad aumentada y realidad virtual.
 \newblock Disponible en
   \url{http://mocadele.net/arloon-app-educativas-de-ciencias-con-realidad-aumentada/}.
 
+\bibitem[{Nintendo({\natexlab{a}})}]{arcards}
+{\sc Nintendo}.
+\newblock Ar cards videogame.
+\newblock Disponible en
+  \url{https://www.nintendo.es/Familia-Nintendo-3DS/Software-instantaneo/Juegos-RA-la-realidad-aumentada/Juegos-RA-la-realidad-aumentada-115169.html}.
+
+\bibitem[{Nintendo({\natexlab{b}})}]{pokemongo}
+{\sc Nintendo}.
+\newblock Pokemon go. versi\'{o}n del juego pokemon en realidad aumentada.
+\newblock Disponible en
+  \url{http://www.pokemon.com/es/videojuegos-pokemon/pokemon-go}.
+
 \bibitem[{Unity3D()}]{Unity3d}
 {\sc Unity3D}.
 \newblock Tutoriales de unity3d.
 \newblock Disponible en \url{https://unity3d.com/es/learn/tutorials}.
 
-\bibitem[{Vuforia()}]{vuforia}
+\bibitem[{VozMe()}]{vozme}
+{\sc VozMe}.
+\newblock Herramienta web para transformar texto en voz.
+\newblock Disponible en \url{http://vozme.com/}.
+
+\bibitem[{Vuforia({\natexlab{a}})}]{vuforia}
 {\sc Vuforia}.
 \newblock Documentaci\'{o}n oficial de vuforia.
 \newblock Disponible en
   \url{https://developer.vuforia.com/library/getting-started}.
+
+\bibitem[{Vuforia({\natexlab{b}})}]{textrecog}
+{\sc Vuforia}.
+\newblock Vuforia library text recognition.
+\newblock Disponible en
+  \url{https://developer.vuforia.com/library/articles/Training/Text-Recognition-Guide}.
 
 \bibitem[{Wikipedia(Arkanoid)}]{ArkanoidWiki}
 {\sc Wikipedia} (Arkanoid).

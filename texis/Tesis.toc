@@ -28,7 +28,7 @@
 \contentsline {section}{\numberline {4.2}Nuestra versi\'on}{21}{section.4.2}
 \contentsline {section}{\numberline {4.3}Dise\~no}{22}{section.4.3}
 \contentsline {section}{\numberline {4.4}Implementaci\'on}{24}{section.4.4}
-\contentsline {section}{\numberline {4.5}Conclusiones}{25}{section.4.5}
+\contentsline {section}{\numberline {4.5}Conclusiones}{26}{section.4.5}
 \contentsline {chapter}{\numberline {5}Arkanoid}{29}{chapter.5}
 \contentsline {section}{\numberline {5.1}Historia}{29}{section.5.1}
 \contentsline {section}{\numberline {5.2}Nuestra versi\'on}{29}{section.5.2}
@@ -72,4 +72,4 @@
 \contentsline {section}{\numberline {10.3}\'Alvar D. Soler}{68}{section.10.3}
 \contentsline {section}{\numberline {10.4}Mar\IeC {\'\i }a Picado}{69}{section.10.4}
 \contentsline {chapter}{Bibliograf\IeC {\'\i }a}{71}{appendix*.43}
-\contentsline {chapter}{Lista de acr\'onimos}{72}{appendix*.43}
+\contentsline {chapter}{Lista de acr\'onimos}{73}{appendix*.43}
