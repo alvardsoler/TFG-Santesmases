@@ -1,0 +1,47 @@
+%---------------------------------------------------------------------
+%
+%                          Chapter 9
+%
+%---------------------------------------------------------------------
+\chapter{Conclusions and future lines}
+
+In this chapter we will have an analysis about our work, decisions and its results.
+
+We will have too an analysis for the future works based on this project.
+
+%-------------------------------------------------------------------
+\section{Conclusions}
+%-------------------------------------------------------------------
+\label{cap9:sec:conclusions}
+
+As we have said in chapter two, augmented reality has many possibilities in lots of fields, videogames, apps, educations and many other things. In our field, the education, we find a lot of possibilities. Some of them  could be attracting people to museums publishing their information, to teach doctors by 3D organ models or engineers to see how motors, gears or transmission system works.
+
+Finally, we have done a gymkhana based on a game where the user will use different AR mechanics to complete levels. The project has three scenes based on classic video games (Space Invaders, Arkanoid and Water Pipes)  seen by AR in differents museum and school places. The game have intermediate scenes that connect the story with the games and explain the scenes. To end, there are a score store  that save the user scores and motivate gamers to play again and rise in the ranking.
+
+This project make us to realize that the AR is going to be a big revolution for museums. It gives lots of possibilities to attract people to museums.
+	
+We think that this type of apps, based on gymkhana, is very attractive. It makes that users go through the museum and see things that were not so attractive before.
+	
+Having all this in mind, the purpose of this project is make the museum attractions and the video games  closer to people better than showing museum information.  We have created three easy games with different ways to interact with the user. Moreover, the scores can be compared with the other users results and it improves the experience.
+
+\section{Future lines}
+%-------------------------------------------------------------------
+\label{cap9:sec:futures}
+
+There are several things to improve. During development we had many ideas that we couldn’t perform.
+
+On one hand, we could add different games or more levels to develop other app. We have had other mini games ideas too, like mole mash game in a school picture in the third floor. Another idea was to connect differents gates and sources with cables in a museum machine.
+
+Another possibility is showing information about the machines and then making questions to the player.
+
+We could add and interactive Lore that show information about museum objects when we point to it, like famous characters or scenes besides.
+
+
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:
