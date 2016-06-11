@@ -5,7 +5,7 @@
 %---------------------------------------------------------------------
 \chapter{Water Pipes}
 
-En este capítulo, vamos a centrarnos en la explicación del último minijuego al que se tendrá que enfrentar el jugador para completar con éxito la yimcana. El recorrido finaliza en la 3º planta de la facultad, en un ``simulador básico de centrales térmicas''. Este simulador y el minijuego combina a la perfección, tanto por la similitud visual entre ambos como por el hilo argumental del juego.
+En este capítulo, vamos a centrarnos en la explicación del último minijuego al que se tendrá que enfrentar el jugador para completar con éxito la yincana. El recorrido finaliza en la 3º planta de la facultad, en un ``simulador básico de centrales térmicas''. Este simulador y el minijuego combina a la perfección, tanto por la similitud visual entre ambos como por el hilo argumental del juego.
 
 \figura{Tfg/termica.jpg}{width=.75\textwidth}{fig:termica}
 	{Simulador térmico del museo García-Santesmases}
@@ -32,10 +32,10 @@ En la versión original, el juego consistía en ir colocando las tuberías que salí
 %-------------------------------------------------------------------
 \label{cap6:sec:nuestra}
 
-En nuestra versión del juego existen algunas diferencias con respecto a la versión original. La principal es la mecánica del juego, ya que en esta ocasión el usuario acaba de exterminar al enemigo que estaba poniendo en peligro a la Facultad y ahora su misión cambia para poder despegar la nave y ponerse a salvo definitivamente. En esta última misión el jugador se encontrará frente a frente con los conductos de refrigeración de la nave. El problema es que, debido a la batalla, éstos se han dispersado y si quiere despegar la nave tendrá que re ordenarlos para que el agua pueda fluir correctamente. 
+En nuestra versión del juego existen algunas diferencias con respecto a la versión original. La principal es la mecánica del juego, ya que en esta ocasión el usuario acaba de exterminar al enemigo que estaba poniendo en peligro a la Facultad y ahora su misión cambia para poder despegar la nave y ponerse a salvo definitivamente. En esta última misión el jugador se encontrará frente a frente con los conductos de refrigeración de la nave. El problema es que, debido a la batalla, estos se han dispersado y si quiere despegar la nave tendrá que re ordenarlos para que el agua pueda fluir correctamente. 
 Al comienzo, el jugador verá un tablero relleno aleatoriamente con estos conductos, además de una salida y una meta. Por lo tanto, el objetivo del jugador es ir cambiando de posición las tuberías que encuentra en la matriz, entre sí, para que el agua pueda fluir del punto de origen al de destino. En esta ocasión, el jugador tiene 6 segundos por cada tubería para ir colocando las demás y otros 10 segundos adicionales desde que el juego comienza hasta que la casilla de salida comienza a llenarse. Para poder despegar la nave, el agua ha debido fluir por todas las tuberías necesarias para llegar a la meta. En cambio si el agua ya ha comenzado a fluir y el jugador no ha conseguido recolocar los conductos, en cuanto el agua no encuentre un camino factible la nave ya no se podrá despegar y el juego terminará.
 
-Para lograr esto, el jugador deberá ir intercambiando una tubería por otra, la mecánica implementada para permitirle realizar esta acciones es, que en primer lugar seleccione la tubería que desea colocar en otra posición, pulsando sobre ella, y a continuación seleccione la otra tubería que desea intercambiar con que ya ha seleccionado anteriormente, y en el momento en el que se pulse esta última, automaticamente se cambiarán entre ellas. Las tuberías en la que ya ha comenzado a fluir el agua no podrán ser seleccionadas.
+Para lograr esto, el jugador deberá ir intercambiando una tubería por otra. La mecánica implementada para permitirle realizar esta acciones es que, en primer lugar, seleccione la tubería que desea colocar en otra posición pulsando sobre ella y, a continuación seleccione la otra tubería que desea intercambiar con que ya ha seleccionado anteriormente, y en el momento en el que se pulse esta última, automaticamente se cambiarán entre ellas. Las tuberías en la que ya ha comenzado a fluir el agua no podrán ser seleccionadas.
 
 \section{Diseño}
 %-------------------------------------------------------------------
@@ -49,8 +49,8 @@ Para este juego existe un solo tipo de objeto visible, los tiles que representan
 \item{Tile: todo el juego se compone de 25 (matriz de 5x5) GameObjects de tipo Quad que representan los conductos de refrigeración. A cada uno se les han incluido los mismos componentes:}
 
 \begin{itemize}
-\item{Box Collider: para detectar la colisión y así poder intercambiar dos objetos entre sí, en este caso, solo existe la colisión entre el usuario y los objetos (Touch).}
-\item{RigidBody: Elimina la gravedad de los objetos y congela ciertos movimientos de desplazamiento y rotación de estos, en este caso hemos querido bloquear todas las rotaciones y la dimensión Z del desplazamiento. Esto es debido a que aunque es un juego en 3D, la experiencia con el jugador es totalmente en 2D y esos movimientos no nos serán necesarios.}
+\item{Box Collider: para detectar la colisión y así poder intercambiar dos objetos entre sí. En este caso, solo existe la colisión entre el usuario y los objetos (Touch).}
+\item{RigidBody: Elimina la gravedad de los objetos y congela ciertos movimientos de desplazamiento y rotación de estos. En este caso hemos querido bloquear todas las rotaciones y la dimensión Z del desplazamiento. Esto es debido a que aunque es un juego en 3D, la experiencia con el jugador es totalmente en 2D y esos movimientos no nos serán necesarios.}
 \end{itemize}
 
 \item{Tile animación: Aunque el único objeto ``visible'' en el juego sean los conductos (Quad), cada uno de ellos contiene otro GameObject como hijo. La funcionalidad de éste es la animación del agua cuando pasa por la tubería, por lo que cada uno de estos ``hijos'' contienen también los mismos componentes cada uno:}
@@ -65,7 +65,7 @@ Para este juego existe un solo tipo de objeto visible, los tiles que representan
 
 \figura{Tfg/gowater.png}{width=\textwidth}{fig:goswater}{Esquema de los GO y sus componentes, necesarios para el tile anterior}
 
-\item{Canvas: Muestra la información del juego, en este caso se encarga de mostrar el tiempo restante que le queda al jugador y cuando el juego finaliza muestra la pantalla de marcadores, para que el jugador pueda introducir su nombre y así entrar en la lista de clasificados.}
+\item{Canvas: Muestra la información del juego, y se encarga de mostrar el tiempo restante que le queda al jugador y cuando el juego finaliza muestra la pantalla de marcadores, para que el jugador pueda introducir su nombre y así entrar en la lista de clasificados.}
 \item{GameManager: Es un GameObject vacío en la escena que contiene los scripts para la funcionalidad del juego:}
 
 \begin{itemize}
@@ -87,7 +87,7 @@ En primer lugar, vamos a describir las clases que se encargan de las otras funci
 \begin{enumerate}
 \item{TouchObject}
 
-Este script es el encargado de controlar el cambio de los conductos. Para ello, lo primero que hace es capturar en el método Update todos los toques en la pantalla y llamar a getObjectHit para obtener el objeto presionado. Este objeto lo obtenemos a través del método ``GetNearestHitGameObject'', que genera un rayo con origen en la ARCamera y con la dirección generada por el rayo. Y de esos se queda con el que haya menor distancia. 
+Este script es el encargado de controlar el cambio de los conductos. Para ello, lo primero que hace es capturar en el método Update todos los toques en la pantalla y llamar a getObjectHit para obtener el objeto presionado. Este objeto lo obtenemos a través del método ``GetNearestHitGameObject'', que genera un rayo con origen en la ARCamera y con la dirección generada por el rayo. De esos se queda con el que haya menor distancia. 
 
 Una vez tenemos el objeto presionado, tenemos que saber si ya existe otro objeto pulsado para poder intercambiarlos, o si es el primer elemento que queremos cambiar. Si es el primero, lo único que haremos es cambiarle a ese objeto el tag a ``ButtonPush'' y si es el segundo, obtenemos el que ya hemos pulsado anteriormente e intercambiamos su posición.
 
@@ -107,7 +107,7 @@ A continuación crea la salida y la meta, ya que estos siempre van a tener una po
 
 \item{WaterController}
 
-Este script es, junto con el gameManagerWaterPipes, es el más importante, ya que se encarga de controlar el flujo del agua, y esta es la funcionalidad básica de nuestro juego. Y por lo tanto está añadido al GameObject vacío de la escena, que como hemos dicho en el punto anterior contiene también el script gameManagerWaterPipes.cs.
+Este script es, junto con el gameManagerWaterPipes, el más importante ya que se encarga de controlar el flujo del agua. Esta es la funcionalidad básica de nuestro juego, y por lo tanto, está añadido al GameObject vacío de la escena, que como hemos dicho en el punto anterior contiene también el script gameManagerWaterPipes.cs.
 
 En este ocasión, se ha decidido diseñar el flujo de agua de la siguiente manera:
 

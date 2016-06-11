@@ -5,7 +5,7 @@
 %---------------------------------------------------------------------
 \chapter{Arkanoid}
 
-Para el comienzo de este juego, el usuario proviene de defender la facultad (nave espacial tfg-III) de unos invasores, y tras finalizar, recibirá una misión, que es la de despejar el campo de batalla para poder despegar la nave. Para ello debe abrir paso reciclando escombros, haciendo uso del panel de reciclaje que se sitúa en la tercera planta, y que se accede a este, apuntando al código QR de Super Mario situado junto a una de las consolas.
+Para el comienzo de este juego, el usuario proviene de defender la facultad (nave espacial tfg-III) de unos invasores y tras finalizar, recibirá una misión, que es la de despejar el campo de batalla para poder despegar la nave. Para ello debe abrir paso reciclando escombros haciendo uso del panel de reciclaje. Éste se sitúa en la tercera planta y se accede a él, apuntando al código QR de Super Mario situado junto a una de las consolas.
 
 %-------------------------------------------------------------------
 \section{Historia}
@@ -74,24 +74,24 @@ La escena se compone de los siguientes elementos:
 Para el Arkanoid, se han tenido que implementar las siguientes lógicas de juego:
 
 \begin{enumerate}
-\item{ScreenDragListener.cs}
+\item{ScreenDragListener}
 \begin{itemize}
 \item{Se encarga de capturar las pulsaciones en pantalla. En su método Update () se comprueba con cada llamada si la pantalla ha sido pulsada; si es así, se guarda el punto inicial donde se detectó la pulsación y se guarda, de forma que al volverse a llamar al método, esta vez, no solo se comprueba si ha habido contacto con la pantalla, sino que, además, se comprueba si ha habido variación en la posición del punto.}
 
 \item{El script, tiene una interfaz interna. En el método Start (), se comprueba todos los componentes que implementan dicha interfaz en la escena y se almacenan en un array. Cada vez que se detecta y calcula un movimiento de drag sobre la pantalla del dispositivo, se recorren los componentes del array. Estos reciben, a través del método, las variaciones en los ejes de la pulsación; y así pueden realizar lasacciones correspondientes.}
 \end{itemize}
 
-\item{BallIA.cs}
+\item{BallIA}
 \begin{itemize}
 \item{No tiene mucha explicación, aplica una fuerza en dos coordenadas que se le asignan como atributos en el momento en el que está activa y se toque por primera vez la pantalla.}
 \end{itemize}
 
-\item{DefaultTrackableEventHandle.cs}
+\item{DefaultTrackableEventHandle}
 \begin{itemize}
 \item{Es un script que viene por defecto asociado al ImageTarget de Vuforia. En este caso, hemos hecho una leve modificación sobre este script, donde hemos añadido un array de componentes que, cuando se detecta el QR en escena (OnTrackingFound ()) se recorre y estos se van activando.}
 \end{itemize}
 
-\item{DieOnCollide.cs:}
+\item{DieOnCollide}
 
 Con dos parámetros que definen las etiquetas de los gameObjects que se comportarán como enemigo (el gameObject que delimita la deathzone) y los objetivos (los bloques que se destruyen al colisionar con ellos). Implementa el método OnCollisionEnter2D (), que es aquel al que llama el collider 2D cuando entra en colisión el gameObject con otro objeto con collider. Cuando se detecta una colisión, se comprueba la etiqueta del objeto con el que se ha producido y si es de tipo enemigo, se destruye el propio objeto y se pasa a la siguiente escena. Si es de tipo objetivo, se llama a la animación de destrucción de este, se aumenta el marcador y se comprueba si quedan más, para que, en el caso de que no, pasar también a la siguiente escena.
 
@@ -111,7 +111,7 @@ Los mencionados son los más importantes, ya que son los que dotan de lógica al j
 
 La RA tiene muchos usos como se menciona en el estado del arte. En este caso, el objetivo principal no es el de aprovecharnos de las dinámicas que nos provee para convertirlas en objeto de entretenimiento, sino el de dotar de dinamismo una parte del museo, ya que aportamos información de uno de los objetos expuestos en forma de videojuego (una versión propia que funcionaba en dicha máquina).
 
-Una de las partes complejas en el desarrollo del juego, es la de configurar una forma de jugar en la que se le haga posible al usuario interaccionar con su dispositivo mientras apunta al target. Para esto se han hecho diferentes pruebas, y se ha llegado a la configuración actual teniendo en cuenta los siguientes factores:
+Una de las partes complejas en el desarrollo del juego, es la de configurar una forma de jugar en la que se le haga posible al usuario interaccionar con su dispositivo mientras apunta al target. Para esto se han hecho diferentes pruebas y se ha llegado a la configuración actual teniendo en cuenta los siguientes factores:
 
 
 \begin{itemize}
