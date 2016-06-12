@@ -17,14 +17,13 @@ El Arkanoid es un juego de los 80, donde el jugador controla una plataforma que 
 \figura{Tfg/arkanoidOriginal.jpg}{width=.5\textwidth}{fig:arkanoid1}
 	{Portada original Arkanoid}
 
-A lo largo del juego puede haber un gran número de variaciones que complican el juego o que facilitan las cosas. La plataforma del jugador puede modificar su tamaño, u obtener mejoras como disparos para romper los bloques. La bola, puede verse modificada mediante variaciones de tamaño o en la física del juego como romper varios bloques sin rebotar o
-incluso multiplicarse. Y los bloques pueden variar en su posición e incluso desplazarse con el fin de finalizar el juego cuando llegan abajo.
+A lo largo del juego puede haber un gran número de variaciones que complican el juego o que facilitan las cosas. La plataforma del jugador puede modificar su tamaño, u obtener mejoras como disparos para romper los bloques. La bola, puede verse modificada mediante variaciones de tamaño o en la física del juego como romper varios bloques sin rebotar o incluso multiplicarse. Y los bloques pueden variar en su posición e incluso desplazarse con el fin de finalizar el juego cuando llegan abajo.
 
 \section{Nuestra versión}
 %-------------------------------------------------------------------
 \label{cap5:sec:nuestra}
 
-Una vez se reconozca el ImageTarget (el QR de Super Mario), aparecerá un viejo televisor, y en su pantalla se observa el juego y dos contadores. El objetivo es sencillo: hay que despejar los escombros. Hay un minuto para realizar dicha tarea o hasta que la bola atraviese la deathzone. Cuantos más residuos recicla, mayor será la puntuación que arrastrará al siguiente juego.
+Una vez se reconozca el ImageTarget (el QR de Super Mario  (Fig: \ref{fig:qrmario})), aparecerá un viejo televisor, y en su pantalla se observa el juego y dos contadores. El objetivo es sencillo: hay que despejar los escombros. Hay un minuto para realizar dicha tarea o hasta que la bola atraviese la deathzone. Cuantos más residuos recicla, mayor será la puntuación que arrastrará al siguiente juego.
 
 \figura{Tfg/qrmario.jpg}{width=.5\textwidth}{fig:qrmario}
 	{Código QR de Super Mario}
@@ -49,13 +48,13 @@ La escena se compone de los siguientes elementos:
 \begin{itemize}
 \item{Ball Material: Es un material de Unity que, junto al componente~RigidBody2D, elimina la gravedad en el objeto, configura a este para poder rebotar, consigue que la fuerza aplicada sobre la bola sea infinita, de forma que no pare jamás de desplazarse; y, define las coordenadas en las que puede desplazarse el objeto (x e y) y en las que puede rotar (ninguna).}
 
-\item{BoxCollider2D: Para controlar todo el tema de colisiones. En este caso, el Collider que envuelve a la bola es un cuadrado rotado 45 grados para evitar problemas en los rebotes.}
+\item{BoxCollider2D: Para controlar todo el tema de colisiones. En este caso, el Collider que envuelve a la bola es un cuadrado rotado 45 grados para evitar problemas en los rebotes (Fig: \ref{fig:boxcolliderarkanoid}).}
 \end{itemize}
 
 \figura{Tfg/boxColliderArkanoid.jpg}{width=.5\textwidth}{fig:boxcolliderarkanoid}
 	{BoxCollider Bola Arkanoid}
 
-\item{Los bloques, que se reparten por la escena esperando a que la bola colisione con ellos y recibir así, la orden de que se lance su animación de destrucción y se aumente el marcador.}
+\item{Los bloques, que se reparten por la escena esperando a que la bola colisione con ellos y recibir así, la orden de que se lance su animación de destrucción y se aumente el marcador (Fig: \ref{fig:bloquesarkanoid}).}
 \begin{itemize}
 \item{Audio source: el componente que da sonido a la acción de destrucción.}
 \item{Animation: la animación de destrucción que se lanza al colisionar con la bola. Esta se genera por interpolación, ya que es el sistema del que nos dota Unity, y lo que hace es reducir la escala del objeto a cero.}

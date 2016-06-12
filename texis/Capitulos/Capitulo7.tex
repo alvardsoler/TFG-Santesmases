@@ -5,7 +5,7 @@
 %---------------------------------------------------------------------
 \chapter{Water Pipes}
 
-En este capítulo, vamos a centrarnos en la explicación del último minijuego al que se tendrá que enfrentar el jugador para completar con éxito la yincana. El recorrido finaliza en la 3º planta de la facultad, en un ``simulador básico de centrales térmicas''. Este simulador y el minijuego combina a la perfección, tanto por la similitud visual entre ambos como por el hilo argumental del juego.
+En este capítulo, vamos a centrarnos en la explicación del último minijuego al que se tendrá que enfrentar el jugador para completar con éxito la yincana. El recorrido finaliza en la 3º planta de la facultad, en un ``simulador básico de centrales térmicas'' (Fig: \ref{fig:termica}). Este simulador y el minijuego combina a la perfección, tanto por la similitud visual entre ambos como por el hilo argumental del juego.
 
 \figura{Tfg/termica.jpg}{width=.75\textwidth}{fig:termica}
 	{Simulador térmico del museo García-Santesmases}
@@ -16,9 +16,7 @@ En este capítulo, vamos a centrarnos en la explicación del último minijuego al q
 \label{cap6:sec:historia}
 
 Este juego fue creado a finales de los años 80 bajo el nombre de
-``Pipe Mania'' por ``The Assembly Line'' \cite{WaterPipesWiki}, teniendo muchas versiones a lo
-largo de los años. Las primeras fueron realizadas por el estudio
-``LucasFilm Game'' que lanzó el juego ``Pipe Dream''.
+``Pipe Mania'' por ``The Assembly Line'' \cite{WaterPipesWiki}, teniendo muchas versiones a lo largo de los años. Las primeras fueron realizadas por el estudio ``LucasFilm Game'' que lanzó el juego ``Pipe Dream''.
 
 Aunque posteriormente fueron lanzadas otras versiones del juego para PC,
 PS2, NintendoDS y PSP.
@@ -26,13 +24,14 @@ PS2, NintendoDS y PSP.
 \figura{Tfg/pipeManiaOriginal.jpg}{width=.75\textwidth}{fig:pipeoriginal}
 	{Juego original de 1989}
 
-En la versión original, el juego consistía en ir colocando las tuberías que salían de forma aleatoria en un tablero de tal manera que el agua pudiera fluir por ellas. El objetivo era construir el mayor recorrido posible antes de que el agua lo inundará todo. Cada tubería llena de agua sumaba puntos y cada tubería que no hubiera sido inundada a la finalización del juego restaba puntos para obtener así la puntuación final. En cada nivel se iban complicando las cosas. Esto lo conseguían poniendo posiciones del tablero de juego en las cuales no se pudieran colocar tuberías, o comenzando antes a fluir el agua por las tuberías, dando al jugador menos tiempo de reacción.
+En la versión original, el juego consistía en ir colocando las tuberías que salían de forma aleatoria en un tablero de tal manera que el agua pudiera fluir por ellas (Fig: \ref{fig:pipeoriginal}). El objetivo era construir el mayor recorrido posible antes de que el agua lo inundará todo. Cada tubería llena de agua sumaba puntos y cada tubería que no hubiera sido inundada a la finalización del juego restaba puntos para obtener así la puntuación final. En cada nivel se iban complicando las cosas. Esto lo conseguían poniendo posiciones del tablero de juego en las cuales no se pudieran colocar tuberías, o comenzando antes a fluir el agua por las tuberías, dando al jugador menos tiempo de reacción.
 
 \section{Nuestra versión}
 %-------------------------------------------------------------------
 \label{cap6:sec:nuestra}
 
-En nuestra versión del juego existen algunas diferencias con respecto a la versión original. La principal es la mecánica del juego, ya que en esta ocasión el usuario acaba de exterminar al enemigo que estaba poniendo en peligro a la Facultad y ahora su misión cambia para poder despegar la nave y ponerse a salvo definitivamente. En esta última misión el jugador se encontrará frente a frente con los conductos de refrigeración de la nave. El problema es que, debido a la batalla, estos se han dispersado y si quiere despegar la nave tendrá que re ordenarlos para que el agua pueda fluir correctamente. 
+En nuestra versión del juego existen algunas diferencias con respecto a la versión original. La principal es la mecánica del juego, ya que en esta ocasión el usuario acaba de exterminar al enemigo que estaba poniendo en peligro a la Facultad y ahora su misión cambia para poder despegar la nave y ponerse a salvo definitivamente. En esta última misión el jugador se encontrará frente a frente con los conductos de refrigeración de la nave. El problema es que, debido a la batalla, estos se han dispersado y si quiere despegar la nave tendrá que re ordenarlos para que el agua pueda fluir correctamente.
+
 Al comienzo, el jugador verá un tablero relleno aleatoriamente con estos conductos, además de una salida y una meta. Por lo tanto, el objetivo del jugador es ir cambiando de posición las tuberías que encuentra en la matriz, entre sí, para que el agua pueda fluir del punto de origen al de destino. En esta ocasión, el jugador tiene 6 segundos por cada tubería para ir colocando las demás y otros 10 segundos adicionales desde que el juego comienza hasta que la casilla de salida comienza a llenarse. Para poder despegar la nave, el agua ha debido fluir por todas las tuberías necesarias para llegar a la meta. En cambio si el agua ya ha comenzado a fluir y el jugador no ha conseguido recolocar los conductos, en cuanto el agua no encuentre un camino factible la nave ya no se podrá despegar y el juego terminará.
 
 Para lograr esto, el jugador deberá ir intercambiando una tubería por otra. La mecánica implementada para permitirle realizar esta acciones es que, en primer lugar, seleccione la tubería que desea colocar en otra posición pulsando sobre ella y, a continuación seleccione la otra tubería que desea intercambiar con que ya ha seleccionado anteriormente, y en el momento en el que se pulse esta última, automaticamente se cambiarán entre ellas. Las tuberías en la que ya ha comenzado a fluir el agua no podrán ser seleccionadas.
@@ -50,6 +49,7 @@ Para este juego existe un solo tipo de objeto visible, los tiles que representan
 
 \begin{itemize}
 \item{Box Collider: para detectar la colisión y así poder intercambiar dos objetos entre sí. En este caso, solo existe la colisión entre el usuario y los objetos (Touch).}
+
 \item{RigidBody: Elimina la gravedad de los objetos y congela ciertos movimientos de desplazamiento y rotación de estos. En este caso hemos querido bloquear todas las rotaciones y la dimensión Z del desplazamiento. Esto es debido a que aunque es un juego en 3D, la experiencia con el jugador es totalmente en 2D y esos movimientos no nos serán necesarios.}
 \end{itemize}
 
@@ -57,7 +57,9 @@ Para este juego existe un solo tipo de objeto visible, los tiles que representan
 
 \begin{itemize}
 \item{Sprite Renderer: Esto es necesario, ya que la animación se compone de un sprites.}
+
 \item{Animator: que contiene el Animator Controller de ese tipo de tubería. Cada controlador suele tener dos animaciones por tubería, que dependiendo de la salida de la anterior se reproduce una animación u otra.}
+
 \figura{Tfg/tile.png}{width=.25\textwidth}{fig:tile}
 	{Uno de los 23 tiles que forman el tablero}
 \end{itemize}
