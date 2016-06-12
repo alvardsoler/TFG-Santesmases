@@ -3,131 +3,127 @@
 %                          Capítulo 5
 %
 %---------------------------------------------------------------------
-\chapter{Arkanoid}
+\chapter{Space Invaders}
 
-Para el comienzo de este juego, el usuario proviene de defender la facultad (nave espacial tfg-III) de unos invasores y tras finalizar, recibirá una misión, que es la de despejar el campo de batalla para poder despegar la nave. Para ello debe abrir paso reciclando escombros haciendo uso del panel de reciclaje. Éste se sitúa en la tercera planta y se accede a él, apuntando al código QR de Super Mario situado junto a una de las consolas.
+Es el primero de los juegos de la yincana, el jugador comienza en la puerta principal de la Facultad. Inspirado en el famoso Space Invaders, el jugador, desde una perspectiva en primera persona, tendrá que disparar a un enjambre de Invaders que pretenden destruir las defensas de la nave donde se desarrolla la historia.
 
 %-------------------------------------------------------------------
 \section{Historia}
 %-------------------------------------------------------------------
-\label{cap5:sec:historia}
+\label{cap4:sec:historia}
 
-El Arkanoid es un juego de los 80, donde el jugador controla una plataforma que impide que una bola se salga de la superficie que limita el juego \cite{ArkanoidWiki}. El objetivo principal de la bola es el de destruir todos los ladrillos o bloques de la pantalla sin salirse de esta. La misión del jugador es la de, no solo impedir que la bola se salga de la escena, sino la de situar la plataforma que maneja de tal forma que consiga que la bola rebote y destruya todos los bloques.
+Space Invaders es uno de los juegos arcade clásicos más conocidos. La primera versión salió al mercado en 1978, hace casi cuarenta años \citep{SpaceInvadersWikipedia}. Uno de los precursores del género shoot 'em up. El jugador controla una nave espacial que se mueve horizontalmente y debe hacer frente a hordas de alienígenas enemigos que atacan al jugador disparándole proyectiles. Además, a veces el jugador cuenta con pequeñas construcciones que hacen la labor de búnker donde ponerse a cubierto de los disparos, aunque éstos se van destruyendo.
 
-\figura{Tfg/arkanoidOriginal.jpg}{width=.5\textwidth}{fig:arkanoid1}
-	{Portada original Arkanoid}
+Space Invaders está ampliamente extendido en la cultura popular ya que es uno de los grandes clásicos, por eso hemos considerado acertado incluirlo en nuestro proyecto.
 
-A lo largo del juego puede haber un gran número de variaciones que complican el juego o que facilitan las cosas. La plataforma del jugador puede modificar su tamaño, u obtener mejoras como disparos para romper los bloques. La bola, puede verse modificada mediante variaciones de tamaño o en la física del juego como romper varios bloques sin rebotar o
-incluso multiplicarse. Y los bloques pueden variar en su posición e incluso desplazarse con el fin de finalizar el juego cuando llegan abajo.
+\figura{Tfg/spaceinvadersoriginal.png}{width=.5\textwidth}{fig:inaveders1}
+	{Space Invaders original}
 
 \section{Nuestra versión}
-%-------------------------------------------------------------------
-\label{cap5:sec:nuestra}
+\label{cap4:sec:nuestraversion}
 
-Una vez se reconozca el ImageTarget (el QR de Super Mario), aparecerá un viejo televisor, y en su pantalla se observa el juego y dos contadores. El objetivo es sencillo: hay que despejar los escombros. Hay un minuto para realizar dicha tarea o hasta que la bola atraviese la deathzone. Cuantos más residuos recicla, mayor será la puntuación que arrastrará al siguiente juego.
+Nosotros hemos decidido darle un cambio a la jugabilidad del
+juego. En nuestra versión utilizamos la RA para que la experiencia sea completamente diferente. Nuestro juego arrancará al detectar el cartel de FACULTAD DE INFORMÁTICA (Text Recognition), mostrándonos unos invasores alienígenas sobre el cartel, y unas defensas bajo éste.
 
-\figura{Tfg/qrmario.jpg}{width=.5\textwidth}{fig:qrmario}
-	{Código QR de Super Mario}
+Para destruir a los invasores, lo que tenemos que hacer es mover nuestro Smartphone para mover nuestra cámara y pulsar en la pantalla para disparar. Hemos pasado de manejar la nave defensora en tercera persona, a hacerlo en primera persona, con un punto de mira en el centro de la pantalla que nos marca en qué dirección irán los láseres de nuestra torreta de defensa, convirtiendo el juego en un First Person Shooter. Tendremos que hacerlo antes de que los enemigos consigan destruir el escudo de nuestra nave espacial (cuando pasa del verde al rojo). Iremos obteniendo puntos según destruyamos naves enemigas y perderemos puntos al recibir impactos en el escudo, por lo que cuanto más rápidos seamos, más puntos obtendremos.
 
-Una vez en situación, mientras enfoca al target para no perder de vista la escena, el jugador deberá arrastrar su dedo por la pantalla de su smartphone para poder desplazar la plataforma y controlar donde rebota la bola. Mientras hace eso, la bola irá rebotando y el tiempo decrementando. A medida que destruya objetivos, la puntuación crecerá y el tiempo se irá agotando.
-
-El juego está ambientado en un entorno espacial, haciendo referencia al hilo del juego pero solo de forma superficial. Lo que conforma el tema del espacio es lo que aparece en la pantalla del televisor que contiene la escena. Pero, en realidad, la escena tiene una connotación retro, donde un antiguo televisor al lado de una de las consolas que en un pasado ejecutaba el juego, quiere recrear la forma primitiva de jugar al Arkanoid; en un televisor de tubo y con un juego sencillo que era para lo que daba de sí la tecnología y los medios de la época.
-
-Con esta recreación lo que se intenta es no tanto simular un juego entretenido para cumplir con el objetivo de la historia, sino el recrear una escena pasada basada en este juego. De esta forma se hace uso de la RA en este caso, no como medio de entretenimiento a través las mecánicas que proporciona, sino generando una escena para mejorar la experiencia del visitante del lugar, el museo de la facultad.
+Con estos cambios hemos conseguido (a nuestro juicio) transformar un clásico de los arcade en un nuevo juego que utiliza la RA dando una experiencia diferente.
 
 \section{Diseño}
 %-------------------------------------------------------------------
-\label{cap5:sec:diseno}
+\label{cap4:sec:diseno}
+El juego se compone de una única escena que contiene todo el juego. Básicamente se compone de:
 
-La escena se compone de los siguientes elementos:
-
+\figura{Tfg/implementacion_space_invaders.png}{width=.5\textwidth}{fig:inaveders3}
+	{Captura durante el proceso de implementación}
 \begin{itemize}
-\item{ARCamera e ImageTarget como elementos principales en una escena de RA. La propia librería de~Vuforia~nos provee de ellos, solo hay que definir el Image target al que reacciona la escena y añadirlos; del resto ya se encarga su lógica interna.}
-\item{Un modelo 3D de un televisor que hace de contenedor de la escena y que no tiene ninguna mecánica asociada.}
-\item{La bola, en la que se han implementado dos componentes; uno físico para hacer que esta rebote, y un script cuya finalidad es la de destruir los bloques, o mejor dicho, la de lanzar la animación de destrucción del bloque y finalizar el juego al acabar con todos los bloques, o, al salirse de la zona de juego. Para evitar problemas y por lógica del juego, aunque la escena sea 3D los componentes sobre este juego son en 2D.}
 
-\begin{itemize}
-\item{Ball Material: Es un material de Unity que, junto al componente~RigidBody2D, elimina la gravedad en el objeto, configura a este para poder rebotar, consigue que la fuerza aplicada sobre la bola sea infinita, de forma que no pare jamás de desplazarse; y, define las coordenadas en las que puede desplazarse el objeto (x e y) y en las que puede rotar (ninguna).}
-
-\item{BoxCollider2D: Para controlar todo el tema de colisiones. En este caso, el Collider que envuelve a la bola es un cuadrado rotado 45 grados para evitar problemas en los rebotes.}
+\item{La cámara de Vuforia, que a su vez tiene los siguientes hijos:}
+	\begin{itemize}
+	\item{El canvas con la Interfaz de usuario (puntos y mensajes de inicio y fin del juego).}
+	\item{El punto de mira que utilizamos para apuntar al disparar, que también está hecho con un canvas.}
+	\item{El Cannon (Cañón de disparo) que representa nuestra arma. Básicamente dibuja una línea hacia el infinito para que de la sensación de un puntero láser para apuntar, además, desde su posición se lanza el raycast que calcula las colisiones con los posibles enemigos.}	
+	\end{itemize}
+	\item{Un GameObject vacío llamado SpaceInvadersGame que contiene la clase singleton que gestiona el juego y la información mostrada por la interfaz.}
+	\item{El TextRecognition que sirve para cargar la detección de textos. A éste le hemos añadido un diccionario propio de palabras para poder leer texto en castellano. El diccionario contiene únicamente dos palabras, facultad e informática. Hemos configurado el TextRecognition de manera que sólo busque las palabras que están en su white list (lista blanca), que son las dos antes mencionadas, así las operaciones son más ligeras ya que no tiene que comprobar las miles de palabras. \cite{textrecog}}
+	\item{Word representa a una palabra detectada por Vuforia. Se puede configurar para que represente cualquier palabra detectada o alguna en particular. Nosotros lo utilizamos para representar en particular la palabra INFORMÁTICA. Éste es el GameObject que sustituye al ImageTarget que utilizábamos en el pasado. Al detectar la palabra  ``INFORMÁTICA'' en la cámara de RA, activa sus hijos y ``avisa'' al gestor del juego de que debe empezar a ejecutarse.}
+	\item{Un Enjambre, que contiene la lógica para crear varios Invasores y posicionarlos a cada uno en su sitio, así como para moverlos todos juntos.}
+	\item{Las copias de los invasores, las cuales disparan a veces a las defensas.}
+	% imagen de los invaders
+	\item{Las defensas, un objeto en tres dimensiones que representa a las defensas del jugador. Van cambiando de color, desde el verde al rojo según van recibiendo impactos de los invasores (o del propio jugador que apunta mal, para ser algo más realista).}
 \end{itemize}
 
-\figura{Tfg/boxColliderArkanoid.jpg}{width=.5\textwidth}{fig:boxcolliderarkanoid}
-	{BoxCollider Bola Arkanoid}
-
-\item{Los bloques, que se reparten por la escena esperando a que la bola colisione con ellos y recibir así, la orden de que se lance su animación de destrucción y se aumente el marcador.}
-\begin{itemize}
-\item{Audio source: el componente que da sonido a la acción de destrucción.}
-\item{Animation: la animación de destrucción que se lanza al colisionar con la bola. Esta se genera por interpolación, ya que es el sistema del que nos dota Unity, y lo que hace es reducir la escala del objeto a cero.}
-\end{itemize}
-\figura{Tfg/bloquesArkanoid.jpg}{width=.5\textwidth}{fig:bloquesarkanoid}
-	{Distintos tipos de bloques del Arkanoid}
-
-\item{La plataforma: Esta contiene un componente que reacciona a los eventos de la pantalla táctil y que le permite desplazarse, además también tiene un RigidBody2D cuyas constraints impiden que pueda verse desplazado en el eje vertical o rotado.}
-\item{Canvas: Contiene la información del estado del juego. Este objeto y sus hijos, a diferencia del resto, en escena, se muestra en función a la pantalla del dispositivo en el que se ejecuta el juego y no en función de lo que enfoca la cámara. Sus hijos son, el marcador, el contador de tiempo y la pantalla de precarga que muestra la información de la ejecución del juego al usuario.}
-\end{itemize}
+% subsection dise_o (end)
 
 \section{Implementación}
 %-------------------------------------------------------------------
-\label{cap5:sec:implementacion}
+\label{cap4:sec:implementacion}
 
-Para el Arkanoid, se han tenido que implementar las siguientes lógicas de juego:
+Pasamos a explicar qué clases componen el juego y para qué las utilizamos.
 
 \begin{enumerate}
-\item{ScreenDragListener}
-\begin{itemize}
-\item{Se encarga de capturar las pulsaciones en pantalla. En su método Update () se comprueba con cada llamada si la pantalla ha sido pulsada; si es así, se guarda el punto inicial donde se detectó la pulsación y se guarda, de forma que al volverse a llamar al método, esta vez, no solo se comprueba si ha habido contacto con la pantalla, sino que, además, se comprueba si ha habido variación en la posición del punto.}
-
-\item{El script, tiene una interfaz interna. En el método Start (), se comprueba todos los componentes que implementan dicha interfaz en la escena y se almacenan en un array. Cada vez que se detecta y calcula un movimiento de drag sobre la pantalla del dispositivo, se recorren los componentes del array. Estos reciben, a través del método, las variaciones en los ejes de la pulsación; y así pueden realizar lasacciones correspondientes.}
-\end{itemize}
-
-\item{BallIA}
-\begin{itemize}
-\item{No tiene mucha explicación, aplica una fuerza en dos coordenadas que se le asignan como atributos en el momento en el que está activa y se toque por primera vez la pantalla.}
-\end{itemize}
-
-\item{DefaultTrackableEventHandle}
-\begin{itemize}
-\item{Es un script que viene por defecto asociado al ImageTarget de Vuforia. En este caso, hemos hecho una leve modificación sobre este script, donde hemos añadido un array de componentes que, cuando se detecta el QR en escena (OnTrackingFound ()) se recorre y estos se van activando.}
-\end{itemize}
-
-\item{DieOnCollide}
-
-Con dos parámetros que definen las etiquetas de los gameObjects que se comportarán como enemigo (el gameObject que delimita la deathzone) y los objetivos (los bloques que se destruyen al colisionar con ellos). Implementa el método OnCollisionEnter2D (), que es aquel al que llama el collider 2D cuando entra en colisión el gameObject con otro objeto con collider. Cuando se detecta una colisión, se comprueba la etiqueta del objeto con el que se ha producido y si es de tipo enemigo, se destruye el propio objeto y se pasa a la siguiente escena. Si es de tipo objetivo, se llama a la animación de destrucción de este, se aumenta el marcador y se comprueba si quedan más, para que, en el caso de que no, pasar también a la siguiente escena.
-
-Los mencionados son los más importantes, ya que son los que dotan de lógica al juego, aunque existen más de los que se hacen uso como el globalGameManager, que es el encargado de navegar entre escenas, ScoreMarkerObserver y TimeMarkerObserver, que pintan en el canvas el estado del juego o un script que se añade a la escena para controlar el back de nuestro dispositivo. Además, hay también otros scripts sencillos que controlan el resto de los objetos de la escena.
-
+\item{Defense}
+	\begin{itemize}
+	\item {Gestiona las defensas del usuario. Marca el color de inicio y el de final que debe tener la defensa para calcular los colores intermedios. Además gestiona las colisiones.  Va añadido al GameObject de las defensas.}
+	\end{itemize}
+\item{Projectile}
+	\begin{itemize}
+	\item{Muy simple. Va asociada a los proyectiles y los destruye al pasar unos segundos en escena. Es para que los proyectiles que no impacten con nada, no se queden siempre en la escena. En la version final, los proyectiles con este Script solo son lanzados por los enemigos.}
+	\end{itemize}
+\item{Enjambre}
+	\begin{itemize}
+	\item {Se encarga de gestionar la inicialización del Enjambre y de sus invasores (colocándolos en la posición que les corresponda en función de cuántos sean y cuántas filas queremos que haya) y el movimiento del Enjambre (del que ``cuelgan'' los invasores), así como la escala de los invasores. Además contiene la información para saber si se han eliminado a todos los invasores o no. Va añadido a un GameObject vacío llamado Enjambre, el cual cuelga del detector de texto y del cual cuelgan los invasores.}
+	\end{itemize}
+\item{GameManager}
+	\begin{itemize}
+	\item {Es la clase que gestiona el juego en sí. Es un singleton y se le llama desde la mayoría de los otros scripts. Gestiona la interfaz de usuario, mostrando mensajes y los puntos cuando empieza el juego, además de cuando se puede disparar, etcétera. Es componente del GameManager, un GameObject vacío también.}
+	\end{itemize}
+\item{Invader}
+	\begin{itemize}
+	\item {Lógica del invasor. Gestiona los disparos de los invasores, la muerte de éstos y el sonido que hacen al ser destruidos. Va añadido al GameObject Invader.}
+	\end{itemize}
+\item{TextInformaticaTrackableEventHandler}
+ 	\begin{itemize}
+	\item {Implementación propia de la clase ITrackableEventHandler de Vuforia. Va asociada al Text de RA. Al ``encontrarse'' y si no está instanciado ya (es decir, que no se ha ``encontrado'' varias veces), le dice al GameManager que comience el juego, indicándole dónde están el Enjambre y las Defensas en relación al Text.}
+	\end{itemize}
+\item{TextTimer}
+	\begin{itemize}
+	\item {De manera muy sencilla destruye el texto (de la interfaz gráfica) al que está asociado al pasar un tiempo dado una vez se ha habilitado. Lo utilizamos para mostrar los mensajes de texto de información previa, avisando al jugador cuando debe comenzar a disparar. Va asociado a GameObjects de texto.}
+	\end{itemize}
 \end{enumerate}
 
 \newpage
 \begin{center}
-\figura{Tfg/diagramaarkanoid.jpg}{width=\textwidth,keepaspectratio}{fig:diagramarkanoid}{Diagrama del juego}
+\figura{Tfg/diagrama_spaceinvaders.jpg}{width=\textwidth,keepaspectratio}{fig:invaders2}{Diagrama de los GameObjects}
 \end{center}
 \newpage
 
 \section{Conclusiones}
 %-------------------------------------------------------------------
-\label{cap5:sec:conclusiones}
+\label{cap4:sec:conclusiones}
 
-La RA tiene muchos usos como se menciona en el estado del arte. En este caso, el objetivo principal no es el de aprovecharnos de las dinámicas que nos provee para convertirlas en objeto de entretenimiento, sino el de dotar de dinamismo una parte del museo, ya que aportamos información de uno de los objetos expuestos en forma de videojuego (una versión propia que funcionaba en dicha máquina).
+Al detectar el texto de FACULTAD DE INFORMÁTICA, el GameManager es avisado y comienza el juego. El GameManager instancia el Enjambre, que a su vez instancia todos los Invaders. Una vez hecho esto, se instancian las defensas desde el GameManager, se activa la información de la interfaz de usuario (puntuación, punto de mira \ldots{}).A partir de este momento, el jugador puede disparar el láser.
 
-Una de las partes complejas en el desarrollo del juego, es la de configurar una forma de jugar en la que se le haga posible al usuario interaccionar con su dispositivo mientras apunta al target. Para esto se han hecho diferentes pruebas y se ha llegado a la configuración actual teniendo en cuenta los siguientes factores:
+Ahora, en cada actualización, el Enjambre mueve su posición, moviendo a todos los Invaders con él. Por su parte, cada Invader tiene un tanto porciento de posibilidades de disparar. Si se da esa posibilidad, instanciará un proyectil en la dirección de las defensas.
+
+Durante el desarrollo de este juego hemos encontrado unos cuantos escollos que superar, algunos que nos han llevado quebraderos de cabeza. Comenzamos desarrollando el videojuego utilizando un código QR como marcador de la RA, pensando que después pasar a utilizar un texto no tendría complicaciones. Una vez teníamos el juego desarrollado con un código QR (ImageTarget), probamos a detectar texto propio, ya que Vuforia nos da un diccionario con miles de palabras en inglés, pero nosotros no queríamos detectar esas palabras, sino únicamente FACULTAD DE INFORMÁTICA.
+
+Para esto, seguimos los tutoriales de Vuforia, y, tras resolver algunas dudas, implementamos una escena sencilla en la que se mostraba una esfera sobre el texto. Después, intentamos transferir lo desarrollado con el ImageTarget, al texto.
+
+Entonces surgieron los problemas. El primero que vimos, era que las proporciones de nuestros Invasores y las Defensas se quedaron muy pequeñas, haciendo imposible jugar cómodamente. La mejor manera que conseguimos para que se ajustaran los elementos del juego a un tamaño aceptable fue mediante un Script de C\# que aumentaba la escala local de los Invasores y las Defensas (local scale).
+
+El siguiente problema que encontramos fue al insertar nuestro Enjambre de Invasores. Por un lado, una vez aparecían los enemigos, si movíamos la cámara, éstos se quedaban en la misma posición respecto a la cámara, es decir, si cuando salían por primera vez estaban en la parte superior izquierda (por ejemplo) de la pantalla, y nos movíamos, seguían ahí, en vez de ajustar su posición con respecto al texto detectado. Tuvimos que cambiar la forma en la que los insertábamos en la escena, antes de manera dinámica y creando una instancia con un Script, y ahora como hijos del GameObject que representa al texto detectado. Éste tipo de problema (de la posición respecto a los objetos de RA) nos volvería a salir más adelante, pero con los proyectiles que lanzábamos para acabar con los enemigos.
+
+En las primeras versiones del juego, lanzábamos un prisma (nuestro Proyectil, similar al que lanzan los enemigos contra las defensas) contra los enemigos. Según lanzábamos, el proyectil se iba dirigiendo en la dirección que tenía la cámara respecto al ImageTarget al realizar el disparo. Al pasar a utilizar el texto, esto cambió. Vimos que nuestro disparo se mantenía siempre en el vector de dirección de la cámara, y cambiaba con éste. Es decir, nuestro proyectil siempre estaba en el centro de la pantalla, con lo cual se perdía toda la gracia al juego y su jugabilidad pasaba a ser bastante complicada. Éste problema nos dejó bastante confusos, ya que con cambiar el objeto de la RA (ImageTarget o TextRecognition) cambiaba el comportamiento del proyectil.
+
+Para resolver esto, cambiamos nuestro proyectil por un láser. Ahora al tocar la pantalla no se lanza un proyectil, si no que se dispara un láser que destruirá los enemigos que estén en el vector de dirección de la cámara. Así hemos conseguido solventar este extraño comportamiento.
+
+El juego en general ha quedado sencillo pero con todos los aspectos que debe tener un juego completo. Sonidos, animaciones, efectos visuales y jugabilidad aceptable. Creemos que sirve como una buena aproximación a otros juegos de este tipo, y que se podría ir escalando para desarrollar un juego más ambicioso.
+
+La complejidad no es grande, aunque sí es recomendable que se tenga cierta habilidad para apuntar con el móvil.  
 
 
-\begin{itemize}
-\item{El usuario tiene una posición incómoda al utilizar su Smartphone. Él tiene que apuntar a la imagen mientras interacciona con el teléfono para evitar que la bola caiga. La mejor solución en este caso es la de implementar una mecánica basada en detectar el arrastre del dedo de la pantalla y que sea este movimiento el que desplace la plataforma en el juego. De esta forma, el usuario puede apuntar sin problema al QR mientras a su vez puede jugar. Esta forma de hacer las cosas consigue los dos objetivos, una mantener la cámara fijada en el target, y dos la de hacer cómodo junto con esto el poder manejar la plataforma.}
-\item{La complejidad del juego. En este caso se implementa un juego sencillo, muy intuitivo y corto, porque el jugador, por la posición que tiene, no puede pasar mucho tiempo jugando. El juego tiene como máximo un minuto de duración. Y es creemos que es la apropiada ya que en este período se puede jugar sin cansarse y acabar el juego si se tiene la habilidad suficiente sin que el cansancio de la posición evite dicho propósito.}
-\item{La escena. Es cierto que el modelo 3D del televisor no ayuda mucho a la jugabilidad. Pero en este caso en el que recrear una escena es casi más importante que la experiencia del jugador en el juego. Se ha preferido penalizar un poco la jugabilidad (tampoco en exceso) para añadir este elemento de forma que añadiendo este objeto a la escena, se haga una referencia a la forma de jugar de la época.}
-\end{itemize}
-
-Con este juego respecto al desarrollo de RA con Unity y Vuforia, los conceptos sintetizados son:
-
-\begin{itemize}
-\item{Aunque se trate de una escena 3D el uso de componentes 2D en los objetos de la escena simplifican mucho el trabajo, ya que al no tener que contar con un eje más; controlar el movimiento de la bola, los rebotes y las colisiones es más sencillo. Al fin y al cabo es como mantener el eje restante en un objeto 3D bloqueado pero esto lo hace por ti, por lo que te ahorras muchos quebraderos de cabeza a la hora de controlar casuísticas que se pueden escapar por ser detalles tan pequeños.}
-\item{El manejo de los componentes Collider y RigidBody que en esta escena hay que modificar el material por defecto para cambiar la lógica de la gravedad, el rozamiento, etc.; que en este caso, no es el que está por defecto, ya que en este juego no hay nada de eso. Además hay que hacer uso de las constraints del RigidBody para poder bloquear las  rotaciones y desplazamientos de algunos de los objetos de la escena que no interesan que puedan moverse.}
-\item{La depuración del juego en modo escena en vez de hacer uso de la cámara. En Vuforia es normal el uso de una webcam para probar tu escena, pero en este caso, para probar el juego, era incómodo el tener que estar usando dicho elemento, por lo que, desactivando dicha opción de depurar la webcam en el ImageTargety colocando la ARCamera apuntando a nuestro modelo 3D podíamos depurar simplemente haciendo click en el play del IDE de Unity sin preocuparnos de apuntar al QR. Lo malo de este planteamiento es que traía un problema consigo, los eventos de pantalla; por defecto, Unity no detecta como eventos de pantalla en un dispositivo Android el uso del ratón. Para solventar esto se hizo uso de una aplicación llamada UnityRemote, que lo que hace es mostrar en la pantalla de nuestro dispositivo la escena que se está ejecutando en el IDE; y de esta forma podemos capturar los eventos que se realizan sobre esta pantalla.}
-\end{itemize}
-
+\medskip
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX
 %%%

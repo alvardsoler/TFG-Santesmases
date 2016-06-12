@@ -19,8 +19,6 @@ Nuestros objetivos a la hora de realizar la evaluación con distintos usuarios so
 
 Cuando se desarrolla un juego, el programador realiza distintas pruebas durante toda la implementación. Y una vez que ha terminado el juego, intenta jugar de varias formas posibles con la única intención de encontrar el mayor número de errores posibles para luego solventarlos. Pero esto no suele ser suficiente debido a que si realiza las pruebas la misma persona que lo ha implementado, pasará por alto muchas cosas. Esto es debido a que él sabe el funcionamiento del juego e inconscientemente jugará bien y le resultará muy difícil darse cuenta de cierto tipo de errores. Un buen ejemplo de esto es, que si el juego es intuitivo, es decir, si aunque no sepas como funciona, esta lo suficientemente bien explicado y diseñado para que el usuario no tenga problemas de ese tipo.
 
-Otro motivo por el cual pensamos que la realización de pruebas a  distintos usuarios es importante, es para tener la información suficiente, como para poder evaluar los errores en y clasificarlos por prioridad. Después de realizar las suficientes pruebas, se van a presentar varios errores, pero no tendrán la misma complejidad a la hora de solucionarlo y sobre todo no suponen lo mismo para la jugabilidad de la aplicación.
-
 Creemos, que la evaluación con usuarios es una fase fundamental en cualquier aplicación. Cuantas más pruebas se realicen, la aplicación será mejor y la experiencia del usuario con el juego será más satisfactoria, lo que seguramente hará que ese usuario quiera repetir el juego y se descargue tu aplicación
 
 \subsection{Métricas}
@@ -28,7 +26,7 @@ Creemos, que la evaluación con usuarios es una fase fundamental en cualquier apl
 
 Al ser una aplicación, decidimos utilizar el cuestionario SUS para realizar estas pruebas. Pero este cuestionario está en un principio dirigido a evaluar una aplicación web, por lo que tuvimos que modificar un poco las preguntas para adaptarlo a un juego. Además, aparte de este, mientras el usuario juega, se toma nota de todo aquello que se puede observar importante, ya sean bugs o posibles mejoras y aquello que el usuario menciona mientras está jugando: Cosas que no comprende, observaciones que aprecia acerca de la dificultad de los juegos o de sus mecánicas.
 
-La siguiente tabla muestra las preguntas finales, con las respuestas necesarias para sacar el 100\% de la puntuación.
+La tabla \ref{cap8:tab:cuestionariosus} muestra las preguntas finales, con las respuestas necesarias para sacar el 100\% de la puntuación.
 
 \begin{table}[t]
 \footnotesize
@@ -130,7 +128,7 @@ Este intervalo es el siguiente:
 \end{itemize}
 
 
-A continuación mostramos el promedio de los resultados obtenidos de los cuestionarios realizados en este primer análisis. 
+En la tabla \ref{cap8:tab:promediosprimera} mostramos el promedio de los resultados obtenidos de los cuestionarios realizados en este primer análisis. Es decir, una nota que representa la usabilidad de los minijuegos. 
 
 \begin{table}[t2]
 \footnotesize
@@ -151,7 +149,7 @@ Space Invaders & Arkanoid & Water Pipes \\
 
 Simplemente con estos datos, se puede ver a primera vista lo comentado anteriormente. El primer mini juego, según la escala SUS, no obtiene la puntuación necesaria para obtener una buena usabilidad, pero se acerca mucho, lo que nos indica que aunque existen ciertas cosas se pueden mejorar, el usuario piensa que el juego tiene lo necesario para ser jugado sin problemas y a demás que el juego le resulta entretenido.
 
-En cambio, la puntuación de los otros dos juegos se encuentran en el caso opuesto. Aunque no llegan a obtener el 51. límite para que la usabilidad del juego no sea buena, se aproximan demasiado. 
+En cambio, la puntuación de los otros dos juegos se encuentran en el caso opuesto. No llegan a suspender en usabilidad reciben una puntuación bastante baja. límite para que la usabilidad del juego no sea buena, se aproximan demasiado. 
 
 \subsection*{Información recogida de los usuarios}
 Los resultados que nos ha proporcionado el cuestionario SUS, nos resultan muy útiles para obtener una visión clara de la usabilidad de cada juego, y aunque si analizamos las respuestas más detenidamente, podríamos hacernos una idea de los fallos y los deseos de los usuarios. Nos es imprescindible también tomar nota, tanto de los comentarios de los usuarios antes, durante y después de haber probado el juego, como de las observaciones que nosotros mismos realizamos. 
@@ -180,7 +178,7 @@ En las siguientes líneas mostramos las opiniones más frecuentes y relevantes de 
 	\end{enumerate}
 \end{itemize}
 
-\subsection{Acciones}
+\subsection{Propuesta de soluciones}
 \label{cap8:sub:acciones}
 
 Las acciones a emprender atendiendo al análisis de los cuestionarios son las siguientes:
@@ -212,11 +210,11 @@ Después de analizar los resultados de los cuestionarios realizados a los usuario
 
 Una gran mayoría de los usuarios no han podido llegar a completar el minijuego del Arkanoid con éxito, y ni siquiera han podido comenzar a jugar el Water Pipes. En cambio, el 100\% de los usuarios no han tenido problemas de este tipo con el primer minijuego y todos han logrado completar con éxito el Space Invaders.
 
-Los usuarios piensan que disminuyendo la velocidad de la bola en el caso del Arkanoid, su experiencia a la hora de jugar podría mejorar notablemente, aunque no es la única mecánica que creen que se debe mejorar, piensan que sería la primera que deberíamos solventar. 
+Los usuarios piensan que disminuyendo la velocidad de la bola en el caso del Arkanoid. Su experiencia a la hora de jugar podría mejorar notablemente, aunque no es la única mecánica que creen que se debe mejorar, piensan que sería la primera que deberíamos solventar. 
 
 Los pocos usuarios que han llegado a comprender la mecánica del minijuego WaterPipes, nos han comentado que les ha gustado mucho el juego y que les ha resultado muy entretenido. Esto nos lleva a pensar que en este caso, añadiendo alguna mecánica que indicará más claramente el funcionamiento del juego y la forma de controlarlo, sería suficiente para que la experiencia del usuario mejore notablemente.
 
-En cualquier caso, la experiencia del usuario en general ha sido buena debido a que sus comentarios al completar la yimcana eran positivos y la mayoría querían repetir la experiencia.
+En cualquier caso, la experiencia del usuario en general ha sido buena debido a que sus comentarios al completar la yincana eran positivos y la mayoría querían repetir la experiencia.
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX

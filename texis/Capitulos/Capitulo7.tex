@@ -3,137 +3,133 @@
 %                          Capítulo 7
 %
 %---------------------------------------------------------------------
-\chapter{Detalles de implementación}
+\chapter{Water Pipes}
 
-En esta sección se van a exponer detalles técnicos del desarrollo que sirva para completar todos aquellos puntos que no se tratan en los capítulos de los otros juegos, pero que han sido necesarios para el desarrollo del proyecto.
+En este capítulo, vamos a centrarnos en la explicación del último minijuego al que se tendrá que enfrentar el jugador para completar con éxito la yincana. El recorrido finaliza en la 3º planta de la facultad, en un ``simulador básico de centrales térmicas''. Este simulador y el minijuego combina a la perfección, tanto por la similitud visual entre ambos como por el hilo argumental del juego.
+
+\figura{Tfg/termica.jpg}{width=.75\textwidth}{fig:termica}
+	{Simulador térmico del museo García-Santesmases}
 
 %-------------------------------------------------------------------
-\section{Realidad aumentada}
+\section{Historia}
 %-------------------------------------------------------------------
-\label{cap7:sec:ra}
+\label{cap6:sec:historia}
 
-Vamos a ver los diferentes aspectos y herramientas de la realidad aumentada que hemos utilizado.
+Este juego fue creado a finales de los años 80 bajo el nombre de
+``Pipe Mania'' por ``The Assembly Line'' \cite{WaterPipesWiki}, teniendo muchas versiones a lo
+largo de los años. Las primeras fueron realizadas por el estudio
+``LucasFilm Game'' que lanzó el juego ``Pipe Dream''.
 
-\subsection{Vuforia}
-\label{cap7:sub:vuforia}
+Aunque posteriormente fueron lanzadas otras versiones del juego para PC,
+PS2, NintendoDS y PSP.
 
-Vuforia es el framework que hemos utilizado para hacer toda la parte de RA. Este tiene una magnífica integración con Unity 3D y facilita muchísimo su desarrollo.
+\figura{Tfg/pipeManiaOriginal.jpg}{width=.75\textwidth}{fig:pipeoriginal}
+	{Juego original de 1989}
 
-Para generar RA, Vuforia superpone a la imagen tomada por la cámara de, en este caso, nuestro Smartphone, cualquier modelo en tres dimensiones que queramos sobre la posición de un Image Target (u otro marcador) que le hayamos indicado. De esta manera, tenemos un ``fondo'' con la imagen tomada por la cámara, con modelos en tres dimensiones ``por encima''. Además, nos mantiene siempre los objetos de tres dimensiones en el mismo punto del espacio, por lo que si movemos nuestra cámara, cambiará la perspectiva desde donde vemos el objeto, pudiendo girar alrededor de éste. El comportamiento puede ser diferente, dependiendo de cómo lo hayamos configurado (podemos hacer que el objeto persista aun que perdamos de vista el detector).
+En la versión original, el juego consistía en ir colocando las tuberías que salían de forma aleatoria en un tablero de tal manera que el agua pudiera fluir por ellas. El objetivo era construir el mayor recorrido posible antes de que el agua lo inundará todo. Cada tubería llena de agua sumaba puntos y cada tubería que no hubiera sido inundada a la finalización del juego restaba puntos para obtener así la puntuación final. En cada nivel se iban complicando las cosas. Esto lo conseguían poniendo posiciones del tablero de juego en las cuales no se pudieran colocar tuberías, o comenzando antes a fluir el agua por las tuberías, dando al jugador menos tiempo de reacción.
 
-Vuforia proporciona paquetes para trabajar directamente con el SDK de Android o el de iOS, así como para Unity3D. Utilizando Unity3D podemos exportarlo después a una aplicación de Android o iOS también, aunque no quedaría de una manera tan ``pulida'' como desarrollándola directamente con el SDK del sistema operativo deseado. Nosotros hemos decidido utilizar el paquete para Unity3D, ya que es un motor de videojuegos y los tres teníamos unos conocimientos básicos en desarrollo con Unity, además de que nos permite exportar después el proyecto al sistema operativo que quisiéramos..
-
-\subsection{Unity}
-\label{cap7:sub:unity}
-
-Unity \cite{Unity3d} funciona con algo a lo que han llamado escenas, que son diferentes situaciones o niveles del juego. En toda escena hay una jerarquía de objetos que la componen, y de cada objeto pueden colgar otros objetos, además de que se pueden añadir (por medio de código programable) otros objetos a esa jerarquía de manera dinámica. Todos los objetos de Unity tienen una serie de componentes, el más básico sería el de su situación en las tres dimensiones (o dos), su escala y su rotación con respecto a los tres planos. Estos componentes permiten configurar los objetos de manera sencilla, encapsulando funcionalidades. Esta forma de ``componer'' los objetos no es casual: es la más utilizada en programación de videojuegos. 
-
- Además, Unity cuenta con una extensísima comunidad de desarrolladores, así como tutoriales, guías, dudas resueltas\ldots{} solo con los tutoriales que proporciona la propia gente de Unity podemos hacer un sencillo juego casi de cada uno de los tipos más comunes de juegos.
-
-Unity nos proporciona por defecto el cálculo de colisiones entre objetos, gravedad, eventos de teclado o ratón... en pocos minutos podemos hacer cosas sencillas pero que con otras herramientas, o programándolo directamente a mano con un lenguaje de programación cualquiera como podría ser Java o C++, nos llevarían bastante más tiempo.
-
-Los scripts los podemos escribir en C#, Boo o un lenguaje ``parecido'' a JavaScript. Nosotros hemos decidido utilizar C\#, ya que era la opción que más nos convencía por varias razones:
-
-\begin{itemize}
-\item{Es más eficiente. Los tres teníamos conocimientos previos de Java, y C\# es muy similar a Java en cuanto a sintaxis.}
-\item{Es el más usado por la comunidad.}
-\end{itemize}
-
-Todos los Scripts utilizados en Unity heredan de la clase MonoBehaviour, la cual permite a estos scripts integrarse con la ejecución interna de Unity. Toda clase que herede de MonoBehaviour tiene los métodos Start (), Awake (), Update (), FixedUpdate (), y OnGUI (), entre otros. 
-
-Éstos se ejecutan en diferentes momentos del juego.
-
-\begin{itemize}
-\item{Awake (): el primer método al que se llama, antes incluso de que el objeto asociado esté habilitado en la escena. Se utiliza para inicializaciones o referencias entre scripts.}
-
-\item{Start (): se ejecuta después de Awake (), justo antes del primer Update () y después de que se active el objeto.}
-
-\item{Update (): se ejecuta en cada frame. Esto hace que dependa del procesador y del equipo donde se ejecuta. Se usa para actualizaciones comunes como mover objetos no físicos, recoger entrada del usuario\ldots{}}
-
-\item{FixedUpdate (): el intervalo entre una ejecución y otra es consistente y siempre el mismo. Se utiliza para actualizaciones cómo ajustar objetos físicos.}
-
-\item{OnGUI (): se utiliza para gestionar y renderizar eventos de la Interfaz Gráfica de Usuario (Graphic User Interface, GUI). Sólo es llamada si el objeto está habilitado.}
-\end{itemize}
-
-\subsection{Unity + Vuforia}
-\label{cap7:sub:unityvuforia}
-
-Vuforia nos proporciona un paquete de extensión de Unity 3D el cual debemos importar para trabajar. Éste paquete contiene diferentes prefabs (objetos ya construidos) que nos harán la tarea muy sencilla.
-
-Lo que debe tener toda aplicación de RA hecha con Vuforia y Unity 3D es una ARCamera (cámara de RA). A ésta hay que indicarle el product key que nos da Vuforia desde su portal para desarrolladores, además de ésto, se le indicará el paquete de targets propios . Es la unidad mínima de desarrollo de RA con Vuforia.
-
-Una vez hecho esto, tendremos diferentes opciones para lanzar los objetos de RA, que deben colgar en la jerarquía de Unity de cualquiera de los siguientes prefabs \cite{vuforia}:
-
-\begin{itemize}
-\item{Frame Markers: Son marcadores muy sencillos que son proporcionados por la gente de Vuforia en su paquete. Se pueden utilizar para calibrar la cámara, pero no tienen una gran calidad a la hora de ser detectados. Son lo más sencillo para comenzar una aplicación de prueba.}
-
-\item{Image Targets: Imágenes propias del desarrollador. Funcionan como los Frame Markers, pero éstas deben ser importadas desde un paquete generado por el portal de desarrolladores de Vuforia, el cual nos indicará la calidad de esa imagen para ser detectada.}
-
-\item{Multi-Targets: Son varios ImageTargets que representan las diferentes caras de un prisma en tres dimensiones.}
-
-\item{Cylinder Targets: ImageTarget que envuelve un cilindro, para representar, por ejemplo, una botella u otro objeto similar.}
-
-\item{Text Recognition: Nos permite detectar textos, ya sean del diccionario proporcionado por Vuforia de palabras en inglés (más de 100.000 palabras diferentes) o de uno creado por nosotros mismos.}
-
-\item{Object Recognition: Sirve para configurar un objeto en tres dimensiones que no sea ninguno de los anteriores.}
-
-\item{Smart Terrain: Permite reconstruir el entorno del usuario de la aplicación en tres dimensiones.}
-\end{itemize}
-
-\figura{Tfg/smartTerrain.png}{width=.5\textwidth}{fig:smartterrain}
-		{Ejemplo de aplicación con Smart Terrain}
-
-Con cualquiera de estos objetos, la funcionalidad por defecto (que podemos modificar creando nuestras propias clases que hereden de las que nos da Vuforia) es que al detectarse (ya sea un ImageTarget, un Text Recognition, etcétera) se comenzarán a mostrar todos los objetos que cuelguen de él en la jerarquía de Unity.
-
-\section{Escenas intermedias}
+\section{Nuestra versión}
 %-------------------------------------------------------------------
-\label{cap7:sec:intermedias}
+\label{cap6:sec:nuestra}
 
-Entre cada escena; o juego del desarrollo, se ha establecido una intermedia donde un humanoide nos pone en situación antes de cada misión y nos sitúa acerca de cómo se ha llegado a dicha situación y a dónde debemos ir para resolverla.
+En nuestra versión del juego existen algunas diferencias con respecto a la versión original. La principal es la mecánica del juego, ya que en esta ocasión el usuario acaba de exterminar al enemigo que estaba poniendo en peligro a la Facultad y ahora su misión cambia para poder despegar la nave y ponerse a salvo definitivamente. En esta última misión el jugador se encontrará frente a frente con los conductos de refrigeración de la nave. El problema es que, debido a la batalla, estos se han dispersado y si quiere despegar la nave tendrá que re ordenarlos para que el agua pueda fluir correctamente. 
+Al comienzo, el jugador verá un tablero relleno aleatoriamente con estos conductos, además de una salida y una meta. Por lo tanto, el objetivo del jugador es ir cambiando de posición las tuberías que encuentra en la matriz, entre sí, para que el agua pueda fluir del punto de origen al de destino. En esta ocasión, el jugador tiene 6 segundos por cada tubería para ir colocando las demás y otros 10 segundos adicionales desde que el juego comienza hasta que la casilla de salida comienza a llenarse. Para poder despegar la nave, el agua ha debido fluir por todas las tuberías necesarias para llegar a la meta. En cambio si el agua ya ha comenzado a fluir y el jugador no ha conseguido recolocar los conductos, en cuanto el agua no encuentre un camino factible la nave ya no se podrá despegar y el juego terminará.
 
-\subsection{SALSA with Random Eyes}
-\label{cap7:sub:salsa}
+Para lograr esto, el jugador deberá ir intercambiando una tubería por otra. La mecánica implementada para permitirle realizar esta acciones es que, en primer lugar, seleccione la tubería que desea colocar en otra posición pulsando sobre ella y, a continuación seleccione la otra tubería que desea intercambiar con que ya ha seleccionado anteriormente, y en el momento en el que se pulse esta última, automaticamente se cambiarán entre ellas. Las tuberías en la que ya ha comenzado a fluir el agua no podrán ser seleccionadas.
 
-Gracias al paquete de Unity de animación por voz, SALSA lip sync, el proceso de sincronizar el audio con la animación del discurso del modelo ha sido algo muy sencillo \cite{salsa}. Dicha animación consta de tres componentes:
-
-\begin{itemize}
-\item{El modelo, que en este caso era un prefab que venía configurado por defecto para soportar el componente de audio y de enfoque aleatoria.}
-
-\item{Componente de animación de los músculos faciales, al cual se le asigna un conjunto de audios de tal forma que la cara del modelo se articula de forma sincronizada con el audio proporcionado. El componente viene configurado para que el audio que le proporcionamos al modelo pueda ser interpretado por este con más o menos énfasis o con diferentes estados de ánimo.}
-
-\item{Random eyes es un componente que, asignado al modelo, articula sus ojos de tal forma que definiendo unos puntos objetivo, alterna y gesticula mirando a los diferentes objetivos a lo largo de la animación del objeto.}
-\end{itemize}
-
-\subsection{VozMe MP3 generator}
-\label{cap7:sub:vozme}
-
-Además del modelo utilizado, también hubo que crear los audios que narran el hilo argumental de nuestro juego. Para esta tarea, se generarón los audio con la herramienta vozme.com \cite{vozme} que convierte a mp3, con una voz un ``robótica'', un texto dado.
-
-\section{Persistencia de puntuaciones}
+\section{Diseño}
 %-------------------------------------------------------------------
-\label{cap7:sec:puntuaciones}
+\label{cap6:sec:diseno}
 
-Al finalizar el juego, el usuario puede almacenar su puntuación, y ver el ranking de estas. Este sistema se hizo para enlazar el juego con lo que es un servicio web, ya que nos parecía una práctica interesante el hacer uso de la parte cliente que nos ofrece Unity para comunicarnos con servicios web. Se han implementado ambas partes en este caso, tanto el lado cliente que consume los servicios en Unity, como el lado del servidor, en el que se ha implementado un sistema de gestión de usuarios con una sencilla api REST en PHP, haciendo uso del framework Symfony 2.
+En este apartado explicaremos todos los objetos y componentes necesarios para la implementación del minijuego.
 
-\subsection{Symfony}
-\label{cap7:sub:symfony}
-
-Para el desarrollo con symfony de una API REST se tuvieron en cuenta los
-siguientes puntos:
+Para este juego existe un solo tipo de objeto visible, los tiles que representan a los conductos. Todos estos objetos, se crean dinámicamente al comienzo de la escena, como hijos del Image Target.
 
 \begin{itemize}
-\item{Base de datos: Se genera una base de datos SQL con una sola tabla, la de usuarios y los campos que deseabamos guardar: id, nombre y puntuación.}
+\item{Tile: todo el juego se compone de 25 (matriz de 5x5) GameObjects de tipo Quad que representan los conductos de refrigeración. A cada uno se les han incluido los mismos componentes:}
 
-\item{Operaciones: Para la parte REST; los servicios, solo pueden realizar las operaciones de leer y crear nuevos usuarios. En el panel de administración, se pueden realizar las CRUD, crear un nuevo usuario, leer los usuarios y ver el usuario en detalle, actualizar y eliminar.}
-
-\item{REST: las operaciones de la API son, de tipo GET /api/users.{[}json \textbar{} xml{]} para obtener un listado de los usuarios y sus puntuaciones en uno de los formatos especificados. Y para guardar la puntuación de un usuario, de tipo POST /api/users dónde se les manda, en el body de la petición, la puntuación del usuario y el nombre de este.}
-
-\item{Seguridad: De lado del servidor, Symfony~nos provee de un sistema de seguridad basado en tres factores; la dirección a la que se accede, la autenticación para acceder a ella y una vez autenticado, el rol que tiene dicho usuario para poder acceder. En nuestro caso hay dos usuario. ``admin'', con el rol de administrador, que le permite entrar tanto en el panel de administración, como hacer uso de la api. Y ``api\_user'', un usuario cuyo rol solo le permite usar los servicios web. El tipo de autenticación es a través de Basic auth. Consiste en añadir un campo en el header~con la clave ``Authorization'' y como valor, la palabra ``Basic'' concatenada y separados por un espacio con la combinación de ``username:password'' codificada en Base64.}
+\begin{itemize}
+\item{Box Collider: para detectar la colisión y así poder intercambiar dos objetos entre sí. En este caso, solo existe la colisión entre el usuario y los objetos (Touch).}
+\item{RigidBody: Elimina la gravedad de los objetos y congela ciertos movimientos de desplazamiento y rotación de estos. En este caso hemos querido bloquear todas las rotaciones y la dimensión Z del desplazamiento. Esto es debido a que aunque es un juego en 3D, la experiencia con el jugador es totalmente en 2D y esos movimientos no nos serán necesarios.}
 \end{itemize}
 
-La implementación del sistema de persistencia se compone de dos partes, la parte del cliente, dónde se consumen los servicios web; y la parte del servidor, donde se configura el sistema.
+\item{Tile animación: Aunque el único objeto ``visible'' en el juego sean los conductos (Quad), cada uno de ellos contiene otro GameObject como hijo. La funcionalidad de éste es la animación del agua cuando pasa por la tubería, por lo que cada uno de estos ``hijos'' contienen también los mismos componentes cada uno:}
 
-El lenguaje utilizado para implementar la parte del lado del Servidor es PHP. Sobre este lenguaje se utiliza un framework de desarrollo llamado Symfony, que facilita mucho la tarea de construir este tipo de sistemas. Symfony hace uso de trabajar basada en el Modelo Vista Controlador y el flujo de trabajo sobre este framework consiste en simplificarte, bajo esta arquitectura, un montón de procedimientos y líneas de código que se repiten constantemente en este tipo de software.
+\begin{itemize}
+\item{Sprite Renderer: Esto es necesario, ya que la animación se compone de un sprites.}
+\item{Animator: que contiene el Animator Controller de ese tipo de tubería. Cada controlador suele tener dos animaciones por tubería, que dependiendo de la salida de la anterior se reproduce una animación u otra.}
+\figura{Tfg/tile.png}{width=.25\textwidth}{fig:tile}
+	{Uno de los 23 tiles que forman el tablero}
+\end{itemize}
+
+
+\figura{Tfg/gowater.png}{width=\textwidth}{fig:goswater}{Esquema de los GO y sus componentes, necesarios para el tile anterior}
+
+\item{Canvas: Muestra la información del juego, y se encarga de mostrar el tiempo restante que le queda al jugador y cuando el juego finaliza muestra la pantalla de marcadores, para que el jugador pueda introducir su nombre y así entrar en la lista de clasificados.}
+\item{GameManager: Es un GameObject vacío en la escena que contiene los scripts para la funcionalidad del juego:}
+
+\begin{itemize}
+\item{GameManagerWaterPipes.cs: es el encargado de generar toda la escena al inicio del juego.}
+\item{WaterController.cs: desde este script, se controla todo el flujo del agua.}
+\item{TimeController.cs: clase que decrementa el tiempo de juego y el tiempo que tarda el agua en pasar por cada conducto.}
+\end{itemize}
+\end{itemize}
+
+
+\section{Implementación}
+%-------------------------------------------------------------------
+\label{cap6:sec:implementacion}
+
+Este juego se ha implementado en base al patrón command, que encapsula la decisión de por dónde va a ir fluyendo el agua. Esta funcionalidad es la principal de todo el juego, ya que aunque el jugador de lo que se encarga es de intercambiar las tuberías, el objetivo del juego es conseguir que el agua fluya desde la casilla de salida hasta la meta.
+
+En primer lugar, vamos a describir las clases que se encargan de las otras funcionalidades del juego, las cuales son, el intercambio de tuberías que realiza el jugador, la inicialización y creación del entorno del juego y el tiempo del juego.
+
+\begin{enumerate}
+\item{TouchObject}
+	\begin{itemize}
+	\item{Este script es el encargado de controlar el cambio de los conductos. Para ello, lo primero que hace es capturar en el método Update todos los toques en la pantalla y llamar a getObjectHit para obtener el objeto presionado. Este objeto lo obtenemos a través del método ``GetNearestHitGameObject'', que genera un rayo con origen en la ARCamera y con la dirección generada por el rayo. De esos se queda con el que haya menor distancia.}
+
+	\item{Una vez tenemos el objeto presionado, tenemos que saber si ya existe otro objeto pulsado para poder intercambiarlos, o si es el primer elemento que queremos cambiar. Si es el primero, lo único que haremos es cambiarle a ese objeto el tag a ``ButtonPush'' y si es el segundo, obtenemos el que ya hemos pulsado anteriormente e intercambiamos su posición.}
+
+	\item{Este componente se encuentra en el objecto ARCamera que nos proporciona Vuforia.}
+	\end{itemize}
+\item{GameManagerWarterPipes}
+
+	\begin{itemize}
+	\item{Es el encargado de crear dinámicamente todos los objetos de la escena al comienzo del juego, y de llevar el control del tiempo que tiene el jugador para completar la misión. Este componente, se añade al GameObject vacío de nombre GameManager de la escena. El script lo primero que hace es añadir los objetos prefabs de cada tipo de conducto (Horizontal, Vertical, Codo Derecho Arriba, Codo Derecho Abajo, Codo Izquierdo Arriba y Codo Izquierdo Abajo) en una lista de SquareReceiver para luego ir eligiendo de manera aleatoria los 23 conductos totales.}
+
+	\figura{Tfg/tuberias.png}{width=.75\textwidth}{fig:tuberias}
+		{Sprites de las tuberías del juego Water Pipes}
+
+	\item{A continuación crea la salida y la meta, ya que estos siempre van a tener una posición fija en el tablero. Y cuando ya está todo listo, lo único que falta es ir creando el resto del tablero. Esto lo hace recorriendo todo el tablero desde la casilla 1 hasta la 23 y por cada una escoge aleatoriamente un tipo de conducto, de la lista anterior.Crea una instancia de ese tipo de objeto que será un hijo del Image Target. Dándole además las propiedades como la posición, el nombre, y la escala. Esta instancia la guardamos en un array del tipo SquareReceiver para luego poder acceder a él. El método Update controla el tiempo del juego.}
+
+	\figura{Tfg/tablerowater.png}{width=.75\textwidth}{fig:tablero}
+		{Captura del tablero generado de forma aleatoria}
+	\end{itemize}
+
+\item{WaterController}
+	\begin{itemize}
+	\item{Este script es, junto con el gameManagerWaterPipes, el más importante ya que se encarga de controlar el flujo del agua. Esta es la funcionalidad básica de nuestro juego, y por lo tanto, está añadido al GameObject vacío de la escena, que como hemos dicho en el punto anterior contiene también el script gameManagerWaterPipes.}
+
+	\item{En este ocasión, se ha decidido diseñar el flujo de agua de la siguiente manera:}
+		\begin{itemize}
+		\item{Por cada tipo de conducto el agua puede fluir en dos sentidos cada vez, por lo tanto a partir de la entrada del agua de la casilla anterior se calculará la casilla siguiente por la que el agua debería de fluir. Y una vez que ya sepamos cuál es la siguiente casilla por la que tenemos que llevar el agua, podremos comprobar si esa casilla es válida, es decir su entrada de agua coincide con la salida de agua anterior.}
+		\end{itemize}
+	\end{itemize}
+\newpage
+\begin{center}
+\figura{Tfg/diagramawaterpipes.jpg}{width=\textwidth,keepaspectratio}{fig:diagramaWaterPipesScene}{Diagrama del juego}
+\end{center}
+
+
+\section{Conclusiones}
+%-------------------------------------------------------------------
+\label{cap6:sec:conclusiones}
+
+En este caso, el juego Water Pipes es un juego sencillo que la mayoría de la gente conoce, por lo menos en alguna de sus versiones, y que entretiene al usuario. Al tener varias versiones del juego fue interesante decidir cuál era la que mejor se podía adaptar a la RA. Quizá no es el juego que más llame la atención del usuario con respecto a este punto, sobretodo en las primeras fases de la implementación cuando no estaban introducidas las animaciones del agua. Pero una vez, terminado el juego la RA hace más llamativas estas, por lo que atrae más la atención del usuario, lo que era nuestro principal objetivo al empezar este proyecto.
+
+Creemos que el resultado final cumple con los objetivos, ya que se ha implementado un juego que gracias a su sencillez y que la duración no es demasiado larga, entretiene y capta la atención del usuario.
+
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX

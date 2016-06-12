@@ -2,7 +2,7 @@
 \contentsline {chapter}{Autorizaci\'on}{\es@scroman {vii}}{chapter*.1}
 \contentsline {chapter}{Agradecimientos}{\es@scroman {ix}}{chapter*.2}
 \contentsline {chapter}{Resumen}{\es@scroman {xi}}{chapter*.3}
-\contentsline {chapter}{\numberline {1}Introducci\'on a Santesmases RA}{1}{chapter.1}
+\contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Museo de inform\'atica Garc\IeC {\'\i }a-Santesmases}{1}{section.1.1}
 \contentsline {section}{\numberline {1.2}Objetivos y motivaci\'on}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Antecedentes}{3}{section.1.3}
@@ -18,37 +18,36 @@
 \contentsline {section}{\numberline {2.4}Realidad aumentada en museos}{12}{section.2.4}
 \contentsline {section}{\numberline {2.5}Herramientas de desarrollo}{13}{section.2.5}
 \contentsline {chapter}{\numberline {3}Dise\~no del videojuego}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}Hilo argumental}{17}{section.3.1}
+\contentsline {section}{\numberline {3.1}Hilo argumental}{18}{section.3.1}
 \contentsline {section}{\numberline {3.2}Mec\'anicas}{18}{section.3.2}
-\contentsline {section}{\numberline {3.3}Conclusiones}{19}{section.3.3}
-\contentsline {chapter}{\numberline {4}Space Invaders}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Historia}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}Nuestra versi\'on}{21}{section.4.2}
-\contentsline {section}{\numberline {4.3}Dise\~no}{22}{section.4.3}
-\contentsline {section}{\numberline {4.4}Implementaci\'on}{24}{section.4.4}
-\contentsline {section}{\numberline {4.5}Conclusiones}{26}{section.4.5}
-\contentsline {chapter}{\numberline {5}Arkanoid}{29}{chapter.5}
-\contentsline {section}{\numberline {5.1}Historia}{29}{section.5.1}
-\contentsline {section}{\numberline {5.2}Nuestra versi\'on}{29}{section.5.2}
-\contentsline {section}{\numberline {5.3}Dise\~no}{31}{section.5.3}
-\contentsline {section}{\numberline {5.4}Implementaci\'on}{33}{section.5.4}
-\contentsline {section}{\numberline {5.5}Conclusiones}{35}{section.5.5}
-\contentsline {chapter}{\numberline {6}Water Pipes}{39}{chapter.6}
-\contentsline {section}{\numberline {6.1}Historia}{39}{section.6.1}
-\contentsline {section}{\numberline {6.2}Nuestra versi\'on}{39}{section.6.2}
-\contentsline {section}{\numberline {6.3}Dise\~no}{41}{section.6.3}
-\contentsline {section}{\numberline {6.4}Implementaci\'on}{42}{section.6.4}
-\contentsline {section}{\numberline {6.5}Conclusiones}{46}{section.6.5}
-\contentsline {chapter}{\numberline {7}Detalles de implementaci\'on}{47}{chapter.7}
-\contentsline {section}{\numberline {7.1}Realidad aumentada}{47}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Vuforia}{47}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Unity}{48}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Unity + Vuforia}{49}{subsection.7.1.3}
-\contentsline {section}{\numberline {7.2}Escenas intermedias}{50}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}SALSA with Random Eyes}{50}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}VozMe MP3 generator}{51}{subsection.7.2.2}
-\contentsline {section}{\numberline {7.3}Persistencia de puntuaciones}{51}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Symfony}{51}{subsection.7.3.1}
+\contentsline {section}{\numberline {3.3}Conclusiones}{20}{section.3.3}
+\contentsline {chapter}{\numberline {4}Arquitectura y Tecnolog\IeC {\'\i }as empleadas}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Realidad aumentada}{21}{section.4.1}
+\contentsline {section}{\numberline {4.2}Desarrollo de videojuegos con Unity}{22}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Integraci\'on de Unity con Vuforia}{23}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Escenas intermedias}{24}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}SALSA with Random Eyes}{24}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}VozMe MP3 generator}{25}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Persistencia de puntuaciones}{25}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Symfony}{25}{subsection.4.4.1}
+\contentsline {chapter}{\numberline {5}Space Invaders}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Historia}{27}{section.5.1}
+\contentsline {section}{\numberline {5.2}Nuestra versi\'on}{27}{section.5.2}
+\contentsline {section}{\numberline {5.3}Dise\~no}{28}{section.5.3}
+\contentsline {section}{\numberline {5.4}Implementaci\'on}{30}{section.5.4}
+\contentsline {section}{\numberline {5.5}Conclusiones}{32}{section.5.5}
+\contentsline {chapter}{\numberline {6}Arkanoid}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Historia}{35}{section.6.1}
+\contentsline {section}{\numberline {6.2}Nuestra versi\'on}{35}{section.6.2}
+\contentsline {section}{\numberline {6.3}Dise\~no}{37}{section.6.3}
+\contentsline {section}{\numberline {6.4}Implementaci\'on}{39}{section.6.4}
+\contentsline {section}{\numberline {6.5}Conclusiones}{41}{section.6.5}
+\contentsline {chapter}{\numberline {7}Water Pipes}{45}{chapter.7}
+\contentsline {section}{\numberline {7.1}Historia}{45}{section.7.1}
+\contentsline {section}{\numberline {7.2}Nuestra versi\'on}{45}{section.7.2}
+\contentsline {section}{\numberline {7.3}Dise\~no}{47}{section.7.3}
+\contentsline {section}{\numberline {7.4}Implementaci\'on}{48}{section.7.4}
+\contentsline {section}{\numberline {7.5}Conclusiones}{52}{section.7.5}
 \contentsline {chapter}{\numberline {8}Evaluaci\'on con usuarios}{53}{chapter.8}
 \contentsline {section}{\numberline {8.1}Plan de evaluaci\'on}{53}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}Objetivos de la evaluaci\'on}{53}{subsection.8.1.1}
@@ -59,10 +58,10 @@
 \contentsline {subsection}{\numberline {8.2.3}Tercera fase}{55}{subsection.8.2.3}
 \contentsline {section}{\numberline {8.3}Primera evaluaci\'on con usuarios}{55}{section.8.3}
 \contentsline {subsection}{\numberline {8.3.1}Informe de resultados}{56}{subsection.8.3.1}
-\contentsline {subsection}{\numberline {8.3.2}Acciones}{58}{subsection.8.3.2}
+\contentsline {subsection}{\numberline {8.3.2}Propuesta de soluciones}{58}{subsection.8.3.2}
 \contentsline {subsection}{\numberline {8.3.3}Conclusiones}{59}{subsection.8.3.3}
 \contentsline {chapter}{\numberline {9}Conclusiones y trabajo futuro}{61}{chapter.9}
-\contentsline {section}{\numberline {9.1}Conclusiones}{61}{section.9.1}
+\contentsline {section}{\numberline {9.1}Conclusions}{62}{section.9.1}
 \contentsline {section}{\numberline {9.2}L\IeC {\'\i }neas futuras}{62}{section.9.2}
 \contentsline {chapter}{\numberline {10}Aportaciones individuales}{65}{chapter.10}
 \contentsline {section}{\numberline {10.1}Organizaci\'on general del proyecto}{65}{section.10.1}
@@ -70,4 +69,3 @@
 \contentsline {section}{\numberline {10.3}\'Alvar D. Soler}{68}{section.10.3}
 \contentsline {section}{\numberline {10.4}Mar\IeC {\'\i }a Picado}{69}{section.10.4}
 \contentsline {chapter}{Bibliograf\IeC {\'\i }a}{71}{appendix*.43}
-\contentsline {chapter}{Lista de acr\'onimos}{73}{appendix*.43}

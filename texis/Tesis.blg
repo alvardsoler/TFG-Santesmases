@@ -19,7 +19,6 @@ A level-1 auxiliary file: Capitulos/Capitulo9.aux
 A level-1 auxiliary file: Capitulos/Capitulo10.aux
 A level-1 auxiliary file: Cascaras/bibliografia.aux
 The style file: TeXiS/TeXiS.bst
-A level-1 auxiliary file: TeXiS/TeXiS_acron.aux
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: otros.bib
 Warning--empty year in aumentaty; set to ????
@@ -98,48 +97,52 @@ Entrada: ``{Pipe Mania}''
 ---the literal stack isn't empty for entry WaterPipesWiki
 while executing---line 1842 of file TeXiS/TeXiS.bst
 ptr=1, stack=
+Entrada: ``{Programaci\'{o}n orientada a componentes}''
+---the literal stack isn't empty for entry progcomponentes
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
 Entrada: ``{Space Invaders}''
 ---the literal stack isn't empty for entry SpaceInvadersWikipedia
 while executing---line 1842 of file TeXiS/TeXiS.bst
-You've used 19 entries,
+You've used 20 entries,
             2962 wiz_defined-function locations,
-            1179 strings with 14709 characters,
-and the built_in function-call counts, 7359 in all, are:
-= -- 610
-> -- 206
-< -- 19
-+ -- 86
-- -- 63
-* -- 442
-:= -- 1257
-add.period$ -- 54
-call.type$ -- 19
-change.case$ -- 116
-chr.to.int$ -- 17
-cite$ -- 30
-duplicate$ -- 602
-empty$ -- 539
-format.name$ -- 90
-if$ -- 1385
+            1182 strings with 14856 characters,
+and the built_in function-call counts, 7704 in all, are:
+= -- 638
+> -- 216
+< -- 20
++ -- 90
+- -- 66
+* -- 466
+:= -- 1319
+add.period$ -- 56
+call.type$ -- 20
+change.case$ -- 122
+chr.to.int$ -- 18
+cite$ -- 31
+duplicate$ -- 630
+empty$ -- 564
+format.name$ -- 94
+if$ -- 1448
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 112
-newline$ -- 96
-num.names$ -- 76
-pop$ -- 313
+missing$ -- 116
+newline$ -- 100
+num.names$ -- 80
+pop$ -- 324
 preamble$ -- 1
-purify$ -- 97
+purify$ -- 102
 quote$ -- 0
-skip$ -- 220
+skip$ -- 232
 stack$ -- 0
-substring$ -- 211
-swap$ -- 227
+substring$ -- 222
+swap$ -- 236
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 190
+type$ -- 200
 warning$ -- 11
-while$ -- 57
+while$ -- 60
 width$ -- 0
-write$ -- 209
-(There were 17 error messages)
+write$ -- 218
+(There were 18 error messages)

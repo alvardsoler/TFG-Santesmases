@@ -3,106 +3,135 @@
 %                          Capítulo 4
 %
 %---------------------------------------------------------------------
-\chapter{Space Invaders}
+\chapter{Arquitectura y Tecnologías empleadas}
 
-Es el primero de los juegos de la yincana, el jugador comienza en la puerta principal de la Facultad. Inspirado en el famoso Space Invaders, el jugador, desde una perspectiva en primera persona, tendrá que disparar a un enjambre de Invaders que pretenden destruir las defensas de la nave donde se desarrolla la historia.
+En esta sección se van a exponer detalles técnicos del desarrollo que sirva para completar todos aquellos puntos que no se tratan en los capítulos de los otros juegos, pero que han sido necesarios para el desarrollo del proyecto.
 
 %-------------------------------------------------------------------
-\section{Historia}
+\section{Realidad aumentada}
 %-------------------------------------------------------------------
-\label{cap4:sec:historia}
+\label{cap7:sec:ra}
 
-Space Invaders es uno de los juegos arcade clásicos más conocidos. La primera versión salió al mercado en 1978, hace casi cuarenta años \citep{SpaceInvadersWikipedia}. Uno de los precursores del género shoot 'em up. El jugador controla una nave espacial que se mueve horizontalmente y debe hacer frente a hordas de alienígenas enemigos que atacan al jugador disparándole proyectiles. Además, a veces el jugador cuenta con pequeñas construcciones que hacen la labor de búnker donde ponerse a cubierto de los disparos, aunque éstos se van destruyendo.
+Vuforia es el framework que hemos utilizado para hacer toda la parte de RA. Este tiene una magnífica integración con Unity 3D y facilita muchísimo su desarrollo.
 
-Space Invaders está ampliamente extendido en la cultura popular ya que es uno de los grandes clásicos, por eso hemos considerado acertado incluirlo en nuestro proyecto.
+Para generar RA, Vuforia superpone a la imagen tomada por la cámara de, en este caso, nuestro Smartphone, cualquier modelo en tres dimensiones que queramos sobre la posición de un Image Target (u otro marcador) que le hayamos indicado. De esta manera, tenemos un ``fondo'' con la imagen tomada por la cámara, con modelos en tres dimensiones ``por encima''. Además, nos mantiene siempre los objetos de tres dimensiones en el mismo punto del espacio, por lo que si movemos nuestra cámara, cambiará la perspectiva desde donde vemos el objeto, pudiendo girar alrededor de éste. El comportamiento puede ser diferente, dependiendo de cómo lo hayamos configurado (podemos hacer que el objeto persista aun que perdamos de vista el detector).
 
-\figura{Tfg/spaceinvadersoriginal.png}{width=.5\textwidth}{fig:inaveders1}
-	{Space Invaders original}
+Vuforia proporciona paquetes para trabajar directamente con el SDK de Android o el de iOS, así como para Unity3D. Utilizando Unity3D podemos exportarlo después a una aplicación de Android o iOS también, aunque no quedaría de una manera tan ``pulida'' como desarrollándola directamente con el SDK del sistema operativo deseado. Nosotros hemos decidido utilizar el paquete para Unity3D, ya que es un motor de videojuegos y los tres teníamos unos conocimientos básicos en desarrollo con Unity, además de que nos permite exportar después el proyecto al sistema operativo que quisiéramos..
 
-\section{Nuestra versión}
-\label{cap4:sec:nuestraversion}
+\section{Desarrollo de videojuegos con Unity}
+\label{cap7:sec:unity}
 
-Nosotros hemos decidido darle un cambio a la jugabilidad del
-juego. En nuestra versión utilizamos la RA para que la experiencia sea completamente diferente. Nuestro juego arrancará al detectar el cartel de FACULTAD DE INFORMÁTICA (Text Recognition), mostrándonos unos invasores alienígenas sobre el cartel, y unas defensas bajo éste.
+Unity funciona con algo a lo que han llamado escenas, que son diferentes situaciones o niveles del juego \cite{Unity3d}. En toda escena hay una jerarquía de objetos que la componen, y de cada objeto pueden colgar otros objetos, además de que se pueden añadir (por medio de código programable) otros objetos a esa jerarquía de manera dinámica. Todos los objetos de Unity tienen una serie de componentes, el más básico sería el de su situación en las tres dimensiones (o dos), su escala y su rotación con respecto a los tres planos. Estos componentes permiten configurar los objetos de manera sencilla, encapsulando funcionalidades. Esta forma de ``componer'' los objetos no es casual: es la más utilizada en programación de videojuegos.
 
-Para destruir a los invasores, lo que tenemos que hacer es mover nuestro Smartphone para mover nuestra cámara y pulsar en la pantalla para disparar. Hemos pasado de manejar la nave defensora en tercera persona, a hacerlo en primera persona, con un punto de mira en el centro de la pantalla que nos marca en qué dirección irán los láseres de nuestra torreta de defensa, convirtiendo el juego en un First Person Shooter. Tendremos que hacerlo antes de que los enemigos consigan destruir el escudo de nuestra nave espacial (cuando pasa del verde al rojo). Iremos obteniendo puntos según destruyamos naves enemigas y perderemos puntos al recibir impactos en el escudo, por lo que cuanto más rápidos seamos, más puntos obtendremos.
+La programación o arquitectura basasada en componentes tiene como principal característica tener más abstracción que la basada en objetos. ``Cada componente es un elemento de un sistema que ofrece un servicio predefinido , y es capaz de comunicarse con otros componentes'' \cite{progcomponentes}.
 
-Con estos cambios hemos conseguido (a nuestro juicio) transformar un clásico de los arcade en un nuevo juego que utiliza la RA dando una experiencia diferente.
+ Además, Unity cuenta con una extensísima comunidad de desarrolladores, así como tutoriales, guías, dudas resueltas\ldots{} solo con los tutoriales que proporciona la propia gente de Unity podemos hacer un sencillo juego casi de cada uno de los tipos más comunes de juegos.
 
-\section{Diseño}
+Unity nos proporciona por defecto el cálculo de colisiones entre objetos, gravedad, eventos de teclado o ratón... en pocos minutos podemos hacer cosas sencillas pero que con otras herramientas, o programándolo directamente a mano con un lenguaje de programación cualquiera como podría ser Java o C++, nos llevarían bastante más tiempo.
+
+Los scripts los podemos escribir en C#, Boo o un lenguaje ``parecido'' a JavaScript. Nosotros hemos decidido utilizar C\#, ya que era la opción que más nos convencía por varias razones:
+
+\begin{itemize}
+\item{Es más eficiente. Los tres teníamos conocimientos previos de Java, y C\# es muy similar a Java en cuanto a sintaxis.}
+\item{Es el más usado por la comunidad.}
+\end{itemize}
+
+Todos los Scripts utilizados en Unity heredan de la clase MonoBehaviour, la cual permite a estos scripts integrarse con la ejecución interna de Unity. Toda clase que herede de MonoBehaviour tiene los métodos Start (), Awake (), Update (), FixedUpdate (), y OnGUI (), entre otros. 
+
+Éstos se ejecutan en diferentes momentos del juego.
+
+\begin{itemize}
+\item{Awake (): el primer método al que se llama, antes incluso de que el objeto asociado esté habilitado en la escena. Se utiliza para inicializaciones o referencias entre scripts.}
+
+\item{Start (): se ejecuta después de Awake (), justo antes del primer Update () y después de que se active el objeto.}
+
+\item{Update (): se ejecuta en cada frame. Esto hace que dependa del procesador y del equipo donde se ejecuta. Se usa para actualizaciones comunes como mover objetos no físicos, recoger entrada del usuario\ldots{}}
+
+\item{FixedUpdate (): el intervalo entre una ejecución y otra es consistente y siempre el mismo. Se utiliza para actualizaciones cómo ajustar objetos físicos.}
+
+\item{OnGUI (): se utiliza para gestionar y renderizar eventos de la Interfaz Gráfica de Usuario (Graphic User Interface, GUI). Sólo es llamada si el objeto está habilitado.}
+\end{itemize}
+
+\subsection{Integración de Unity con Vuforia}
+\label{cap7:sub:unityvuforia}
+
+Vuforia nos proporciona un paquete de extensión de Unity 3D el cual debemos importar para trabajar. Éste paquete contiene diferentes prefabs (objetos ya construidos) que nos harán la tarea muy sencilla.
+
+Lo que debe tener toda aplicación de RA hecha con Vuforia y Unity 3D es una ARCamera (cámara de RA). A ésta hay que indicarle el product key que nos da Vuforia desde su portal para desarrolladores, además de ésto, se le indicará el paquete de targets propios . Es la unidad mínima de desarrollo de RA con Vuforia.
+
+Una vez hecho esto, tendremos diferentes opciones para lanzar los objetos de RA, que deben colgar en la jerarquía de Unity de cualquiera de los siguientes prefabs \cite{vuforia}:
+
+\begin{itemize}
+\item{Frame Markers: Son marcadores muy sencillos que son proporcionados por la gente de Vuforia en su paquete. Se pueden utilizar para calibrar la cámara, pero no tienen una gran calidad a la hora de ser detectados. Son lo más sencillo para comenzar una aplicación de prueba.}
+
+\item{Image Targets: Imágenes propias del desarrollador. Funcionan como los Frame Markers, pero éstas deben ser importadas desde un paquete generado por el portal de desarrolladores de Vuforia, el cual nos indicará la calidad de esa imagen para ser detectada.}
+
+\item{Multi-Targets: Son varios ImageTargets que representan las diferentes caras de un prisma en tres dimensiones.}
+
+\item{Cylinder Targets: ImageTarget que envuelve un cilindro, para representar, por ejemplo, una botella u otro objeto similar.}
+
+\item{Text Recognition: Nos permite detectar textos, ya sean del diccionario proporcionado por Vuforia de palabras en inglés (más de 100.000 palabras diferentes) o de uno creado por nosotros mismos.}
+
+\item{Object Recognition: Sirve para configurar un objeto en tres dimensiones que no sea ninguno de los anteriores.}
+
+\item{Smart Terrain: Permite reconstruir el entorno del usuario de la aplicación en tres dimensiones.}
+\end{itemize}
+
+\figura{Tfg/smartTerrain.png}{width=.5\textwidth}{fig:smartterrain}
+		{Ejemplo de aplicación con Smart Terrain}
+
+Con cualquiera de estos objetos, la funcionalidad por defecto (que podemos modificar creando nuestras propias clases que hereden de las que nos da Vuforia) es que al detectarse (ya sea un ImageTarget, un Text Recognition, etcétera) se comenzarán a mostrar todos los objetos que cuelguen de él en la jerarquía de Unity.
+
+\section{Escenas intermedias}
 %-------------------------------------------------------------------
-\label{cap4:sec:diseno}
-El juego se compone de una única escena que contiene todo el juego. Básicamente se compone de:
+\label{cap7:sec:intermedias}
 
-\figura{Tfg/implementacion_space_invaders.png}{width=.5\textwidth}{fig:inaveders3}
-	{Captura durante el proceso de implementación}
-\begin{enumerate}
+Antes de cada minijuego, como nexo de enlace entre ellos, se ha establecido una escena intermedia donde un humanoide nos pone en situación antes de cada misión y nos sitúa acerca de cómo se ha llegado a dicha situación y a dónde debemos ir para resolverla.
 
-\item{La cámara de Vuforia, que a su vez tiene los siguientes hijos:}
-	\begin{enumerate}
-	\item{El canvas con la Interfaz de usuario (puntos y mensajes de inicio y fin del juego).}
-	\item{El punto de mira que utilizamos para apuntar al disparar, que también está hecho con un canvas.}
-	\item{El Cannon (Cañón de disparo) que representa nuestra arma. Básicamente dibuja una línea hacia el infinito para que de la sensación de un puntero láser para apuntar, además, desde su posición se lanza el raycast que calcula las colisiones con los posibles enemigos.}	
-	\end{enumerate}
-	\item{Un GameObject vacío llamado SpaceInvadersGame que contiene la clase singleton que gestiona el juego y la información mostrada por la interfaz.}
-	\item{El TextRecognition que sirve para cargar la detección de textos. A éste le hemos añadido un diccionario propio de palabras para poder leer texto en castellano. El diccionario contiene únicamente dos palabras, facultad e informática. Hemos configurado el TextRecognition de manera que sólo busque las palabras que están en su white list (lista blanca), que son las dos antes mencionadas, así las operaciones son más ligeras ya que no tiene que comprobar las miles de palabras. \cite{textrecog}}
-	\item{Word representa a una palabra detectada por Vuforia. Se puede configurar para que represente cualquier palabra detectada o alguna en particular. Nosotros lo utilizamos para representar en particular la palabra INFORMÁTICA. Éste es el GameObject que sustituye al ImageTarget que utilizábamos en el pasado. Al detectar la palabra  ``INFORMÁTICA'' en la cámara de RA, activa sus hijos y ``avisa'' al gestor del juego de que debe empezar a ejecutarse.}
-	\item{Un Enjambre, que contiene la lógica para crear varios Invasores y posicionarlos a cada uno en su sitio, así como para moverlos todos juntos.}
-	\item{Las copias de los invasores, las cuales disparan a veces a las defensas.}
-	% imagen de los invaders
-	\item{Las defensas, un objeto en tres dimensiones que representa a las defensas del jugador. Van cambiando de color, desde el verde al rojo según van recibiendo impactos de los invasores (o del propio jugador que apunta mal, para ser algo más realista).}
-\end{enumerate}
+\subsection{SALSA with Random Eyes}
+\label{cap7:sub:salsa}
 
-% subsection dise_o (end)
+Gracias al paquete de Unity de animación por voz, SALSA lip sync, el proceso de sincronizar el audio con la animación del discurso del modelo ha sido algo muy sencillo \cite{salsa}. Dicha animación consta de tres componentes:
 
-\section{Implementación}
+\begin{itemize}
+\item{El modelo, que en este caso era un prefab que venía configurado por defecto para soportar el componente de audio y de enfoque aleatoria.}
+
+\item{Componente de animación de los músculos faciales, al cual se le asigna un conjunto de audios de tal forma que la cara del modelo se articula de forma sincronizada con el audio proporcionado. El componente viene configurado para que el audio que le proporcionamos al modelo pueda ser interpretado por este con más o menos énfasis o con diferentes estados de ánimo.}
+
+\item{Random eyes es un componente que, asignado al modelo, articula sus ojos de tal forma que definiendo unos puntos objetivo, alterna y gesticula mirando a los diferentes objetivos a lo largo de la animación del objeto.}
+\end{itemize}
+
+\subsection{VozMe MP3 generator}
+\label{cap7:sub:vozme}
+
+Además del modelo utilizado, también hubo que crear los audios que narran el hilo argumental de nuestro juego. Para esta tarea, se generarón los audio con la herramienta vozme.com \cite{vozme} que convierte a mp3, con una voz un ``robótica'', un texto dado.
+
+\section{Persistencia de puntuaciones}
 %-------------------------------------------------------------------
-\label{cap4:sec:implementacion}
+\label{cap7:sec:puntuaciones}
 
-Pasamos a explicar qué clases componen el juego y para qué las utilizamos.
+Al finalizar el juego, el usuario puede almacenar su puntuación, y ver el ranking de estas. Este sistema se hizo para enlazar el juego con lo que es un servicio web, ya que nos parecía una práctica interesante el hacer uso de la parte cliente que nos ofrece Unity para comunicarnos con servicios web. Se han implementado ambas partes en este caso, tanto el lado cliente que consume los servicios en Unity, como el lado del servidor, en el que se ha implementado un sistema de gestión de usuarios con una sencilla api REST en PHP, haciendo uso del framework Symfony 2.
 
-\begin{enumerate}
-\item{Defense.cs: Gestiona las defensas del usuario. Marca el color de inicio y el de final que debe tener la defensa para calcular los colores intermedios. Además gestiona las colisiones.  Va añadido al GameObject de las defensas.}
-\item{Projectile.cs: Muy simple. Va asociada a los proyectiles y los destruye al pasar unos segundos en escena. Es para que los proyectiles que no impacten con nada, no se queden siempre en la escena. En la version final, los proyectiles con este Script solo son lanzados por los enemigos.}
-\item{Enjambre.cs: Se encarga de gestionar la inicialización del Enjambre y de sus invasores (colocándolos en la posición que les corresponda en función de cuántos sean y cuántas filas queremos que haya) y el movimiento del Enjambre (del que ``cuelgan'' los invasores), así como la escala de los invasores. Además contiene la información para saber si se han eliminado a todos los invasores o no. Va añadido a un GameObject vacío llamado Enjambre, el cual cuelga del detector de texto y del cual cuelgan los invasores.}
-\item{GameManager.cs: Es la clase que gestiona el juego en sí. Es un singleton y se le llama desde la mayoría de los otros scripts. Gestiona la interfaz de usuario, mostrando mensajes y los puntos cuando empieza el juego, además de cuando se puede disparar, etcétera. Es componente del GameManager, un GameObject vacío también.}
-\item{Invader.cs: Lógica del invasor. Gestiona los disparos de los invasores, la muerte de éstos y el sonido que hacen al ser destruidos. Va añadido al GameObject Invader.}
-\item{TextInformaticaTrackableEventHandler.cs: Implementación propia de la clase ITrackableEventHandler de Vuforia. Va asociada al Text de RA. Al ``encontrarse'' y si no está instanciado ya (es decir, que no se ha ``encontrado'' varias veces), le dice al GameManager que comience el juego, indicándole dónde están el Enjambre y las Defensas en relación al Text.}
-\item{TextTimer.cs: De manera muy sencilla destruye el texto (de la interfaz gráfica) al que está asociado al pasar un tiempo dado una vez se ha habilitado. Lo utilizamos para mostrar los mensajes de texto de información previa, avisando al jugador cuando debe comenzar a disparar. Va asociado a GameObjects de texto.}
-\end{enumerate}
+\subsection{Symfony}
+\label{cap7:sub:symfony}
 
-\newpage
-\begin{center}
-\figura{Tfg/diagrama_spaceinvaders.jpg}{width=\textwidth,keepaspectratio}{fig:invaders2}{Diagrama de los GameObjects}
-\end{center}
-\newpage
+Para el desarrollo con symfony de una API REST se tuvieron en cuenta los
+siguientes puntos:
 
-\section{Conclusiones}
-%-------------------------------------------------------------------
-\label{cap4:sec:conclusiones}
+\begin{itemize}
+\item{Base de datos: Se genera una base de datos SQL con una sola tabla, la de usuarios y los campos que deseabamos guardar: id, nombre y puntuación.}
 
-Al detectar el texto de FACULTAD DE INFORMÁTICA, el GameManager es avisado y comienza el juego. El GameManager instancia el Enjambre, que a su vez instancia todos los Invaders. Una vez hecho esto, se instancian las defensas desde el GameManager, se activa la información de la interfaz de usuario (puntuación, punto de mira \ldots{}).A partir de este momento, el jugador puede disparar el láser.
+\item{Operaciones: Para la parte REST; los servicios, solo pueden realizar las operaciones de leer y crear nuevos usuarios. En el panel de administración, se pueden realizar las CRUD, crear un nuevo usuario, leer los usuarios y ver el usuario en detalle, actualizar y eliminar.}
 
-Ahora, en cada actualización, el Enjambre mueve su posición, moviendo a todos los Invaders con él. Por su parte, cada Invader tiene un tanto porciento de posibilidades de disparar. Si se da esa posibilidad, instanciará un proyectil en la dirección de las defensas.
+\item{REST: las operaciones de la API son, de tipo GET /api/users.{[}json \textbar{} xml{]} para obtener un listado de los usuarios y sus puntuaciones en uno de los formatos especificados. Y para guardar la puntuación de un usuario, de tipo POST /api/users dónde se les manda, en el body de la petición, la puntuación del usuario y el nombre de este.}
 
-Durante el desarrollo de este juego hemos encontrado unos cuantos escollos que superar, algunos que nos han llevado quebraderos de cabeza. Comenzamos desarrollando el videojuego utilizando un código QR como marcador de la RA, pensando que después pasar a utilizar un texto no tendría complicaciones. Una vez teníamos el juego desarrollado con un código QR (ImageTarget), probamos a detectar texto propio, ya que Vuforia nos da un diccionario con miles de palabras en inglés, pero nosotros no queríamos detectar esas palabras, sino únicamente FACULTAD DE INFORMÁTICA.
+\item{Seguridad: De lado del servidor, Symfony~nos provee de un sistema de seguridad basado en tres factores; la dirección a la que se accede, la autenticación para acceder a ella y una vez autenticado, el rol que tiene dicho usuario para poder acceder. En nuestro caso hay dos usuario. ``admin'', con el rol de administrador, que le permite entrar tanto en el panel de administración, como hacer uso de la api. Y ``api\_user'', un usuario cuyo rol solo le permite usar los servicios web. El tipo de autenticación es a través de Basic auth. Consiste en añadir un campo en el header~con la clave ``Authorization'' y como valor, la palabra ``Basic'' concatenada y separados por un espacio con la combinación de ``username:password'' codificada en Base64.}
+\end{itemize}
 
-Para esto, seguimos los tutoriales de Vuforia, y, tras resolver algunas dudas, implementamos una escena sencilla en la que se mostraba una esfera sobre el texto. Después, intentamos transferir lo desarrollado con el ImageTarget, al texto.
+La implementación del sistema de persistencia se compone de dos partes, la parte del cliente, dónde se consumen los servicios web; y la parte del servidor, donde se configura el sistema.
 
-Entonces surgieron los problemas. El primero que vimos, era que las proporciones de nuestros Invasores y las Defensas se quedaron muy pequeñas, haciendo imposible jugar cómodamente. La mejor manera que conseguimos para que se ajustaran los elementos del juego a un tamaño aceptable fue mediante un Script de C\# que aumentaba la escala local de los Invasores y las Defensas (local scale).
+El lenguaje utilizado para implementar la parte del lado del Servidor es PHP. Sobre este lenguaje se utiliza un framework de desarrollo llamado Symfony, que facilita mucho la tarea de construir este tipo de sistemas. Symfony hace uso de trabajar basada en el Modelo Vista Controlador y el flujo de trabajo sobre este framework consiste en simplificarte, bajo esta arquitectura, un montón de procedimientos y líneas de código que se repiten constantemente en este tipo de software.
 
-El siguiente problema que encontramos fue al insertar nuestro Enjambre de Invasores. Por un lado, una vez aparecían los enemigos, si movíamos la cámara, éstos se quedaban en la misma posición respecto a la cámara, es decir, si cuando salían por primera vez estaban en la parte superior izquierda (por ejemplo) de la pantalla, y nos movíamos, seguían ahí, en vez de ajustar su posición con respecto al texto detectado. Tuvimos que cambiar la forma en la que los insertábamos en la escena, antes de manera dinámica y creando una instancia con un Script, y ahora como hijos del GameObject que representa al texto detectado. Éste tipo de problema (de la posición respecto a los objetos de RA) nos volvería a salir más adelante, pero con los proyectiles que lanzábamos para acabar con los enemigos.
-
-En las primeras versiones del juego, lanzábamos un prisma (nuestro Proyectil, similar al que lanzan los enemigos contra las defensas) contra los enemigos. Según lanzábamos, el proyectil se iba dirigiendo en la dirección que tenía la cámara respecto al ImageTarget al realizar el disparo. Al pasar a utilizar el texto, esto cambió. Vimos que nuestro disparo se mantenía siempre en el vector de dirección de la cámara, y cambiaba con éste. Es decir, nuestro proyectil siempre estaba en el centro de la pantalla, con lo cual se perdía toda la gracia al juego y su jugabilidad pasaba a ser bastante complicada. Éste problema nos dejó bastante confusos, ya que con cambiar el objeto de la RA (ImageTarget o TextRecognition) cambiaba el comportamiento del proyectil.
-
-Para resolver esto, cambiamos nuestro proyectil por un láser. Ahora al tocar la pantalla no se lanza un proyectil, si no que se dispara un láser que destruirá los enemigos que estén en el vector de dirección de la cámara. Así hemos conseguido solventar este extraño comportamiento.
-
-El juego en general ha quedado sencillo pero con todos los aspectos que debe tener un juego completo. Sonidos, animaciones, efectos visuales y jugabilidad aceptable. Creemos que sirve como una buena aproximación a otros juegos de este tipo, y que se podría ir escalando para desarrollar un juego más ambicioso.
-
-La complejidad no es grande, aunque sí es recomendable que se tenga cierta habilidad para apuntar con el móvil.  
-
-
-\medskip
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX
 %%%
