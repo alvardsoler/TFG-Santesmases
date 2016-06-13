@@ -1,129 +1,129 @@
 %---------------------------------------------------------------------
 %
-%                          Cap√≠tulo 4
+%                          CapÌtulo 4
 %
 %---------------------------------------------------------------------
-\chapter{Arquitectura y Tecnolog√≠as empleadas}
+\chapter{Arquitectura y TecnologÌas empleadas}
 
-En esta secci√≥n se van a exponer detalles t√©cnicos del desarrollo que sirva para completar todos aquellos puntos que no se tratan en los cap√≠tulos de los otros juegos, pero que han sido necesarios para el desarrollo del proyecto.
+En esta secciÛn se van a exponer detalles tÈcnicos del desarrollo que sirva para completar todos aquellos puntos que no se tratan en los capÌtulos de los otros juegos, pero que han sido necesarios para el desarrollo del proyecto.
 
 %-------------------------------------------------------------------
 \section{Realidad aumentada}
 %-------------------------------------------------------------------
 \label{cap4:sec:ra}
 
-Vuforia es el framework que hemos utilizado para hacer toda la parte de RA. Este tiene una magn√≠fica integraci√≥n con Unity 3D y facilita much√≠simo su desarrollo.
+Vuforia es el framework que hemos utilizado para hacer toda la parte de RA. Este tiene una magnÌfica integraciÛn con Unity 3D y facilita muchÌsimo su desarrollo.
 
-Para generar RA, Vuforia superpone a la imagen tomada por la c√°mara de, en este caso, nuestro Smartphone, cualquier modelo en tres dimensiones que queramos sobre la posici√≥n de un Image Target (u otro marcador) que le hayamos indicado. De esta manera, tenemos un ``fondo'' con la imagen tomada por la c√°mara, con modelos en tres dimensiones ``por encima''. Adem√°s, nos mantiene siempre los objetos de tres dimensiones en el mismo punto del espacio, por lo que si movemos nuestra c√°mara, cambiar√° la perspectiva desde donde vemos el objeto, pudiendo girar alrededor de √©ste. El comportamiento puede ser diferente, dependiendo de c√≥mo lo hayamos configurado (podemos hacer que el objeto persista aun que perdamos de vista el detector).
+Para generar RA, Vuforia superpone a la imagen tomada por la c·mara de, en este caso, nuestro Smartphone, cualquier modelo en tres dimensiones que queramos sobre la posiciÛn de un Image Target (u otro marcador) que le hayamos indicado. De esta manera, tenemos un ``fondo'' con la imagen tomada por la c·mara, con modelos en tres dimensiones ``por encima''. Adem·s, nos mantiene siempre los objetos de tres dimensiones en el mismo punto del espacio, por lo que si movemos nuestra c·mara, cambiar· la perspectiva desde donde vemos el objeto, pudiendo girar alrededor de Èste. El comportamiento puede ser diferente, dependiendo de cÛmo lo hayamos configurado (podemos hacer que el objeto persista aun que perdamos de vista el detector).
 
-Vuforia proporciona paquetes para trabajar directamente con el SDK de Android o el de iOS, as√≠ como para Unity3D. Utilizando Unity3D podemos exportarlo despu√©s a una aplicaci√≥n de Android o iOS tambi√©n, aunque no quedar√≠a de una manera tan ``pulida'' como desarroll√°ndola directamente con el SDK del sistema operativo deseado. Nosotros hemos decidido utilizar el paquete para Unity3D, ya que es un motor de videojuegos y los tres ten√≠amos unos conocimientos b√°sicos en desarrollo con Unity, adem√°s de que nos permite exportar despu√©s el proyecto al sistema operativo que quisi√©ramos..
+Vuforia proporciona paquetes para trabajar directamente con el SDK de Android o el de iOS, asÌ como para Unity3D. Utilizando Unity3D podemos exportarlo despuÈs a una aplicaciÛn de Android o iOS tambiÈn, aunque no quedarÌa de una manera tan ``pulida'' como desarroll·ndola directamente con el SDK del sistema operativo deseado. Nosotros hemos decidido utilizar el paquete para Unity3D, ya que es un motor de videojuegos y los tres tenÌamos unos conocimientos b·sicos en desarrollo con Unity, adem·s de que nos permite exportar despuÈs el proyecto al sistema operativo que quisiÈramos..
 
 \section{Desarrollo de videojuegos con Unity}
 \label{cap4:sec:unity}
 
-Unity funciona con algo a lo que han llamado escenas, que son diferentes situaciones o niveles del juego \cite{Unity3d}. En toda escena hay una jerarqu√≠a de objetos que la componen, y de cada objeto pueden colgar otros objetos, adem√°s de que se pueden a√±adir (por medio de c√≥digo programable) otros objetos a esa jerarqu√≠a de manera din√°mica. Todos los objetos de Unity tienen una serie de componentes, el m√°s b√°sico ser√≠a el de su situaci√≥n en las tres dimensiones (o dos), su escala y su rotaci√≥n con respecto a los tres planos. Estos componentes permiten configurar los objetos de manera sencilla, encapsulando funcionalidades. Esta forma de ``componer'' los objetos no es casual: es la m√°s utilizada en programaci√≥n de videojuegos.
+Unity funciona con algo a lo que han llamado escenas, que son diferentes situaciones o niveles del juego \cite{Unity3d}. En toda escena hay una jerarquÌa de objetos que la componen, y de cada objeto pueden colgar otros objetos, adem·s de que se pueden aÒadir (por medio de cÛdigo programable) otros objetos a esa jerarquÌa de manera din·mica. Todos los objetos de Unity tienen una serie de componentes, el m·s b·sico serÌa el de su situaciÛn en las tres dimensiones (o dos), su escala y su rotaciÛn con respecto a los tres planos. Estos componentes permiten configurar los objetos de manera sencilla, encapsulando funcionalidades. Esta forma de ``componer'' los objetos no es casual: es la m·s utilizada en programaciÛn de videojuegos.
 
-La programaci√≥n o arquitectura basasada en componentes tiene como principal caracter√≠stica tener m√°s abstracci√≥n que la basada en objetos. ``Cada componente es un elemento de un sistema que ofrece un servicio predefinido , y es capaz de comunicarse con otros componentes'' \cite{progcomponentes}.
+La programaciÛn o arquitectura basasada en componentes tiene como principal caracterÌstica tener m·s abstracciÛn que la basada en objetos. ``Cada componente es un elemento de un sistema que ofrece un servicio predefinido , y es capaz de comunicarse con otros componentes'' \cite{progcomponentes}.
 
- Adem√°s, Unity cuenta con una extens√≠sima comunidad de desarrolladores, as√≠ como tutoriales, gu√≠as, dudas resueltas\ldots{} solo con los tutoriales que proporciona la propia gente de Unity podemos hacer un sencillo juego casi de cada uno de los tipos m√°s comunes de juegos.
+ Adem·s, Unity cuenta con una extensÌsima comunidad de desarrolladores, asÌ como tutoriales, guÌas, dudas resueltas\ldots{} solo con los tutoriales que proporciona la propia gente de Unity podemos hacer un sencillo juego casi de cada uno de los tipos m·s comunes de juegos.
 
-Unity nos proporciona por defecto el c√°lculo de colisiones entre objetos, gravedad, eventos de teclado o rat√≥n... en pocos minutos podemos hacer cosas sencillas pero que con otras herramientas, o program√°ndolo directamente a mano con un lenguaje de programaci√≥n cualquiera como podr√≠a ser Java o C++, nos llevar√≠an bastante m√°s tiempo.
+Unity nos proporciona por defecto el c·lculo de colisiones entre objetos, gravedad, eventos de teclado o ratÛn... en pocos minutos podemos hacer cosas sencillas pero que con otras herramientas, o program·ndolo directamente a mano con un lenguaje de programaciÛn cualquiera como podrÌa ser Java o C++, nos llevarÌan bastante m·s tiempo.
 
-Los scripts los podemos escribir en C#, Boo o un lenguaje ``parecido'' a JavaScript. Nosotros hemos decidido utilizar C\#, ya que era la opci√≥n que m√°s nos convenc√≠a por varias razones:
-
-\begin{itemize}
-\item{Es m√°s eficiente. Los tres ten√≠amos conocimientos previos de Java, y C\# es muy similar a Java en cuanto a sintaxis.}
-\item{Es el m√°s usado por la comunidad.}
-\end{itemize}
-
-Todos los Scripts utilizados en Unity heredan de la clase MonoBehaviour, la cual permite a estos scripts integrarse con la ejecuci√≥n interna de Unity. Toda clase que herede de MonoBehaviour tiene los m√©todos Start (), Awake (), Update (), FixedUpdate (), y OnGUI (), entre otros. 
-
-√âstos se ejecutan en diferentes momentos del juego.
+Los scripts los podemos escribir en C#, Boo o un lenguaje ``parecido'' a JavaScript. Nosotros hemos decidido utilizar C\#, ya que era la opciÛn que m·s nos convencÌa por varias razones:
 
 \begin{itemize}
-\item{Awake (): el primer m√©todo al que se llama, antes incluso de que el objeto asociado est√© habilitado en la escena. Se utiliza para inicializaciones o referencias entre scripts.}
-
-\item{Start (): se ejecuta despu√©s de Awake (), justo antes del primer Update () y despu√©s de que se active el objeto.}
-
-\item{Update (): se ejecuta en cada frame. Esto hace que dependa del procesador y del equipo donde se ejecuta. Se usa para actualizaciones comunes como mover objetos no f√≠sicos, recoger entrada del usuario\ldots{}}
-
-\item{FixedUpdate (): el intervalo entre una ejecuci√≥n y otra es consistente y siempre el mismo. Se utiliza para actualizaciones c√≥mo ajustar objetos f√≠sicos.}
-
-\item{OnGUI (): se utiliza para gestionar y renderizar eventos de la Interfaz Gr√°fica de Usuario (Graphic User Interface, GUI). S√≥lo es llamada si el objeto est√° habilitado.}
+\item{Es m·s eficiente. Los tres tenÌamos conocimientos previos de Java, y C\# es muy similar a Java en cuanto a sintaxis.}
+\item{Es el m·s usado por la comunidad.}
 \end{itemize}
 
-\subsection{Integraci√≥n de Unity con Vuforia}
+Todos los Scripts utilizados en Unity heredan de la clase MonoBehaviour, la cual permite a estos scripts integrarse con la ejecuciÛn interna de Unity. Toda clase que herede de MonoBehaviour tiene los mÈtodos Start (), Awake (), Update (), FixedUpdate (), y OnGUI (), entre otros. 
+
+…stos se ejecutan en diferentes momentos del juego.
+
+\begin{itemize}
+\item{Awake (): el primer mÈtodo al que se llama, antes incluso de que el objeto asociado estÈ habilitado en la escena. Se utiliza para inicializaciones o referencias entre scripts.}
+
+\item{Start (): se ejecuta despuÈs de Awake (), justo antes del primer Update () y despuÈs de que se active el objeto.}
+
+\item{Update (): se ejecuta en cada frame. Esto hace que dependa del procesador y del equipo donde se ejecuta. Se usa para actualizaciones comunes como mover objetos no fÌsicos, recoger entrada del usuario\ldots{}}
+
+\item{FixedUpdate (): el intervalo entre una ejecuciÛn y otra es consistente y siempre el mismo. Se utiliza para actualizaciones cÛmo ajustar objetos fÌsicos.}
+
+\item{OnGUI (): se utiliza para gestionar y renderizar eventos de la Interfaz Gr·fica de Usuario (Graphic User Interface, GUI). SÛlo es llamada si el objeto est· habilitado.}
+\end{itemize}
+
+\subsection{IntegraciÛn de Unity con Vuforia}
 \label{cap4:sub:unityvuforia}
 
-Vuforia nos proporciona un paquete de extensi√≥n de Unity 3D el cual debemos importar para trabajar. √âste paquete contiene diferentes prefabs (objetos ya construidos) que nos har√°n la tarea muy sencilla.
+Vuforia nos proporciona un paquete de extensiÛn de Unity 3D el cual debemos importar para trabajar. …ste paquete contiene diferentes prefabs (objetos ya construidos) que nos har·n la tarea muy sencilla.
 
-Lo que debe tener toda aplicaci√≥n de RA hecha con Vuforia y Unity 3D es una ARCamera (c√°mara de RA). A √©sta hay que indicarle el product key que nos da Vuforia desde su portal para desarrolladores, adem√°s de √©sto, se le indicar√° el paquete de targets propios . Es la unidad m√≠nima de desarrollo de RA con Vuforia.
+Lo que debe tener toda aplicaciÛn de RA hecha con Vuforia y Unity 3D es una ARCamera (c·mara de RA). A Èsta hay que indicarle el product key que nos da Vuforia desde su portal para desarrolladores, adem·s de Èsto, se le indicar· el paquete de targets propios . Es la unidad mÌnima de desarrollo de RA con Vuforia.
 
-Una vez hecho esto, tendremos diferentes opciones para lanzar los objetos de RA, que deben colgar en la jerarqu√≠a de Unity de cualquiera de los siguientes prefabs \cite{vuforia}:
+Una vez hecho esto, tendremos diferentes opciones para lanzar los objetos de RA, que deben colgar en la jerarquÌa de Unity de cualquiera de los siguientes prefabs \cite{vuforia}:
 
 \begin{itemize}
-\item{Frame Markers: Son marcadores muy sencillos que son proporcionados por la gente de Vuforia en su paquete. Se pueden utilizar para calibrar la c√°mara, pero no tienen una gran calidad a la hora de ser detectados. Son lo m√°s sencillo para comenzar una aplicaci√≥n de prueba.}
+\item{Frame Markers: Son marcadores muy sencillos que son proporcionados por la gente de Vuforia en su paquete. Se pueden utilizar para calibrar la c·mara, pero no tienen una gran calidad a la hora de ser detectados. Son lo m·s sencillo para comenzar una aplicaciÛn de prueba.}
 
-\item{Image Targets: Im√°genes propias del desarrollador. Funcionan como los Frame Markers, pero √©stas deben ser importadas desde un paquete generado por el portal de desarrolladores de Vuforia, el cual nos indicar√° la calidad de esa imagen para ser detectada.}
+\item{Image Targets: Im·genes propias del desarrollador. Funcionan como los Frame Markers, pero Èstas deben ser importadas desde un paquete generado por el portal de desarrolladores de Vuforia, el cual nos indicar· la calidad de esa imagen para ser detectada.}
 
 \item{Multi-Targets: Son varios ImageTargets que representan las diferentes caras de un prisma en tres dimensiones.}
 
 \item{Cylinder Targets: ImageTarget que envuelve un cilindro, para representar, por ejemplo, una botella u otro objeto similar.}
 
-\item{Text Recognition: Nos permite detectar textos, ya sean del diccionario proporcionado por Vuforia de palabras en ingl√©s (m√°s de 100.000 palabras diferentes) o de uno creado por nosotros mismos.}
+\item{Text Recognition: Nos permite detectar textos, ya sean del diccionario proporcionado por Vuforia de palabras en inglÈs (m·s de 100.000 palabras diferentes) o de uno creado por nosotros mismos.}
 
 \item{Object Recognition: Sirve para configurar un objeto en tres dimensiones que no sea ninguno de los anteriores.}
 
-\item{Smart Terrain: Permite reconstruir el entorno del usuario de la aplicaci√≥n en tres dimensiones (Fig: \ref{fig:smartterrain}).}
+\item{Smart Terrain: Permite reconstruir el entorno del usuario de la aplicaciÛn en tres dimensiones (Fig: \ref{fig:smartterrain}).}
 \end{itemize}
 
 \figura{Tfg/smartTerrain.png}{width=.5\textwidth}{fig:smartterrain}
-		{Ejemplo de aplicaci√≥n con Smart Terrain}
+		{Ejemplo de aplicaciÛn con Smart Terrain}
 
-Con cualquiera de estos objetos, la funcionalidad por defecto (que podemos modificar creando nuestras propias clases que hereden de las que nos da Vuforia) es que al detectarse (ya sea un ImageTarget, un Text Recognition, etc√©tera) se comenzar√°n a mostrar todos los objetos que cuelguen de √©l en la jerarqu√≠a de Unity.
+Con cualquiera de estos objetos, la funcionalidad por defecto (que podemos modificar creando nuestras propias clases que hereden de las que nos da Vuforia) es que al detectarse (ya sea un ImageTarget, un Text Recognition, etcÈtera) se comenzar·n a mostrar todos los objetos que cuelguen de Èl en la jerarquÌa de Unity.
 
 \section{Escenas intermedias}
 %-------------------------------------------------------------------
 \label{cap4:sec:intermedias}
 
-Antes de cada minijuego, como nexo de enlace entre ellos, se ha establecido una escena intermedia donde un humanoide nos pone en situaci√≥n antes de cada misi√≥n y nos sit√∫a acerca de c√≥mo se ha llegado a dicha situaci√≥n y a d√≥nde debemos ir para resolverla.
+Antes de cada minijuego, como nexo de enlace entre ellos, se ha establecido una escena intermedia donde un humanoide nos pone en situaciÛn antes de cada misiÛn y nos sit˙a acerca de cÛmo se ha llegado a dicha situaciÛn y a dÛnde debemos ir para resolverla.
 
 \subsection{SALSA with Random Eyes}
 \label{cap4:sub:salsa}
 
-Gracias al paquete de Unity de animaci√≥n por voz, SALSA lip sync, el proceso de sincronizar el audio con la animaci√≥n del discurso del modelo ha sido algo muy sencillo \cite{salsa}. Dicha animaci√≥n consta de tres componentes:
+Gracias al paquete de Unity de animaciÛn por voz, SALSA lip sync, el proceso de sincronizar el audio con la animaciÛn del discurso del modelo ha sido algo muy sencillo \cite{salsa}. Dicha animaciÛn consta de tres componentes:
 
 \begin{itemize}
-\item{El modelo, que en este caso era un prefab que ven√≠a configurado por defecto para soportar el componente de audio y de enfoque aleatoria.}
+\item{El modelo, que en este caso era un prefab que venÌa configurado por defecto para soportar el componente de audio y de enfoque aleatoria.}
 
-\item{Componente de animaci√≥n de los m√∫sculos faciales, al cual se le asigna un conjunto de audios de tal forma que la cara del modelo se articula de forma sincronizada con el audio proporcionado. El componente viene configurado para que el audio que le proporcionamos al modelo pueda ser interpretado por este con m√°s o menos √©nfasis o con diferentes estados de √°nimo.}
+\item{Componente de animaciÛn de los m˙sculos faciales, al cual se le asigna un conjunto de audios de tal forma que la cara del modelo se articula de forma sincronizada con el audio proporcionado. El componente viene configurado para que el audio que le proporcionamos al modelo pueda ser interpretado por este con m·s o menos Ènfasis o con diferentes estados de ·nimo.}
 
-\item{Random eyes es un componente que, asignado al modelo, articula sus ojos de tal forma que definiendo unos puntos objetivo, alterna y gesticula mirando a los diferentes objetivos a lo largo de la animaci√≥n del objeto.}
+\item{Random eyes es un componente que, asignado al modelo, articula sus ojos de tal forma que definiendo unos puntos objetivo, alterna y gesticula mirando a los diferentes objetivos a lo largo de la animaciÛn del objeto.}
 \end{itemize}
 
 \subsection{VozMe MP3 generator}
 \label{cap4:sub:vozme}
 
-Adem√°s del modelo utilizado, tambi√©n hubo que crear los audios que narran el hilo argumental de nuestro juego. Para esta tarea, se generar√≥n los audio con la herramienta vozme.com \cite{vozme} que convierte a mp3, con una voz un ``rob√≥tica'', un texto dado.
+Adem·s del modelo utilizado, tambiÈn hubo que crear los audios que narran el hilo argumental de nuestro juego. Para esta tarea, se generarÛn los audio con la herramienta vozme.com \cite{vozme} que convierte a mp3, con una voz un ``robÛtica'', un texto dado.
 
 \section{Persistencia de puntuaciones}
 %-------------------------------------------------------------------
 \label{cap4:sec:puntuaciones}
 
-Al finalizar el juego, el usuario puede almacenar su puntuaci√≥n, y ver el ranking de estas. Este sistema se hizo para enlazar el juego con lo que es un servicio web, ya que nos parec√≠a una pr√°ctica interesante el hacer uso de la parte cliente que nos ofrece Unity para comunicarnos con servicios web. Se han implementado ambas partes en este caso, tanto el lado cliente que consume los servicios en Unity, como el lado del servidor, en el que se ha implementado un sistema de gesti√≥n de usuarios con una sencilla api REST en PHP, haciendo uso del framework Symfony 2.
+Al finalizar el juego, el usuario puede almacenar su puntuaciÛn, y ver el ranking de estas. Este sistema se hizo para enlazar el juego con lo que es un servicio web, ya que nos parecÌa una pr·ctica interesante el hacer uso de la parte cliente que nos ofrece Unity para comunicarnos con servicios web. Se han implementado ambas partes en este caso, tanto el lado cliente que consume los servicios en Unity, como el lado del servidor, en el que se ha implementado un sistema de gestiÛn de usuarios con una sencilla api REST en PHP, haciendo uso del framework Symfony 2.
 
 \subsection{Symfony}
 \label{cap4:sub:symfony}
 
-La arquitectura cliente-servidor es un modelo de aplicaci√≥n distribuida en el que las tareas se reparten entre los proveedores de recursos o servicios, llamados servidores, y los demandantes, llamados clientes. En nuestro caso, Unity se considerar√≠a el cliente, y es qui√©n realiza peticiones a los servicios que tenemos implementados, el servidor, quien le da respuesta.
+La arquitectura cliente-servidor es un modelo de aplicaciÛn distribuida en el que las tareas se reparten entre los proveedores de recursos o servicios, llamados servidores, y los demandantes, llamados clientes. En nuestro caso, Unity se considerarÌa el cliente, y es quiÈn realiza peticiones a los servicios que tenemos implementados, el servidor, quien le da respuesta.
 
-Por otro lado, un servicio web consiste en una petici√≥n del cliente, de tal forma que a trav√©s del protocolo http (describe la forma de comunicarse entre el cliente y el servidor), en funci√≥n de la acci√≥n que va a realizar nuestro servidor, la petici√≥n se env√≠a de una forma u otra. Los tipos de petici√≥n que contempla el protocolo http son POST, GET, PUT y DELETE, aunque con el paso del tiempo se han ido ampliando, estos son los principales. En nuestra aplicaci√≥n solo se van a utilizar POST, para realizar una acci√≥n cuyo prop√≥sito es el de a√±adir un elemento a nuestra base de datos y GET,que le proporcionar√° al usuario una lista con las puntuaciones de los usuarios.
+Por otro lado, un servicio web consiste en una peticiÛn del cliente, de tal forma que a travÈs del protocolo http (describe la forma de comunicarse entre el cliente y el servidor), en funciÛn de la acciÛn que va a realizar nuestro servidor, la peticiÛn se envÌa de una forma u otra. Los tipos de peticiÛn que contempla el protocolo http son POST, GET, PUT y DELETE, aunque con el paso del tiempo se han ido ampliando, estos son los principales. En nuestra aplicaciÛn solo se van a utilizar POST, para realizar una acciÛn cuyo propÛsito es el de aÒadir un elemento a nuestra base de datos y GET,que le proporcionar· al usuario una lista con las puntuaciones de los usuarios.
 
-La comunicaci√≥n entre Unity (cliente) y Symfony (servidor) es a trav√©s del formato de datos json, de tal forma que con Unity se interpretan estos datos y se muestran en pantalla al pedir la lista de usuarios al servidor, haciendo la correspondiente petici√≥n http a trav√©s del servicio que proporciona Symfony para devolver dichos datos. De igual forma, pero en el otro sentido, Unity los manda al servidor para dar de alta una nueva puntuaci√≥n, y Symfony, lo interpreta para almacenar esos datos.
+La comunicaciÛn entre Unity (cliente) y Symfony (servidor) es a travÈs del formato de datos json, de tal forma que con Unity se interpretan estos datos y se muestran en pantalla al pedir la lista de usuarios al servidor, haciendo la correspondiente peticiÛn http a travÈs del servicio que proporciona Symfony para devolver dichos datos. De igual forma, pero en el otro sentido, Unity los manda al servidor para dar de alta una nueva puntuaciÛn, y Symfony, lo interpreta para almacenar esos datos.
 
-El lado del cliente (Unity), est√° implementado con los scripts de Unity escritos con C#, y en el lado del servidor, se utiliza PHP con un Symfony cmmo framework, que facilita mucho el desarrollo.
+El lado del cliente (Unity), est· implementado con los scripts de Unity escritos con C#, y en el lado del servidor, se utiliza PHP con un Symfony cmmo framework, que facilita mucho el desarrollo.
 
-Los servicios que se implementaron son el servicio POST, /api/user para a√±adir una puntuaci√≥n, y el servicio GET /api/users.json para obtener la lista de puntuaciones d elos usuarios.
+Los servicios que se implementaron son el servicio POST, /api/user para aÒadir una puntuaciÛn, y el servicio GET /api/users.json para obtener la lista de puntuaciones d elos usuarios.
 
 \figura{Tfg/cliente-servidor.jpg}{width=.5\textwidth}{fig:cliente-servidor}
 		{Funcionamiento cliente servidor}
@@ -132,21 +132,21 @@ Los servicios que se implementaron son el servicio POST, /api/user para a√±adir 
 Para el desarrollo con symfony de nuestra API REST se tuvieron en cuenta los siguientes puntos:
 
 \begin{itemize}
-\item{Base de datos: Se genera una base de datos SQL con una sola tabla, la de usuarios y los campos que deseabamos guardar: id, nombre y puntuaci√≥n.}
+\item{Base de datos: Se genera una base de datos SQL con una sola tabla, la de usuarios y los campos que deseabamos guardar: id, nombre y puntuaciÛn.}
 
-\item{Operaciones: Para la parte REST; los servicios, solo pueden realizar las operaciones de leer y crear nuevos usuarios. En el panel de administraci√≥n, se pueden realizar las CRUD, crear un nuevo usuario, leer los usuarios y ver el usuario en detalle, actualizar y eliminar.}
+\item{Operaciones: Para la parte REST; los servicios, solo pueden realizar las operaciones de leer y crear nuevos usuarios. En el panel de administraciÛn, se pueden realizar las CRUD, crear un nuevo usuario, leer los usuarios y ver el usuario en detalle, actualizar y eliminar.}
 
-\item{REST: las operaciones de la API son, de tipo GET /api/users.{[}json \textbar{} xml{]} para obtener un listado de los usuarios y sus puntuaciones en uno de los formatos especificados. Y para guardar la puntuaci√≥n de un usuario, de tipo POST /api/users d√≥nde se les manda, en el body de la petici√≥n, la puntuaci√≥n del usuario y el nombre de este.}
+\item{REST: las operaciones de la API son, de tipo GET /api/users.{[}json \textbar{} xml{]} para obtener un listado de los usuarios y sus puntuaciones en uno de los formatos especificados. Y para guardar la puntuaciÛn de un usuario, de tipo POST /api/users dÛnde se les manda, en el body de la peticiÛn, la puntuaciÛn del usuario y el nombre de este.}
 
-\item{Seguridad: De lado del servidor, Symfony~nos provee de un sistema de seguridad basado en tres factores; la direcci√≥n a la que se accede, la autenticaci√≥n para acceder a ella y una vez autenticado, el rol que tiene dicho usuario para poder acceder. En nuestro caso hay dos usuario. ``admin'', con el rol de administrador, que le permite entrar tanto en el panel de administraci√≥n, como hacer uso de la api. Y ``api\_user'', un usuario cuyo rol solo le permite usar los servicios web. El tipo de autenticaci√≥n es a trav√©s de Basic auth. Consiste en a√±adir un campo en el header~con la clave ``Authorization'' y como valor, la palabra ``Basic'' concatenada y separados por un espacio con la combinaci√≥n de ``username:password'' codificada en Base64.}
+\item{Seguridad: De lado del servidor, Symfony~nos provee de un sistema de seguridad basado en tres factores; la direcciÛn a la que se accede, la autenticaciÛn para acceder a ella y una vez autenticado, el rol que tiene dicho usuario para poder acceder. En nuestro caso hay dos usuario. ``admin'', con el rol de administrador, que le permite entrar tanto en el panel de administraciÛn, como hacer uso de la api. Y ``api\_user'', un usuario cuyo rol solo le permite usar los servicios web. El tipo de autenticaciÛn es a travÈs de Basic auth. Consiste en aÒadir un campo en el header~con la clave ``Authorization'' y como valor, la palabra ``Basic'' concatenada y separados por un espacio con la combinaciÛn de ``username:password'' codificada en Base64.}
 \end{itemize}
 
-La implementaci√≥n del sistema de persistencia se compone de dos partes, la parte del cliente, d√≥nde se consumen los servicios web; y la parte del servidor, donde se configura el sistema.
+La implementaciÛn del sistema de persistencia se compone de dos partes, la parte del cliente, dÛnde se consumen los servicios web; y la parte del servidor, donde se configura el sistema.
 
-El lenguaje utilizado para implementar la parte del lado del Servidor es PHP. Sobre este lenguaje se utiliza un framework de desarrollo llamado Symfony, que facilita mucho la tarea de construir este tipo de sistemas. Symfony hace uso de trabajar basada en el Modelo Vista Controlador y el flujo de trabajo sobre este framework consiste en simplificarte, bajo esta arquitectura, un mont√≥n de procedimientos y l√≠neas de c√≥digo que se repiten constantemente en este tipo de software.
+El lenguaje utilizado para implementar la parte del lado del Servidor es PHP. Sobre este lenguaje se utiliza un framework de desarrollo llamado Symfony, que facilita mucho la tarea de construir este tipo de sistemas. Symfony hace uso de trabajar basada en el Modelo Vista Controlador y el flujo de trabajo sobre este framework consiste en simplificarte, bajo esta arquitectura, un montÛn de procedimientos y lÌneas de cÛdigo que se repiten constantemente en este tipo de software.
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
-% compilaci√≥n y funcionen mejor algunas teclas r√°pidas de AucTeX
+% compilaciÛn y funcionen mejor algunas teclas r·pidas de AucTeX
 %%%
 %%% Local Variables:
 %%% mode: latex

@@ -30,24 +30,24 @@
 \contentsline {subsection}{\numberline {4.3.2}VozMe MP3 generator}{25}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4}Persistencia de puntuaciones}{25}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Symfony}{25}{subsection.4.4.1}
-\contentsline {chapter}{\numberline {5}Space Invaders}{27}{chapter.5}
-\contentsline {section}{\numberline {5.1}Historia}{27}{section.5.1}
-\contentsline {section}{\numberline {5.2}Nuestra versi\'on}{27}{section.5.2}
-\contentsline {section}{\numberline {5.3}Dise\~no}{28}{section.5.3}
-\contentsline {section}{\numberline {5.4}Implementaci\'on}{29}{section.5.4}
-\contentsline {section}{\numberline {5.5}Conclusiones}{31}{section.5.5}
-\contentsline {chapter}{\numberline {6}Arkanoid}{35}{chapter.6}
-\contentsline {section}{\numberline {6.1}Historia}{35}{section.6.1}
-\contentsline {section}{\numberline {6.2}Nuestra versi\'on}{35}{section.6.2}
-\contentsline {section}{\numberline {6.3}Dise\~no}{37}{section.6.3}
-\contentsline {section}{\numberline {6.4}Implementaci\'on}{39}{section.6.4}
-\contentsline {section}{\numberline {6.5}Conclusiones}{41}{section.6.5}
-\contentsline {chapter}{\numberline {7}Water Pipes}{43}{chapter.7}
-\contentsline {section}{\numberline {7.1}Historia}{43}{section.7.1}
-\contentsline {section}{\numberline {7.2}Nuestra versi\'on}{43}{section.7.2}
-\contentsline {section}{\numberline {7.3}Dise\~no}{45}{section.7.3}
-\contentsline {section}{\numberline {7.4}Implementaci\'on}{46}{section.7.4}
-\contentsline {section}{\numberline {7.5}Conclusiones}{48}{section.7.5}
+\contentsline {chapter}{\numberline {5}Space Invaders}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Historia}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}Nuestra versi\'on}{29}{section.5.2}
+\contentsline {section}{\numberline {5.3}Dise\~no}{30}{section.5.3}
+\contentsline {section}{\numberline {5.4}Implementaci\'on}{32}{section.5.4}
+\contentsline {section}{\numberline {5.5}Conclusiones}{33}{section.5.5}
+\contentsline {chapter}{\numberline {6}Arkanoid}{37}{chapter.6}
+\contentsline {section}{\numberline {6.1}Historia}{37}{section.6.1}
+\contentsline {section}{\numberline {6.2}Nuestra versi\'on}{37}{section.6.2}
+\contentsline {section}{\numberline {6.3}Dise\~no}{39}{section.6.3}
+\contentsline {section}{\numberline {6.4}Implementaci\'on}{41}{section.6.4}
+\contentsline {section}{\numberline {6.5}Conclusiones}{43}{section.6.5}
+\contentsline {chapter}{\numberline {7}Water Pipes}{45}{chapter.7}
+\contentsline {section}{\numberline {7.1}Historia}{45}{section.7.1}
+\contentsline {section}{\numberline {7.2}Nuestra versi\'on}{45}{section.7.2}
+\contentsline {section}{\numberline {7.3}Dise\~no}{47}{section.7.3}
+\contentsline {section}{\numberline {7.4}Implementaci\'on}{48}{section.7.4}
+\contentsline {section}{\numberline {7.5}Conclusiones}{51}{section.7.5}
 \contentsline {chapter}{\numberline {8}Evaluaci\'on con usuarios}{53}{chapter.8}
 \contentsline {section}{\numberline {8.1}Plan de evaluaci\'on}{53}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}Objetivos de la evaluaci\'on}{53}{subsection.8.1.1}
@@ -56,16 +56,16 @@
 \contentsline {subsection}{\numberline {8.2.1}Primera fase}{55}{subsection.8.2.1}
 \contentsline {subsection}{\numberline {8.2.2}Segunda fase}{55}{subsection.8.2.2}
 \contentsline {subsection}{\numberline {8.2.3}Tercera fase}{55}{subsection.8.2.3}
-\contentsline {section}{\numberline {8.3}Primera evaluaci\'on con usuarios}{55}{section.8.3}
+\contentsline {section}{\numberline {8.3}Primera evaluaci\'on con usuarios}{56}{section.8.3}
 \contentsline {subsection}{\numberline {8.3.1}Informe de resultados}{56}{subsection.8.3.1}
 \contentsline {subsection}{\numberline {8.3.2}Propuesta de soluciones}{58}{subsection.8.3.2}
 \contentsline {subsection}{\numberline {8.3.3}Conclusiones}{59}{subsection.8.3.3}
 \contentsline {chapter}{\numberline {9}Conclusiones y trabajo futuro}{61}{chapter.9}
 \contentsline {section}{\numberline {9.1}Conclusions}{62}{section.9.1}
-\contentsline {section}{\numberline {9.2}L\IeC {\'\i }neas futuras}{63}{section.9.2}
-\contentsline {chapter}{\numberline {10}Aportaciones individuales}{65}{chapter.10}
-\contentsline {section}{\numberline {10.1}Organizaci\'on general del proyecto}{65}{section.10.1}
-\contentsline {section}{\numberline {10.2}Ra\'ul Cobos}{66}{section.10.2}
-\contentsline {section}{\numberline {10.3}\'Alvar D. Soler}{68}{section.10.3}
-\contentsline {section}{\numberline {10.4}Mar\IeC {\'\i }a Picado}{69}{section.10.4}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{71}{appendix*.41}
+\contentsline {section}{\numberline {9.2}L\IeC {\'\i }neas futuras}{64}{section.9.2}
+\contentsline {chapter}{\numberline {10}Aportaciones individuales}{67}{chapter.10}
+\contentsline {section}{\numberline {10.1}Organizaci\'on general del proyecto}{67}{section.10.1}
+\contentsline {section}{\numberline {10.2}Ra\'ul Cobos}{68}{section.10.2}
+\contentsline {section}{\numberline {10.3}\'Alvar D. Soler}{70}{section.10.3}
+\contentsline {section}{\numberline {10.4}Mar\IeC {\'\i }a Picado}{72}{section.10.4}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{75}{appendix*.42}

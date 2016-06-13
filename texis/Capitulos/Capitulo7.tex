@@ -42,9 +42,12 @@ Para lograr esto, el jugador deberá ir intercambiando una tubería por otra. La m
 
 En este apartado explicaremos todos los objetos y componentes necesarios para la implementación del minijuego (Fig: \ref{fig:diagramaWaterPipesScene}).
 
-\figura{Tfg/DiagramaWater.png}{width=\textwidth,keepaspectratio}{fig:diagramaWaterPipesScene}{Diagrama de los componentes del juego}
 
 Para este juego existe un solo tipo de objeto visible, los tiles que representan a los conductos. Todos estos objetos, se crean dinámicamente al comienzo de la escena, como hijos del Image Target.
+
+\figura{Tfg/tile.png}{width=.25\textwidth}{fig:tile}
+	{Uno de los 23 tiles que forman el tablero}
+\end{itemize}
 
 \begin{itemize}
 \item{Tile: todo el juego se compone de 25 (matriz de 5x5) GameObjects de tipo Quad que representan los conductos de refrigeración. A cada uno se les han incluido los mismos componentes:}
@@ -62,10 +65,6 @@ Para este juego existe un solo tipo de objeto visible, los tiles que representan
 
 \item{Animator: que contiene el Animator Controller de ese tipo de tubería. Cada controlador suele tener dos animaciones por tubería, que dependiendo de la salida de la anterior se reproduce una animación u otra.}
 
-\figura{Tfg/tile.png}{width=.25\textwidth}{fig:tile}
-	{Uno de los 23 tiles que forman el tablero}
-\end{itemize}
-
 \item{Canvas: Muestra la información del juego, y se encarga de mostrar el tiempo restante que le queda al jugador y cuando el juego finaliza muestra la pantalla de marcadores, para que el jugador pueda introducir su nombre y así entrar en la lista de clasificados.}
 \item{GameManager: Es un GameObject vacío en la escena que contiene los scripts para la funcionalidad del juego:}
 
@@ -76,7 +75,6 @@ Para este juego existe un solo tipo de objeto visible, los tiles que representan
 \end{itemize}
 \end{itemize}
 
-
 \section{Implementación}
 %-------------------------------------------------------------------
 \label{cap6:sec:implementacion}
@@ -84,6 +82,13 @@ Para este juego existe un solo tipo de objeto visible, los tiles que representan
 Este juego se ha implementado en base al patrón command, que encapsula la decisión de por dónde va a ir fluyendo el agua. Esta funcionalidad es la principal de todo el juego, ya que aunque el jugador de lo que se encarga es de intercambiar las tuberías, el objetivo del juego es conseguir que el agua fluya desde la casilla de salida hasta la meta.
 
 En primer lugar, vamos a describir las clases que se encargan de las otras funcionalidades del juego, las cuales son, el intercambio de tuberías que realiza el jugador, la inicialización y creación del entorno del juego y el tiempo del juego.
+
+	\figura{Tfg/tuberias.png}{width=.5\textwidth}{fig:tuberias}
+		{Sprites de las tuberías del juego Water Pipes}
+
+	\figura{Tfg/tablerowater.png}{width=.5\textwidth}{fig:tablero}
+		{Captura del tablero generado de forma aleatoria}
+	\end{itemize}
 
 \begin{enumerate}
 \item{TouchObject}
@@ -99,14 +104,7 @@ En primer lugar, vamos a describir las clases que se encargan de las otras funci
 	\begin{itemize}
 	\item{Es el encargado de crear dinámicamente todos los objetos de la escena al comienzo del juego, y de llevar el control del tiempo que tiene el jugador para completar la misión. Este componente, se añade al GameObject vacío de nombre GameManager de la escena. El script lo primero que hace es añadir los objetos prefabs de cada tipo de conducto (Horizontal, Vertical, Codo Derecho Arriba, Codo Derecho Abajo, Codo Izquierdo Arriba y Codo Izquierdo Abajo) en una lista de SquareReceiver para luego ir eligiendo de manera aleatoria los 23 conductos totales.}
 
-	\figura{Tfg/tuberias.png}{width=.75\textwidth}{fig:tuberias}
-		{Sprites de las tuberías del juego Water Pipes}
-
 	\item{A continuación crea la salida y la meta, ya que estos siempre van a tener una posición fija en el tablero. Y cuando ya está todo listo, lo único que falta es ir creando el resto del tablero. Esto lo hace recorriendo todo el tablero desde la casilla 1 hasta la 23 y por cada una escoge aleatoriamente un tipo de conducto, de la lista anterior.Crea una instancia de ese tipo de objeto que será un hijo del Image Target. Dándole además las propiedades como la posición, el nombre, y la escala. Esta instancia la guardamos en un array del tipo SquareReceiver para luego poder acceder a él. El método Update controla el tiempo del juego.}
-
-	\figura{Tfg/tablerowater.png}{width=.75\textwidth}{fig:tablero}
-		{Captura del tablero generado de forma aleatoria}
-	\end{itemize}
 
 \item{WaterController}
 	\begin{itemize}
@@ -126,6 +124,9 @@ En este caso, el juego Water Pipes es un juego sencillo que la mayoría de la gen
 
 Creemos que el resultado final cumple con los objetivos, ya que se ha implementado un juego que gracias a su sencillez y que la duración no es demasiado larga, entretiene y capta la atención del usuario.
 
+\newpage
+\figura{Tfg/DiagramaWater.png}{width=\textwidth,keepaspectratio}{fig:diagramaWaterPipesScene}{Diagrama de los componentes del juego}
+\newpage
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX
