@@ -121,6 +121,8 @@ Por otro lado, un servicio web consiste en una petición del cliente, de tal for
 
 La comunicación entre Unity (cliente) y Symfony (servidor) es a través del formato de datos json, de tal forma que con Unity se interpretan estos datos y se muestran en pantalla al pedir la lista de usuarios al servidor, haciendo la correspondiente petición http a través del servicio que proporciona Symfony para devolver dichos datos. De igual forma, pero en el otro sentido, Unity los manda al servidor para dar de alta una nueva puntuación, y Symfony, lo interpreta para almacenar esos datos.
 
+El lado del cliente (Unity), está implementado con los scripts de Unity escritos con C#, y en el lado del servidor, se utiliza PHP con un Symfony cmmo framework, que facilita mucho el desarrollo.
+
 Los servicios que se implementaron son el servicio POST, /api/user para añadir una puntuación, y el servicio GET /api/users.json para obtener la lista de puntuaciones d elos usuarios.
 
 Para el desarrollo con symfony de nuestra API REST se tuvieron en cuenta los siguientes puntos:
