@@ -34,20 +34,20 @@
 \contentsline {section}{\numberline {5.1}Historia}{27}{section.5.1}
 \contentsline {section}{\numberline {5.2}Nuestra versi\'on}{27}{section.5.2}
 \contentsline {section}{\numberline {5.3}Dise\~no}{28}{section.5.3}
-\contentsline {section}{\numberline {5.4}Implementaci\'on}{30}{section.5.4}
-\contentsline {section}{\numberline {5.5}Conclusiones}{32}{section.5.5}
+\contentsline {section}{\numberline {5.4}Implementaci\'on}{29}{section.5.4}
+\contentsline {section}{\numberline {5.5}Conclusiones}{31}{section.5.5}
 \contentsline {chapter}{\numberline {6}Arkanoid}{35}{chapter.6}
 \contentsline {section}{\numberline {6.1}Historia}{35}{section.6.1}
 \contentsline {section}{\numberline {6.2}Nuestra versi\'on}{35}{section.6.2}
 \contentsline {section}{\numberline {6.3}Dise\~no}{37}{section.6.3}
 \contentsline {section}{\numberline {6.4}Implementaci\'on}{39}{section.6.4}
 \contentsline {section}{\numberline {6.5}Conclusiones}{41}{section.6.5}
-\contentsline {chapter}{\numberline {7}Water Pipes}{45}{chapter.7}
-\contentsline {section}{\numberline {7.1}Historia}{45}{section.7.1}
-\contentsline {section}{\numberline {7.2}Nuestra versi\'on}{45}{section.7.2}
-\contentsline {section}{\numberline {7.3}Dise\~no}{47}{section.7.3}
-\contentsline {section}{\numberline {7.4}Implementaci\'on}{48}{section.7.4}
-\contentsline {section}{\numberline {7.5}Conclusiones}{52}{section.7.5}
+\contentsline {chapter}{\numberline {7}Water Pipes}{43}{chapter.7}
+\contentsline {section}{\numberline {7.1}Historia}{43}{section.7.1}
+\contentsline {section}{\numberline {7.2}Nuestra versi\'on}{43}{section.7.2}
+\contentsline {section}{\numberline {7.3}Dise\~no}{45}{section.7.3}
+\contentsline {section}{\numberline {7.4}Implementaci\'on}{46}{section.7.4}
+\contentsline {section}{\numberline {7.5}Conclusiones}{48}{section.7.5}
 \contentsline {chapter}{\numberline {8}Evaluaci\'on con usuarios}{53}{chapter.8}
 \contentsline {section}{\numberline {8.1}Plan de evaluaci\'on}{53}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}Objetivos de la evaluaci\'on}{53}{subsection.8.1.1}
@@ -68,4 +68,4 @@
 \contentsline {section}{\numberline {10.2}Ra\'ul Cobos}{66}{section.10.2}
 \contentsline {section}{\numberline {10.3}\'Alvar D. Soler}{68}{section.10.3}
 \contentsline {section}{\numberline {10.4}Mar\IeC {\'\i }a Picado}{69}{section.10.4}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{71}{appendix*.42}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{71}{appendix*.41}

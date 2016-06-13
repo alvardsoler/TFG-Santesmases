@@ -40,7 +40,9 @@ Para lograr esto, el jugador deberá ir intercambiando una tubería por otra. La m
 %-------------------------------------------------------------------
 \label{cap6:sec:diseno}
 
-En este apartado explicaremos todos los objetos y componentes necesarios para la implementación del minijuego.
+En este apartado explicaremos todos los objetos y componentes necesarios para la implementación del minijuego (Fig: \ref{fig:diagramaWaterPipesScene}).
+
+\figura{Tfg/DiagramaWater.png}{width=\textwidth,keepaspectratio}{fig:diagramaWaterPipesScene}{Diagrama de los componentes del juego}
 
 Para este juego existe un solo tipo de objeto visible, los tiles que representan a los conductos. Todos estos objetos, se crean dinámicamente al comienzo de la escena, como hijos del Image Target.
 
@@ -63,9 +65,6 @@ Para este juego existe un solo tipo de objeto visible, los tiles que representan
 \figura{Tfg/tile.png}{width=.25\textwidth}{fig:tile}
 	{Uno de los 23 tiles que forman el tablero}
 \end{itemize}
-
-
-\figura{Tfg/gowater.png}{width=\textwidth}{fig:goswater}{Esquema de los GO y sus componentes, necesarios para el tile anterior}
 
 \item{Canvas: Muestra la información del juego, y se encarga de mostrar el tiempo restante que le queda al jugador y cuando el juego finaliza muestra la pantalla de marcadores, para que el jugador pueda introducir su nombre y así entrar en la lista de clasificados.}
 \item{GameManager: Es un GameObject vacío en la escena que contiene los scripts para la funcionalidad del juego:}
@@ -118,11 +117,6 @@ En primer lugar, vamos a describir las clases que se encargan de las otras funci
 		\item{Por cada tipo de conducto el agua puede fluir en dos sentidos cada vez, por lo tanto a partir de la entrada del agua de la casilla anterior se calculará la casilla siguiente por la que el agua debería de fluir. Y una vez que ya sepamos cuál es la siguiente casilla por la que tenemos que llevar el agua, podremos comprobar si esa casilla es válida, es decir su entrada de agua coincide con la salida de agua anterior.}
 		\end{itemize}
 	\end{itemize}
-\newpage
-\begin{center}
-\figura{Tfg/diagramawaterpipes.jpg}{width=\textwidth,keepaspectratio}{fig:diagramaWaterPipesScene}{Diagrama del juego}
-\end{center}
-
 
 \section{Conclusiones}
 %-------------------------------------------------------------------

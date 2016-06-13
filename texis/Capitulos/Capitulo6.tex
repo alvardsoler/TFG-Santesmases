@@ -38,15 +38,18 @@ Con esta recreación lo que se intenta es no tanto simular un juego entretenido p
 %-------------------------------------------------------------------
 \label{cap5:sec:diseno}
 
-La escena se compone de los siguientes elementos:
+La escena se compone de los siguientes elementos (Fig: \ref{fig:diagramarkanoid}):
+
+\figura{Tfg/diagramaarkanoid.png}{width=\textwidth,keepaspectratio}{fig:diagramarkanoid}
+	{Diagrama de los componentes del juego}
 
 \begin{itemize}
-\item{ARCamera e ImageTarget como elementos principales en una escena de RA. La propia librería de~Vuforia~nos provee de ellos, solo hay que definir el Image target al que reacciona la escena y añadirlos; del resto ya se encarga su lógica interna.}
+\item{ARCamera e ImageTarget como elementos principales en una escena de RA. La propia librería de Vuforia nos provee de ellos, solo hay que definir el Image target al que reacciona la escena y añadirlos; del resto ya se encarga su lógica interna.}
 \item{Un modelo 3D de un televisor que hace de contenedor de la escena y que no tiene ninguna mecánica asociada.}
 \item{La bola, en la que se han implementado dos componentes; uno físico para hacer que esta rebote, y un script cuya finalidad es la de destruir los bloques, o mejor dicho, la de lanzar la animación de destrucción del bloque y finalizar el juego al acabar con todos los bloques, o, al salirse de la zona de juego. Para evitar problemas y por lógica del juego, aunque la escena sea 3D los componentes sobre este juego son en 2D.}
 
 \begin{itemize}
-\item{Ball Material: Es un material de Unity que, junto al componente~RigidBody2D, elimina la gravedad en el objeto, configura a este para poder rebotar, consigue que la fuerza aplicada sobre la bola sea infinita, de forma que no pare jamás de desplazarse; y, define las coordenadas en las que puede desplazarse el objeto (x e y) y en las que puede rotar (ninguna).}
+\item{Ball Material: Es un material de Unity que, junto al componente RigidBody2D, elimina la gravedad en el objeto, configura a este para poder rebotar, consigue que la fuerza aplicada sobre la bola sea infinita, de forma que no pare jamás de desplazarse; y, define las coordenadas en las que puede desplazarse el objeto (x e y) y en las que puede rotar (ninguna).}
 
 \item{BoxCollider2D: Para controlar todo el tema de colisiones. En este caso, el Collider que envuelve a la bola es un cuadrado rotado 45 grados para evitar problemas en los rebotes (Fig: \ref{fig:boxcolliderarkanoid}).}
 \end{itemize}
@@ -97,12 +100,6 @@ Para el Arkanoid, se han tenido que implementar las siguientes lógicas de juego:
 Los mencionados son los más importantes, ya que son los que dotan de lógica al juego, aunque existen más de los que se hacen uso como el globalGameManager, que es el encargado de navegar entre escenas, ScoreMarkerObserver y TimeMarkerObserver, que pintan en el canvas el estado del juego o un script que se añade a la escena para controlar el back de nuestro dispositivo. Además, hay también otros scripts sencillos que controlan el resto de los objetos de la escena.}
 \end{itemize}
 \end{enumerate}
-
-\newpage
-\begin{center}
-\figura{Tfg/diagramaarkanoid.jpg}{width=\textwidth,keepaspectratio}{fig:diagramarkanoid}{Diagrama del juego}
-\end{center}
-\newpage
 
 \section{Conclusiones}
 %-------------------------------------------------------------------

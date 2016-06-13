@@ -32,7 +32,13 @@ Con estos cambios hemos conseguido (a nuestro juicio) transformar un clásico de 
 \section{Diseño}
 %-------------------------------------------------------------------
 \label{cap4:sec:diseno}
-El juego se compone de una única escena que contiene todo el juego. Básicamente se compone de:
+El juego se compone de una única escena que contiene todo el juego  (Fig: \ref{fig:invaders2}). Básicamente se compone de:
+
+
+
+\figura{Tfg/diagrama_spaceinvaders.png}{width=\textwidth,keepaspectratio}{fig:invaders2}
+	{Diagrama de los componentes}
+
 
 \figura{Tfg/implementacion_space_invaders.png}{width=.5\textwidth}{fig:inaveders3}
 	{Captura durante el proceso de implementación}
@@ -44,13 +50,15 @@ El juego se compone de una única escena que contiene todo el juego. Básicamente 
 	\item{El punto de mira que utilizamos para apuntar al disparar, que también está hecho con un canvas.}
 	\item{El Cannon (Cañón de disparo) que representa nuestra arma. Básicamente dibuja una línea hacia el infinito para que de la sensación de un puntero láser para apuntar, además, desde su posición se lanza el raycast que calcula las colisiones con los posibles enemigos.}	
 	\end{itemize}
-	\item{Un GameObject vacío llamado SpaceInvadersGame que contiene la clase singleton que gestiona el juego y la información mostrada por la interfaz.}
-	\item{El TextRecognition que sirve para cargar la detección de textos. A éste le hemos añadido un diccionario propio de palabras para poder leer texto en castellano. El diccionario contiene únicamente dos palabras, facultad e informática. Hemos configurado el TextRecognition de manera que sólo busque las palabras que están en su white list (lista blanca), que son las dos antes mencionadas, así las operaciones son más ligeras ya que no tiene que comprobar las miles de palabras. \cite{textrecog}}
-	\item{Word representa a una palabra detectada por Vuforia. Se puede configurar para que represente cualquier palabra detectada o alguna en particular. Nosotros lo utilizamos para representar en particular la palabra INFORMÁTICA. Éste es el GameObject que sustituye al ImageTarget que utilizábamos en el pasado. Al detectar la palabra  ``INFORMÁTICA'' en la cámara de RA, activa sus hijos y ``avisa'' al gestor del juego de que debe empezar a ejecutarse.}
+\item{Un GameObject vacío llamado SpaceInvadersGame que contiene la clase singleton que gestiona el juego y la información mostrada por la interfaz.}
+\item{El TextRecognition que sirve para cargar la detección de textos. A éste le hemos añadido un diccionario propio de palabras para poder leer texto en castellano. El diccionario contiene únicamente dos palabras, facultad e informática. Hemos configurado el TextRecognition de manera que sólo busque las palabras que están en su white list (lista blanca), que son las dos antes mencionadas, así las operaciones son más ligeras ya que no tiene que comprobar las miles de palabras. \cite{textrecog}}
+\item{Word representa a una palabra detectada por Vuforia. Se puede configurar para que represente cualquier palabra detectada o alguna en particular. Nosotros lo utilizamos para representar en particular la palabra INFORMÁTICA. Éste es el GameObject que sustituye al ImageTarget que utilizábamos en el pasado. Al detectar la palabra  ``INFORMÁTICA'' en la cámara de RA, activa sus hijos y ``avisa'' al gestor del juego de que debe empezar a ejecutarse. De ella cuelgan:}
+\begin{itemize}
 	\item{Un Enjambre, que contiene la lógica para crear varios Invasores y posicionarlos a cada uno en su sitio, así como para moverlos todos juntos.}
-	\item{Las copias de los invasores, las cuales disparan a veces a las defensas.}
+	\item{Nueve Invaders (Invasores) colocados en tres filas de tres columnas cada una. Atacan al enemigo aleatoriamente.}
 	% imagen de los invaders
 	\item{Las defensas, un objeto en tres dimensiones que representa a las defensas del jugador. Van cambiando de color, desde el verde al rojo según van recibiendo impactos de los invasores (o del propio jugador que apunta mal, para ser algo más realista).}
+\end{itemize}
 \end{itemize}
 
 % subsection dise_o (end)
@@ -59,7 +67,7 @@ El juego se compone de una única escena que contiene todo el juego. Básicamente 
 %-------------------------------------------------------------------
 \label{cap4:sec:implementacion}
 
-Pasamos a explicar qué clases componen el juego y para qué las utilizamos.
+Pasamos a explicar qué componentes componen el juego y para qué los utilizamos.
 
 \begin{enumerate}
 \item{Defense}
@@ -92,11 +100,6 @@ Pasamos a explicar qué clases componen el juego y para qué las utilizamos.
 	\end{itemize}
 \end{enumerate}
 
-\newpage
-\begin{center}
-\figura{Tfg/diagrama_spaceinvaders.jpg}{width=\textwidth,keepaspectratio}{fig:invaders2}{Diagrama de los GameObjects}
-\end{center}
-\newpage
 
 \section{Conclusiones}
 %-------------------------------------------------------------------
