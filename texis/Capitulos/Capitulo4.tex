@@ -115,8 +115,15 @@ Al finalizar el juego, el usuario puede almacenar su puntuación, y ver el ranki
 \subsection{Symfony}
 \label{cap4:sub:symfony}
 
-Para el desarrollo con symfony de una API REST se tuvieron en cuenta los
-siguientes puntos:
+La arquitectura cliente-servidor es un modelo de aplicación distribuida en el que las tareas se reparten entre los proveedores de recursos o servicios, llamados servidores, y los demandantes, llamados clientes. En nuestro caso, Unity se consideraría el cliente, y es quién realiza peticiones a los servicios que tenemos implementados, el servidor, quien le da respuesta.
+
+Por otro lado, un servicio web consiste en una petición del cliente, de tal forma que a través del protocolo http (describe la forma de comunicarse entre el cliente y el servidor), en función de la acción que va a realizar nuestro servidor, la petición se envía de una forma u otra. Los tipos de petición que contempla el protocolo http son POST, GET, PUT y DELETE, aunque con el paso del tiempo se han ido ampliando, estos son los principales. En nuestra aplicación solo se van a utilizar POST, para realizar una acción cuyo propósito es el de añadir un elemento a nuestra base de datos y GET,que le proporcionará al usuario una lista con las puntuaciones de los usuarios.
+
+La comunicación entre Unity (cliente) y Symfony (servidor) es a través del formato de datos json, de tal forma que con Unity se interpretan estos datos y se muestran en pantalla al pedir la lista de usuarios al servidor, haciendo la correspondiente petición http a través del servicio que proporciona Symfony para devolver dichos datos. De igual forma, pero en el otro sentido, Unity los manda al servidor para dar de alta una nueva puntuación, y Symfony, lo interpreta para almacenar esos datos.
+
+Los servicios que se implementaron son el servicio POST, /api/user para añadir una puntuación, y el servicio GET /api/users.json para obtener la lista de puntuaciones d elos usuarios.
+
+Para el desarrollo con symfony de nuestra API REST se tuvieron en cuenta los siguientes puntos:
 
 \begin{itemize}
 \item{Base de datos: Se genera una base de datos SQL con una sola tabla, la de usuarios y los campos que deseabamos guardar: id, nombre y puntuación.}
