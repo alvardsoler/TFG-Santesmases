@@ -7,42 +7,43 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Cartel publicitario de la empresa CamOnApp\relax }}{7}{figure.caption.8}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Captura del entorno de desarrollo de la aplicaci\'on Aumentaty\relax }}{8}{figure.caption.9}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Realidad aumentada en medicina\relax }}{8}{figure.caption.10}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Realidad aumentada en medicina\relax }}{9}{figure.caption.11}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Aplicaci\'on de RA aplicada a la arquitectura\relax }}{9}{figure.caption.12}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces AR Cards para Nintendo3DS\relax }}{10}{figure.caption.13}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Captura del juego Pok\'emon Go\relax }}{11}{figure.caption.14}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Captura del juego Ingress\relax }}{11}{figure.caption.15}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Captura del juego Paintball\relax }}{12}{figure.caption.16}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Captura del juego Father.io\relax }}{12}{figure.caption.17}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Captura del juego Night Terrors\relax }}{13}{figure.caption.18}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Aplicaci\'on del Museo de Matar\'o\relax }}{14}{figure.caption.19}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces StreetMuseum\relax }}{15}{figure.caption.20}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Crononautas\relax }}{15}{figure.caption.21}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Captura de RACMA que muestra las zonas de influencia de las sociedades precolombinas.\relax }}{15}{figure.caption.22}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Aplicaciones de RA en la medicina\relax }}{8}{figure.caption.10}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces RA en medicina}}{8}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces RA en medicina 2}}{8}{subfigure.3.2}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Aplicaci\'on de RA aplicada a la arquitectura\relax }}{9}{figure.caption.11}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces AR Cards para Nintendo3DS\relax }}{10}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Captura del juego Pok\'emon Go\relax }}{10}{figure.caption.13}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Captura del juego Ingress\relax }}{11}{figure.caption.14}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Captura del juego Paintball\relax }}{11}{figure.caption.15}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Captura del juego Father.io\relax }}{12}{figure.caption.16}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Captura del juego Night Terrors\relax }}{12}{figure.caption.17}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Aplicaci\'on del Museo de Matar\'o\relax }}{13}{figure.caption.18}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces StreetMuseum\relax }}{14}{figure.caption.19}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Crononautas\relax }}{14}{figure.caption.20}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Captura de RACMA que muestra las zonas de influencia de las sociedades precolombinas.\relax }}{15}{figure.caption.21}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Ejemplo de aplicaci\'on con Smart Terrain\relax }}{24}{figure.caption.23}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Ejemplo de aplicaci\'on con Smart Terrain\relax }}{24}{figure.caption.22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Space Invaders original\relax }}{28}{figure.caption.24}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Captura durante el proceso de implementaci\'on\relax }}{29}{figure.caption.25}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama de los GameObjects\relax }}{32}{figure.caption.26}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Space Invaders original\relax }}{28}{figure.caption.23}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Captura durante el proceso de implementaci\'on\relax }}{29}{figure.caption.24}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama de los GameObjects\relax }}{32}{figure.caption.25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Portada original Arkanoid\relax }}{36}{figure.caption.27}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces C\'odigo QR de Super Mario\relax }}{37}{figure.caption.28}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces BoxCollider Bola Arkanoid\relax }}{38}{figure.caption.29}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Distintos tipos de bloques del Arkanoid\relax }}{38}{figure.caption.30}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Diagrama del juego\relax }}{41}{figure.caption.31}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Portada original Arkanoid\relax }}{36}{figure.caption.26}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces C\'odigo QR de Super Mario\relax }}{37}{figure.caption.27}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces BoxCollider Bola Arkanoid\relax }}{38}{figure.caption.28}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Distintos tipos de bloques del Arkanoid\relax }}{38}{figure.caption.29}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Diagrama del juego\relax }}{41}{figure.caption.30}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Simulador t\'ermico del museo Garc\IeC {\'\i }a-Santesmases\relax }}{46}{figure.caption.32}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Juego original de 1989\relax }}{46}{figure.caption.33}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Uno de los 23 tiles que forman el tablero\relax }}{48}{figure.caption.34}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Esquema de los GO y sus componentes, necesarios para el tile anterior\relax }}{49}{figure.caption.35}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Sprites de las tuber\IeC {\'\i }as del juego Water Pipes\relax }}{50}{figure.caption.36}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Captura del tablero generado de forma aleatoria\relax }}{51}{figure.caption.37}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Diagrama del juego\relax }}{52}{figure.caption.38}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Simulador t\'ermico del museo Garc\IeC {\'\i }a-Santesmases\relax }}{46}{figure.caption.31}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Juego original de 1989\relax }}{46}{figure.caption.32}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Uno de los 23 tiles que forman el tablero\relax }}{48}{figure.caption.33}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Esquema de los GO y sus componentes, necesarios para el tile anterior\relax }}{49}{figure.caption.34}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Sprites de las tuber\IeC {\'\i }as del juego Water Pipes\relax }}{50}{figure.caption.35}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Captura del tablero generado de forma aleatoria\relax }}{51}{figure.caption.36}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Diagrama del juego\relax }}{52}{figure.caption.37}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Usuario realizando un prueba del Space Invaders\relax }}{56}{figure.caption.40}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Usuario realizando un prueba del Space Invaders\relax }}{56}{figure.caption.39}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Fotograf\IeC {\'\i }a del cuadro informativo con los disquetes\relax }}{63}{figure.caption.42}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Fotograf\IeC {\'\i }a del cuadro informativo con los disquetes\relax }}{64}{figure.caption.41}
 \addvspace {10\p@ }

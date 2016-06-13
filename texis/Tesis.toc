@@ -14,9 +14,9 @@
 \contentsline {subsection}{\numberline {2.2.3}Ciencia y desarrollo}{8}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Otros}{8}{subsection.2.2.4}
 \contentsline {section}{\numberline {2.3}Realidad aumentada en videojuegos}{9}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Ejemplos de Realidad Aumentada en videojuegos}{10}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Ejemplos de Realidad Aumentada en videojuegos}{9}{subsection.2.3.1}
 \contentsline {section}{\numberline {2.4}Realidad aumentada en museos}{12}{section.2.4}
-\contentsline {section}{\numberline {2.5}Herramientas de desarrollo}{13}{section.2.5}
+\contentsline {section}{\numberline {2.5}Herramientas de desarrollo}{14}{section.2.5}
 \contentsline {chapter}{\numberline {3}Dise\~no del videojuego}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Hilo argumental}{18}{section.3.1}
 \contentsline {section}{\numberline {3.2}Mec\'anicas}{18}{section.3.2}
@@ -62,10 +62,10 @@
 \contentsline {subsection}{\numberline {8.3.3}Conclusiones}{59}{subsection.8.3.3}
 \contentsline {chapter}{\numberline {9}Conclusiones y trabajo futuro}{61}{chapter.9}
 \contentsline {section}{\numberline {9.1}Conclusions}{62}{section.9.1}
-\contentsline {section}{\numberline {9.2}L\IeC {\'\i }neas futuras}{62}{section.9.2}
+\contentsline {section}{\numberline {9.2}L\IeC {\'\i }neas futuras}{63}{section.9.2}
 \contentsline {chapter}{\numberline {10}Aportaciones individuales}{65}{chapter.10}
 \contentsline {section}{\numberline {10.1}Organizaci\'on general del proyecto}{65}{section.10.1}
 \contentsline {section}{\numberline {10.2}Ra\'ul Cobos}{66}{section.10.2}
 \contentsline {section}{\numberline {10.3}\'Alvar D. Soler}{68}{section.10.3}
 \contentsline {section}{\numberline {10.4}Mar\IeC {\'\i }a Picado}{69}{section.10.4}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{71}{appendix*.43}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{71}{appendix*.42}
